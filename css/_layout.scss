@@ -1,0 +1,12 @@
+@import "typography";
+
+$unit: 1em;
+//$gutter @unit
+//$margin: $unit * 2 $leading * 2;
+
+
+$margin: $unit * 2 $leading * 2 !default;
+
+body {
+	padding: $margin;
+}

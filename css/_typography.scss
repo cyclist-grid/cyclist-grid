@@ -1,8 +1,5 @@
-$font-size: 12px; 
-$leading: 1.4em; 
-//$unit: 1em;
-//$gutter @unit
-//$margin: $unit * 2 $leading * 2;
+$font-size: 12px !default;
+$leading: 1.4em !default;
 
 body {
 	font-size: $font-size;
