@@ -3,13 +3,16 @@ body {
   line-height: 1.4em; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 2em;
+  line-height: 2.8em; }
 
 h2 {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  line-height: 2.1em; }
 
 h3 {
-  font-size: 1em; }
+  font-size: 1em;
+  line-height: 1.4em; }
 
 p, h1, h2, ul, ol {
   margin-bottom: 1.4em; }
@@ -27,13 +30,16 @@ body {
   line-height: 1.4em; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 2em;
+  line-height: 2.8em; }
 
 h2 {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  line-height: 2.1em; }
 
 h3 {
-  font-size: 1em; }
+  font-size: 1em;
+  line-height: 1.4em; }
 
 p, h1, h2, ul, ol {
   margin-bottom: 1.4em; }

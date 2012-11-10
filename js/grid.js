@@ -3,13 +3,24 @@ window.addEventListener('load', function () { grid(); }, false);
 function drawBaselineOnCanvas(canvas, lineHeight) {	
 	var context = contextForCanvas(canvas);
 	if (context) {
+		var width = canvas.offsetWidth;
+		var height = canvas.offsetHeight
+		
 		// Border
 		context.strokeStyle = "#f00";
 		context.lineWidth = 1;
-		context.strokeRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+		context.strokeRect(0, 0, width, height);
 		// Baseline
-		context.strokeStyle = "#00f";
-		
+		context.strokeStyle = "#D7F1FF";
+		var leading = parseInt(lineHeight);
+		var lines = Math.floor(height / leading);
+		for (var i = 0; i < lines; i++) {
+			var y = (i + 1) * leading;
+			context.moveTo(0, y);
+			context.lineTo(width, y);
+			context.stroke();
+			context.closePath();
+		};
 	}
 }
 
