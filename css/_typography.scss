@@ -1,5 +1,4 @@
-$font-size: 12px !default;
-$leading: 1.4em !default;
+@import "settings";
 
 body {
 	font-size: $font-size;
