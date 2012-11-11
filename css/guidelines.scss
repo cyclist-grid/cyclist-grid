@@ -1,1 +1,9 @@
-@import "settings"
+@import "settings";
+
+.unit {
+	width: $unit;
+}
+
+.column {
+	width: $column;
+}
