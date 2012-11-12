@@ -1,7 +1,5 @@
 @import "settings";
 
-$column: $unit * $column-units + $gutter * ($column-units - 1) !default;
-
 .unit {
 	width: $unit;
 	margin-right: $gutter;

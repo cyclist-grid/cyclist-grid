@@ -4,6 +4,10 @@ $leading: 1.4em !default;
 
 // Layout
 $gutter: 1em !default;
-$unit: $gutter * 4 !default;
-$margin: $gutter * 2 $leading * 2 !default;
+$unit-gutters: 4 !default;
 $column-units: 2 !default;
+$margin: $gutter * 2 $leading * 2 !default;
+
+// Calculated
+$unit: $gutter * $unit-gutters !default;
+$column: $unit * $column-units + $gutter * ($column-units - 1) !default;
