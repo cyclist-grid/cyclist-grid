@@ -6,21 +6,23 @@ body {
 }
 @mixin header($ratio) {
 	font-size: $ratio * 1em;
-	line-height: $ratio * $leading;
+	line-height: $leading;
+	margin-bottom: $leading / $ratio; // Gives a bottom margin equal to the leading of the body text
 }
-
+@mixin headerOffset($ratio, $offset) {
+	@include header($ratio);
+	margin-bottom: $leading / $ratio * $offset;
+}
 h1 {
 	@include header(2);
 }
 h2 {
-  	@include header(1.5);
-//	font-size: 1.5em;
+  	@include headerOffset(1.5, .5);
 }
 h3 {
 	@include header(1);
-//    font-size: 1em;
 }
-p, h1, h2, ul, ol {
+p, ul, ol {
   	margin-bottom: $leading;
 }
 /*ul {

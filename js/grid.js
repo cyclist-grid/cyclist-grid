@@ -1,12 +1,18 @@
 window.addEventListener('load', function () { grid(); }, false);
 function grid() {
-	var baselineElements = document.getElementsByClassName("baseline");
-	for (var i=0; i < baselineElements.length; i++) {
-		var baselineElement = baselineElements[i];
-		var canvas = canvasForElement(baselineElement);
-        var lineHeight = window.getComputedStyle(baselineElement, null).getPropertyValue("line-height");
+	// Baseline
+	var elements = document.getElementsByClassName("baseline");
+	for (var i=0; i < elements.length; i++) {
+		var element = elements[i];
+		var canvas = canvasForElement(element);
+        var lineHeight = window.getComputedStyle(element, null).getPropertyValue("line-height");
 		drawBaselineOnCanvas(canvas, lineHeight);
 	};
+
+	// Grid
+	// var gridElements = document.getElementsByClassName("grid");
+	// for (var i=0; i < baselineElements.length; i++) {
+
 }
 
 // Drawing

@@ -75,17 +75,21 @@ body {
 
 h1 {
   font-size: 2em;
-  line-height: 2.8em; }
+  line-height: 1.4em;
+  margin-bottom: 0.7em; }
 
 h2 {
   font-size: 1.5em;
-  line-height: 2.1em; }
+  line-height: 1.4em;
+  margin-bottom: 0.93333em;
+  margin-bottom: 0.46667em; }
 
 h3 {
   font-size: 1em;
-  line-height: 1.4em; }
+  line-height: 1.4em;
+  margin-bottom: 1.4em; }
 
-p, h1, h2, ul, ol {
+p, ul, ol {
   margin-bottom: 1.4em; }
 
 /*ul {
@@ -97,4 +101,4 @@ ol {
 	margin-left: 21px;
 }*/
 body {
-  padding: 2em 2.8em; }
+  padding: 2.8em 2em; }
