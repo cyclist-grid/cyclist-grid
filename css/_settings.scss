@@ -1,6 +1,9 @@
+// Typography
 $font-size: 12px !default;
 $leading: 1.4em !default;
-$gutter: 1em;
+
+// Layout
+$gutter: 1em !default;
 $unit: $gutter * 4 !default;
 $margin: $gutter * 2 $leading * 2 !default;
-$column: $unit * 2 !default;
+$column-units: 2 !default;
