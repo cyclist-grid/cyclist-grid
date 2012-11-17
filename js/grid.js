@@ -9,10 +9,64 @@ function grid() {
 		drawBaselineOnCanvas(canvas, lineHeight);
 	};
 
+	var elements = document.getElementsByClassName("baseline2");
+	for (var i=0; i < elements.length; i++) {
+		var element = elements[i];
+		var container = containerForElement(element);
+		showBaseline(container);
+	};
+
 	// Grid
 	// var gridElements = document.getElementsByClassName("grid");
 	// for (var i=0; i < baselineElements.length; i++) {
 
+}
+
+function showBaseline(container) {
+	container.style.height = "auto";
+
+	// container.style.border = "1px solid green";
+
+    var containerHeightInt = parseInt(window.getComputedStyle(container, null).getPropertyValue("height"));
+	var parentHeightInt = parseInt(window.getComputedStyle(container.parentNode, null).getPropertyValue("height"));
+
+	var baselineElement;
+	while (containerHeightInt < parentHeightInt) {
+		baselineElement = document.createElement("p");
+		// baselineElement.style.position = "relative";
+		baselineElement.style.borderBottom = "1px solid red";
+		baselineElement.style.margin = "0";
+		baselineElement.style.marginTop = "-1px";
+		baselineElement.style.padding = "0";
+		baselineElement.appendChild(document.createTextNode('\u00A0'));
+		container.appendChild(baselineElement);
+
+
+
+		containerHeightInt = parseInt(window.getComputedStyle(container, null).getPropertyValue("height"));
+		console.log(containerHeightInt + " < " + parentHeightInt);
+	}
+
+
+	// baselineElement.style.position = "relative";
+	// baselineElement.style.top = "-1px";
+	// baselineElement.style.borderBottom = "1px solid red";
+	// baselineElement.style.margin = "0";
+	// baselineElement.style.padding = "0";
+	// baselineElement.appendChild(document.createTextNode('\u00A0'));
+	// container.appendChild(baselineElement);
+	// 
+	// baselineElement = document.createElement("p");
+	// baselineElement.style.position = "relative";
+	// baselineElement.style.top = "-1px";
+	// baselineElement.style.margin = "0";
+	// baselineElement.style.padding = "0";
+	// baselineElement.style.borderBottom = "1px solid red";
+	// baselineElement.appendChild(document.createTextNode('\u00A0'));
+	// container.appendChild(baselineElement);
+
+	// console.log(containerHeight);
+	// console.log(parentHeight);
 }
 
 // Drawing
@@ -40,6 +94,34 @@ function drawBaselineOnCanvas(canvas, lineHeight) {
 	}
 }
 
+// Helpers
+function containerForElement(element) {
+	var container = document.createElement("div");
+	element.appendChild(container);
+	makeContainer(container);
+	return container;
+}
+
+function makeContainer(element) {
+	var parent = element.parentNode;
+	parent.style.position = "relative";
+	
+	// console.log(parent + "width = " + parent.offsetWidth + " height = " + parent.offsetHeight);
+
+	var height = parent.offsetHeight;
+	var width = parent.offsetWidth;
+
+	element.setAttribute("width", width);
+	element.setAttribute("height", height);
+	element.style.width = width + "px";
+	element.style.height = height + "px";
+	element.style.position = "absolute";
+	element.style.left = "0";
+	element.style.top = "0";
+
+	// console.log(element + "width = " + element.style.width + " height = " + element.style.height);
+}
+
 // Canvas Helpers
 function contextForCanvas(canvas) {
 	if (canvas && canvas.getContext) {
@@ -48,17 +130,8 @@ function contextForCanvas(canvas) {
 }
 
 function canvasForElement(element) {
-	element.style.position = "relative";
-
 	var canvas = document.createElement("canvas");
-
-	canvas.setAttribute("width", element.offsetWidth);
-	canvas.setAttribute("height", element.offsetHeight);
-	canvas.style.position = "absolute";
-	canvas.style.left = "0";
-	canvas.style.top = "0";
-
 	element.appendChild(canvas);
-
+	makeContainer(canvas);
 	return canvas;
 }
