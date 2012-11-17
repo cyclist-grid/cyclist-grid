@@ -24,49 +24,39 @@ function grid() {
 
 function showBaseline(container) {
 	container.style.height = "auto";
-
-	// container.style.border = "1px solid green";
+	container.style.width = "100%";
 
     var containerHeightInt = parseInt(window.getComputedStyle(container, null).getPropertyValue("height"));
 	var parentHeightInt = parseInt(window.getComputedStyle(container.parentNode, null).getPropertyValue("height"));
 
-	var baselineElement;
+	
 	while (containerHeightInt < parentHeightInt) {
-		baselineElement = document.createElement("p");
-		// baselineElement.style.position = "relative";
-		baselineElement.style.borderBottom = "1px solid red";
-		baselineElement.style.margin = "0";
-		baselineElement.style.marginTop = "-1px";
-		baselineElement.style.padding = "0";
+		// Add an element to contain the baseline
+		var baselineElement = document.createElement("p");
+		resetCSS(baselineElement)
 		baselineElement.appendChild(document.createTextNode('\u00A0'));
+
+		// Draw the baseline on a canvas element
+		var canvas = document.createElement("canvas");
+		baselineElement.style.position = "relative";
+		canvas.setAttribute("width", 1);
+		canvas.setAttribute("height", 1);
+		canvas.style.position = "absolute";
+		canvas.style.left = "0";
+		canvas.style.bottom = "0";
+		canvas.style.width = "100%";
+		canvas.style.height = "1px";
+		if (canvas && canvas.getContext) {
+			context = canvas.getContext('2d');
+			context.strokeStyle = "rgba(148, 235, 255, 0.5)";
+			context.lineWidth = 1;
+			context.strokeRect(0, 0, 1, 1);
+		}
+		baselineElement.appendChild(canvas);
 		container.appendChild(baselineElement);
-
-
-
 		containerHeightInt = parseInt(window.getComputedStyle(container, null).getPropertyValue("height"));
-		console.log(containerHeightInt + " < " + parentHeightInt);
+		// console.log(containerHeightInt + " < " + parentHeightInt);
 	}
-
-
-	// baselineElement.style.position = "relative";
-	// baselineElement.style.top = "-1px";
-	// baselineElement.style.borderBottom = "1px solid red";
-	// baselineElement.style.margin = "0";
-	// baselineElement.style.padding = "0";
-	// baselineElement.appendChild(document.createTextNode('\u00A0'));
-	// container.appendChild(baselineElement);
-	// 
-	// baselineElement = document.createElement("p");
-	// baselineElement.style.position = "relative";
-	// baselineElement.style.top = "-1px";
-	// baselineElement.style.margin = "0";
-	// baselineElement.style.padding = "0";
-	// baselineElement.style.borderBottom = "1px solid red";
-	// baselineElement.appendChild(document.createTextNode('\u00A0'));
-	// container.appendChild(baselineElement);
-
-	// console.log(containerHeight);
-	// console.log(parentHeight);
 }
 
 // Drawing
@@ -135,3 +125,20 @@ function canvasForElement(element) {
 	makeContainer(canvas);
 	return canvas;
 }
+
+function resetCSS(element) {
+	element.style.border = 0;
+	element.style.margin = "0";
+	element.style.padding = "0";
+	element.style.outline = "0";
+	element.style.fontSize = "100%";
+	element.style.verticalAlign = "baseline";
+	element.style.background = "transparent";
+}
+// margin: 0;
+// padding: 0;
+// border: 0;
+// outline: 0;
+// font-size: 100%;
+// vertical-align: baseline;
+// background: transparent;
