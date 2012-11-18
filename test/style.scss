@@ -1,0 +1,41 @@
+@import "../css/reset.scss";
+
+$primer-ratio: 1.5;
+$great-primer-ratio: 3.0;
+
+//body {
+//	font-size: 12px;
+//	line-height: ;
+//}
+
+
+//@mixin setup($font-size, $leading) {
+//	font-size: $font-size;
+//	line-height: $leading;
+//}
+
+
+.em {
+	font-size: .75em;
+	line-height: 1.333em;
+}
+
+.percent {
+	font-size: 75%;
+	line-height: 134%;
+}
+
+.pixels {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+h2 {
+//	font-size
+//	font-size: $primer;
+}
+
+
+//h1 {
+//	font-size: ;
+//}

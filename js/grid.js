@@ -29,6 +29,8 @@ function showBaseline(container) {
     var containerHeightInt = parseInt(window.getComputedStyle(container, null).getPropertyValue("height"));
 	var parentHeightInt = parseInt(window.getComputedStyle(container.parentNode, null).getPropertyValue("height"));
 
+
+	// container.style.backgroundColor = "rgba(255, 72, 147, 0.25)";
 	
 	while (containerHeightInt < parentHeightInt) {
 		// Add an element to contain the baseline
