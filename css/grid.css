@@ -70,32 +70,38 @@ blockquote, q {
   quotes: "" ""; }
 
 body {
-  font-size: 12px;
+  font-size: 0.75em;
   line-height: 1.41667em; }
 
 h1 {
   font-size: 3em;
-  line-height: 1.41667em; }
+  line-height: 1.41667em;
+  margin-bottom: 0.47222em; }
 
 h2 {
   font-size: 2em;
-  line-height: 1.41667em; }
+  line-height: 1.41667em;
+  margin-bottom: 0.70833em; }
 
 h3 {
   font-size: 1.75em;
-  line-height: 1.41667em; }
+  line-height: 1.41667em;
+  margin-bottom: 0.20238em; }
 
 h4 {
   font-size: 1.5em;
-  line-height: 1.41667em; }
+  line-height: 1.41667em;
+  margin-bottom: 0.47222em; }
 
 h5 {
   font-size: 1.16667em;
-  line-height: 1.41667em; }
+  line-height: 1.41667em;
+  margin-bottom: 1.0119em; }
 
 h6 {
   font-size: 1em;
-  line-height: 1.41667em; }
+  line-height: 1.41667em;
+  margin-bottom: 1.41667em; }
 
 p, ul, ol {
   margin-bottom: 1.41667em; }

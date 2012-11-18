@@ -8,12 +8,17 @@ body {
 @mixin header($ratio) {
 	font-size: 1em * $ratio;
 	line-height: $leading;
+	// I have to correct for browser rounding errors in both the leading and margin
+
 	$margin: $leading / $ratio; // This is a margin the size of the leading
 	$remainder: ceil($ratio) - $ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
 	@if $remainder > 0 {
 		$margin: $margin * $remainder;
 	}
 	margin-bottom: $margin;
+
+//	$pixeltest: $ratio * $font-size * $leading;
+//	@debug $pixeltest;
 }
 
 $double-great-primer-ratio: 36 / 12;
@@ -31,6 +36,7 @@ h2 {
 }
 h3 {
 	@include header($double-small-pica-ratio);
+//	padding-bottom: 1px;
 }
 h4 {
 	@include header($great-primer-ratio);
