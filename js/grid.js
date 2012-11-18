@@ -1,7 +1,7 @@
 window.addEventListener('load', function () { grid(); }, false);
 function grid() {
 	// Baseline
-	var elements = document.getElementsByClassName("baseline");
+	var elements = document.getElementsByClassName("baseline_old");
 	for (var i=0; i < elements.length; i++) {
 		var element = elements[i];
 		var canvas = canvasForElement(element);
@@ -9,7 +9,7 @@ function grid() {
 		drawBaselineOnCanvas(canvas, lineHeight);
 	};
 
-	var elements = document.getElementsByClassName("baseline2");
+	var elements = document.getElementsByClassName("baseline");
 	for (var i=0; i < elements.length; i++) {
 		var element = elements[i];
 		var container = containerForElement(element);

@@ -22,6 +22,10 @@ $great-primer-ratio: 3.0;
 	@if unit($leading) == "%" {
 		// Convert leading to to ems
 		$leading: $leading / 1% / 100 * 1em;
+	} @else if unit($leading) == "px" {
+//		$test: $leading / 1px / $font-size * 1em;
+		$test: $leading / $font-size * 1em;
+		@debug $test;
 	}
 	font-size: $font-size;
 	line-height: $leading;
