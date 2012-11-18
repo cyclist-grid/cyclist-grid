@@ -8,26 +8,47 @@ $great-primer-ratio: 3.0;
 //	line-height: ;
 //}
 
+$font-size: 16px !default;
+$body: 1em !default;
+//$body: 14px;
 
-//@mixin setup($font-size, $leading) {
-//	font-size: $font-size;
-//	line-height: $leading;
-//}
+html {
+	font-size: $font-size;
+}
+body {
+	font-size: $body;
+}
+
+
+
+
+@mixin setup($font-size, $leading) {
+	font-size: $font-size;
+	line-height: $leading;
+	h1 {
+		font-size: $font-size * $great-primer-ratio;
+//		line-height: $leading * $great-primer-ratio;
+		line-height: $leading;
+	}
+}
 
 
 .em {
-	font-size: .75em;
-	line-height: 1.333em;
+	@include setup(.75em, 1.333em);
+//	font-size: .75em;
+//	line-height: 1.333em;
 }
 
 .percent {
-	font-size: 75%;
-	line-height: 134%;
+	@include setup(75%, 134%);
+//	font-size: 75%;
+//	line-height: 134%;
 }
 
 .pixels {
-	font-size: 12px;
-	line-height: 16px;
+	@include setup(12px, 16px);
+//	font-size: 12px;
+//	line-height: 16px;
 }
 
 h2 {
