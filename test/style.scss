@@ -45,14 +45,13 @@ $double-pica-ratio: 1.75;
 	h3 {
 		font-size: 1em * $double-pica-ratio;
 		line-height: $leading;
-//		margin-bottom: $leading / $double-pica-ratio * .25;
 		$margin: $leading / $double-pica-ratio; // This is a margin the size of the leading
 		$remainder: ceil($double-pica-ratio) - $double-pica-ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
 		@if $remainder > 0 {
 			$margin: $margin * $remainder;
 			@debug $margin;
 		}
-//		@debug ceil($double-pica-ratio) - $double-pica-ratio;
+		margin-bottom: $margin;
 	}
 }
 

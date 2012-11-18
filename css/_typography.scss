@@ -4,23 +4,42 @@ body {
 	font-size: $font-size;
 	line-height: $leading;
 }
+
 @mixin header($ratio) {
-	font-size: $ratio * 1em;
+	font-size: 1em * $ratio;
 	line-height: $leading;
-	margin-bottom: $leading / $ratio; // Gives a bottom margin equal to the leading of the body text
+	$margin: $leading / $ratio; // This is a margin the size of the leading
+	$remainder: ceil($ratio) - $ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
+	@if $remainder > 0 {
+		$margin: $margin * $remainder;
+	}
+	margin-bottom: $margin;
 }
-@mixin headerOffset($ratio, $offset) {
-	@include header($ratio);
-	margin-bottom: $leading / $ratio * $offset;
-}
+
+$double-great-primer-ratio: 36 / 12;
+$double-pica-ratio: 24 / 12;
+$double-small-pica-ratio: 21 / 12;
+$great-primer-ratio: 18 / 12;
+$english-ratio: 14 / 12;
+$pica-ratio: 12 / 12;
+
 h1 {
-	@include header(2);
+	@include header($double-great-primer-ratio);
 }
 h2 {
-  	@include headerOffset(1.5, .5);
+  	@include header($double-pica-ratio);
 }
 h3 {
-	@include header(1);
+	@include header($double-small-pica-ratio);
+}
+h4 {
+	@include header($great-primer-ratio);
+}
+h5 {
+	@include header($english-ratio);
+}
+h6 {
+	@include header($pica-ratio);
 }
 p, ul, ol {
   	margin-bottom: $leading;

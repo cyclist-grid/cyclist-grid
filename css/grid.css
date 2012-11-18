@@ -71,26 +71,34 @@ blockquote, q {
 
 body {
   font-size: 12px;
-  line-height: 1.4em; }
+  line-height: 1.41667em; }
 
 h1 {
-  font-size: 2em;
-  line-height: 1.4em;
-  margin-bottom: 0.7em; }
+  font-size: 3em;
+  line-height: 1.41667em; }
 
 h2 {
-  font-size: 1.5em;
-  line-height: 1.4em;
-  margin-bottom: 0.93333em;
-  margin-bottom: 0.46667em; }
+  font-size: 2em;
+  line-height: 1.41667em; }
 
 h3 {
+  font-size: 1.75em;
+  line-height: 1.41667em; }
+
+h4 {
+  font-size: 1.5em;
+  line-height: 1.41667em; }
+
+h5 {
+  font-size: 1.16667em;
+  line-height: 1.41667em; }
+
+h6 {
   font-size: 1em;
-  line-height: 1.4em;
-  margin-bottom: 1.4em; }
+  line-height: 1.41667em; }
 
 p, ul, ol {
-  margin-bottom: 1.4em; }
+  margin-bottom: 1.41667em; }
 
 /*ul {
 	list-style-type: disc;
@@ -101,4 +109,4 @@ ol {
 	margin-left: 21px;
 }*/
 body {
-  padding: 2.8em 2em; }
+  padding: 1.41667em; }

@@ -84,7 +84,8 @@ blockquote, q {
     margin-bottom: 0.44433em; }
   .em h3 {
     font-size: 1.75em;
-    line-height: 1.333em; }
+    line-height: 1.333em;
+    margin-bottom: 0.19043em; }
 
 .percent {
   font-size: 75%;
@@ -101,7 +102,8 @@ blockquote, q {
     margin-bottom: 0.44667em; }
   .percent h3 {
     font-size: 1.75em;
-    line-height: 1.34em; }
+    line-height: 1.34em;
+    margin-bottom: 0.19143em; }
 
 .pixels {
   font-size: 12px;
@@ -118,4 +120,5 @@ blockquote, q {
     margin-bottom: 0.44444em; }
   .pixels h3 {
     font-size: 1.75em;
-    line-height: 1.33333em; }
+    line-height: 1.33333em;
+    margin-bottom: 0.19048em; }
