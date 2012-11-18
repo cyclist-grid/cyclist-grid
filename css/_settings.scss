@@ -1,6 +1,6 @@
 // Typography
 $font-size: 12px !default;
-$leading: 1.5em !default;
+$leading: 1.5em !default; // A leading that doesn't result in whole number multiples of the font size will result in an irregular baseline grid due to how browsers render decimal pixel values calculated from ems. Unless no multiples of the leading are used.
 
 // Layout
 $gutter: 1em !default;

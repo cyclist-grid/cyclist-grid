@@ -69,29 +69,26 @@ blockquote:before, blockquote:after, q:before, q:after {
 blockquote, q {
   quotes: "" ""; }
 
-html {
-  font-size: 16px; }
-
-body {
-  font-size: 1em; }
-
 .em {
   font-size: 0.75em;
   line-height: 1.333em; }
   .em h1 {
-    font-size: 2.25em;
-    line-height: 1.333em; }
+    font-size: 3em;
+    line-height: 1.333em;
+    margin-bottom: 0.44433em; }
 
 .percent {
   font-size: 75%;
-  line-height: 134%; }
+  line-height: 1.34em; }
   .percent h1 {
-    font-size: 225%;
-    line-height: 134%; }
+    font-size: 3em;
+    line-height: 1.34em;
+    margin-bottom: 0.44667em; }
 
 .pixels {
   font-size: 12px;
   line-height: 16px; }
   .pixels h1 {
-    font-size: 36px;
-    line-height: 16px; }
+    font-size: 3em;
+    line-height: 48px;
+    margin-bottom: 16px; }
