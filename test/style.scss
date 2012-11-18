@@ -2,7 +2,7 @@
 
 $primer-ratio: 1.5;
 $great-primer-ratio: 3.0;
-
+$double-pica-ratio: 1.75;
 //body {
 //	font-size: 12px;
 //	line-height: ;
@@ -18,29 +18,48 @@ $great-primer-ratio: 3.0;
 //	font-size: $body;
 //}
 
+
 @mixin setup($font-size, $leading) {
+	// Convert leading to to ems
 	@if unit($leading) == "%" {
-		// Convert leading to to ems
 		$leading: $leading / 1% / 100 * 1em;
 	} @else if unit($leading) == "px" {
-//		$test: $leading / 1px / $font-size * 1em;
-		$test: $leading / $font-size * 1em;
-		@debug $test;
+		$leading: $leading / $font-size * 1em;
 	}
+
 	font-size: $font-size;
 	line-height: $leading;
+	p {
+		margin-bottom: $leading;
+	}
 	h1 {
 		font-size: 1em * $great-primer-ratio;
-		@if unit($leading) == px {
-			line-height: $leading * $great-primer-ratio;
-			margin-bottom: $leading;
-		} 
-		@else {
-       	 	line-height: $leading; 
-			margin-bottom: $leading / $great-primer-ratio;
-   		}
+		line-height: $leading;
+		margin-bottom: $leading / $great-primer-ratio;
+	}
+	h2 {
+		font-size: 1em * $primer-ratio;
+		line-height: $leading;
+		margin-bottom: $leading / $primer-ratio * .5;
+	}
+	h3 {
+		font-size: 1em * $double-pica-ratio;
+		line-height: $leading;
+//		margin-bottom: $leading / $double-pica-ratio * .25;
+		$margin: $leading / $double-pica-ratio; // This is a margin the size of the leading
+		$remainder: ceil($double-pica-ratio) - $double-pica-ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
+		@if $remainder > 0 {
+			$margin: $margin * $remainder;
+			@debug $margin;
+		}
+//		@debug ceil($double-pica-ratio) - $double-pica-ratio;
 	}
 }
+
+//@mixin header($ratio) {
+//	font-size: 1em * $ratio;
+//	margin-bottom: $leading / $great-primer-ratio;
+//}
 
 .em {
 	@include setup(.75em, 1.333em);

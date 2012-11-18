@@ -72,23 +72,50 @@ blockquote, q {
 .em {
   font-size: 0.75em;
   line-height: 1.333em; }
+  .em p {
+    margin-bottom: 1.333em; }
   .em h1 {
     font-size: 3em;
     line-height: 1.333em;
     margin-bottom: 0.44433em; }
+  .em h2 {
+    font-size: 1.5em;
+    line-height: 1.333em;
+    margin-bottom: 0.44433em; }
+  .em h3 {
+    font-size: 1.75em;
+    line-height: 1.333em; }
 
 .percent {
   font-size: 75%;
   line-height: 1.34em; }
+  .percent p {
+    margin-bottom: 1.34em; }
   .percent h1 {
     font-size: 3em;
     line-height: 1.34em;
     margin-bottom: 0.44667em; }
+  .percent h2 {
+    font-size: 1.5em;
+    line-height: 1.34em;
+    margin-bottom: 0.44667em; }
+  .percent h3 {
+    font-size: 1.75em;
+    line-height: 1.34em; }
 
 .pixels {
   font-size: 12px;
-  line-height: 16px; }
+  line-height: 1.33333em; }
+  .pixels p {
+    margin-bottom: 1.33333em; }
   .pixels h1 {
     font-size: 3em;
-    line-height: 48px;
-    margin-bottom: 16px; }
+    line-height: 1.33333em;
+    margin-bottom: 0.44444em; }
+  .pixels h2 {
+    font-size: 1.5em;
+    line-height: 1.33333em;
+    margin-bottom: 0.44444em; }
+  .pixels h3 {
+    font-size: 1.75em;
+    line-height: 1.33333em; }
