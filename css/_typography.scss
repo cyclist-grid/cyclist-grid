@@ -8,7 +8,7 @@ body {
 @mixin header($ratio) {
 	font-size: 1em * $ratio;
 	line-height: $leading;
-	// I have to correct for browser rounding errors in both the leading and margin
+
 
 	$margin: $leading / $ratio; // This is a margin the size of the leading
 	$remainder: ceil($ratio) - $ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
@@ -17,8 +17,19 @@ body {
 	}
 	margin-bottom: $margin;
 
-//	$pixeltest: $ratio * $font-size * $leading;
-//	@debug $pixeltest;
+	// Hack to correct for browser rounding errors in both the leading and margin
+	// Hopefully I can remove this once browsers properly support sub-pixel rendering
+
+	$calculatedHeight: $ratio * ($font-size / 1em) * ($leading / 1em)  * ($browser-default-font-size / 1px);
+	$roundedHeight: round($calculatedHeight);
+	@debug "Ratio: " + $ratio;
+	@debug $calculatedHeight;
+	@debug $roundedHeight;
+
+	$newLineHeight: $roundedHeight / $ratio / ($font-size / 1em) / ($browser-default-font-size / 1px);
+	
+	@debug $newLineHeight;
+	@debug "";	
 }
 
 $double-great-primer-ratio: 36 / 12;

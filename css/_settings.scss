@@ -3,6 +3,7 @@ $font-size: 12px !default;
 $leading: 17px !default; // A leading that doesn't result in whole number multiples of the font size will result in an irregular baseline grid due to how browsers render decimal pixel values calculated from ems. Unless no multiples of the leading are used.
 $browser-default-font-size: 16px;
 
+// Convert font size to ems
 @if unit($font-size) == "%" {
 	$font-size: $font-size / 1% / 100 * 1em;
 } @else if unit($font-size) == "px" {
@@ -13,10 +14,7 @@ $browser-default-font-size: 16px;
 @if unit($leading) == "%" {
 	$leading: $leading / 1% / 100 * 1em;
 } @else if unit($leading) == "px" {
-//	$leading: $leading / $font-size * 1em;
-	$leading: ($leading / ($font-size * $browser-default-font-size)) * 1em;
-	$leading: $leading * 1em;
-	@debug $leading;
+	$leading: $leading / ($font-size / 1em * $browser-default-font-size) * 1em;
 }
 
 // Layout
