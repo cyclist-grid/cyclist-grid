@@ -76,32 +76,44 @@ body {
 h1 {
   font-size: 3em;
   line-height: 1.41667em;
-  margin-bottom: 0.47222em; }
+  margin-bottom: 0.47222em;
+  line-height: 1.41667em;
+  margin-bottom: 0.47222; }
 
 h2 {
   font-size: 2em;
   line-height: 1.41667em;
-  margin-bottom: 0.70833em; }
+  margin-bottom: 0.70833em;
+  line-height: 1.41667em;
+  margin-bottom: 0.70833; }
 
 h3 {
   font-size: 1.75em;
   line-height: 1.41667em;
-  margin-bottom: 0.20238em; }
+  margin-bottom: 0.20238em;
+  line-height: 1.42857em;
+  margin-bottom: 0.19048; }
 
 h4 {
   font-size: 1.5em;
   line-height: 1.41667em;
-  margin-bottom: 0.47222em; }
+  margin-bottom: 0.47222em;
+  line-height: 1.44444em;
+  margin-bottom: 0.5; }
 
 h5 {
   font-size: 1.16667em;
   line-height: 1.41667em;
-  margin-bottom: 1.0119em; }
+  margin-bottom: 1.0119em;
+  line-height: 1.42857em;
+  margin-bottom: 1; }
 
 h6 {
   font-size: 1em;
   line-height: 1.41667em;
-  margin-bottom: 1.41667em; }
+  margin-bottom: 1.41667em;
+  line-height: 1.41667em;
+  margin-bottom: 1.41667; }
 
 p, ul, ol {
   margin-bottom: 1.41667em; }

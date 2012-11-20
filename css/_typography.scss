@@ -26,22 +26,23 @@ body {
 	@debug "height: " + $leading;
 	@debug "calculatedHeight: " + $calculatedHeight;
 	@debug "roundedHeight: " + $roundedHeight;
-
 	$newLineHeight: $roundedHeight / $ratio / ($font-size / 1em) / ($browser-default-font-size / 1px) * 1em;
-	
 	@debug "newLineHeight: " + $newLineHeight;
 
 	@debug "";
-
+	@debug "Margin: " + $margin;
 	$calculatedMargin: $ratio * ($font-size / 1em) * ($margin / 1em) * ($browser-default-font-size / 1px);
-	$roundedMargin: round($calculatedMargin);
+	$roundedMargin: round($calculatedMargin);	
 	@debug "calculatedMargin: " + $calculatedMargin;
 	@debug "roundedMargin: " + $roundedMargin;
 
 	$newMargin: $roundedMargin / $ratio / ($font-size / 1em) / ($browser-default-font-size / 1px);
 	
+	@debug "newMargin: " + $newMargin;
 	@debug "";
-	@debug "";
+
+	line-height: $newLineHeight;
+	margin-bottom: $newMargin;
 }
 
 $double-great-primer-ratio: 36 / 12;
