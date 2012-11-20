@@ -20,16 +20,28 @@ body {
 	// Hack to correct for browser rounding errors in both the leading and margin
 	// Hopefully I can remove this once browsers properly support sub-pixel rendering
 
+	@debug "Ratio: " + $ratio;
 	$calculatedHeight: $ratio * ($font-size / 1em) * ($leading / 1em)  * ($browser-default-font-size / 1px);
 	$roundedHeight: round($calculatedHeight);
-	@debug "Ratio: " + $ratio;
-	@debug $calculatedHeight;
-	@debug $roundedHeight;
+	@debug "height: " + $leading;
+	@debug "calculatedHeight: " + $calculatedHeight;
+	@debug "roundedHeight: " + $roundedHeight;
 
-	$newLineHeight: $roundedHeight / $ratio / ($font-size / 1em) / ($browser-default-font-size / 1px);
+	$newLineHeight: $roundedHeight / $ratio / ($font-size / 1em) / ($browser-default-font-size / 1px) * 1em;
 	
-	@debug $newLineHeight;
-	@debug "";	
+	@debug "newLineHeight: " + $newLineHeight;
+
+	@debug "";
+
+	$calculatedMargin: $ratio * ($font-size / 1em) * ($margin / 1em) * ($browser-default-font-size / 1px);
+	$roundedMargin: round($calculatedMargin);
+	@debug "calculatedMargin: " + $calculatedMargin;
+	@debug "roundedMargin: " + $roundedMargin;
+
+	$newMargin: $roundedMargin / $ratio / ($font-size / 1em) / ($browser-default-font-size / 1px);
+	
+	@debug "";
+	@debug "";
 }
 
 $double-great-primer-ratio: 36 / 12;
