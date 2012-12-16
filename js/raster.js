@@ -1,5 +1,5 @@
-window.addEventListener('load', function () { grid(); }, false);
-function grid() {
+window.addEventListener('load', function () { setup(); }, false);
+function setup() {
 	// Baseline
 	var elements = document.getElementsByClassName("baseline_old");
 	for (var i=0; i < elements.length; i++) {
