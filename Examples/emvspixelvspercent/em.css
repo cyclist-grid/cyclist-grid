@@ -72,52 +72,52 @@ blockquote, q {
 
 body {
   font-size: 0.75em;
-  line-height: 1.33333em; }
+  line-height: 1.333em; }
 
 h1 {
   font-size: 3em;
-  line-height: 1.33333em;
-  margin-bottom: 0.44444em;
+  line-height: 1.333em;
+  margin-bottom: 0.44433em;
   line-height: 1.33333em;
   margin-bottom: 0.44444em; }
 
 h2 {
   font-size: 2em;
-  line-height: 1.33333em;
-  margin-bottom: 0.66667em;
+  line-height: 1.333em;
+  margin-bottom: 0.6665em;
   line-height: 1.33333em;
   margin-bottom: 0.66667em; }
 
 h3 {
   font-size: 1.75em;
-  line-height: 1.33333em;
-  margin-bottom: 0.19048em;
+  line-height: 1.333em;
+  margin-bottom: 0.19043em;
   line-height: 1.33333em;
   margin-bottom: 0.19048em; }
 
 h4 {
   font-size: 1.5em;
-  line-height: 1.33333em;
-  margin-bottom: 0.44444em;
+  line-height: 1.333em;
+  margin-bottom: 0.44433em;
   line-height: 1.33333em;
   margin-bottom: 0.44444em; }
 
 h5 {
   font-size: 1.16667em;
-  line-height: 1.33333em;
-  margin-bottom: 0.95238em;
+  line-height: 1.333em;
+  margin-bottom: 0.95214em;
   line-height: 1.35714em;
   margin-bottom: 0.92857em; }
 
 h6 {
   font-size: 1em;
-  line-height: 1.33333em;
-  margin-bottom: 1.33333em;
+  line-height: 1.333em;
+  margin-bottom: 1.333em;
   line-height: 1.33333em;
   margin-bottom: 1.33333em; }
 
 p, ul, ol {
-  margin-bottom: 1.33333em; }
+  margin-bottom: 1.333em; }
 
 /*ul {
 	list-style-type: disc;
@@ -128,4 +128,4 @@ ol {
 	margin-left: 21px;
 }*/
 body {
-  padding: 1.33333em; }
+  padding: 1.333em; }
