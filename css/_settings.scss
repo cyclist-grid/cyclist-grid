@@ -1,6 +1,11 @@
-// Typography
+// Typography Defaults
 $font-size: 12px !default;
-$leading: 17px !default; // A leading that doesn't result in whole number multiples of the font size will result in an irregular baseline grid due to how browsers render decimal pixel values calculated from ems. Unless no multiples of the leading are used.
+$leading: 17px !default;
+// A leading that doesn't result in whole number multiples of the font size will 
+// result in an irregular baseline grid due to how browsers render decimal pixel 
+// values calculated from ems. (Unless the leading is never multiplied.)
+
+// Typography Constants
 $browser-default-font-size: 16px;
 
 // Convert font sizes and leading in pixels and percents to ems
@@ -15,12 +20,12 @@ $browser-default-font-size: 16px;
 	$leading: $leading / ($font-size / 1em * $browser-default-font-size) * 1em;
 }
 
-// Layout
+// Layout Defaults
 $gutter: 1em !default;
 $unit-gutters: 4 !default;
 $column-units: 2 !default;
 $margin: $leading * 2 $gutter * 2 !default;
 
-// Calculated
+// Calculations
 $unit: $gutter * $unit-gutters !default;
 $column: $unit * $column-units + $gutter * ($column-units - 1) !default;
