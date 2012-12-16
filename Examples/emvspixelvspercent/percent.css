@@ -1,3 +1,4 @@
+/* Settings */
 /* Eric Meyer's Reset
 ============================================================================*/
 /* Details here:
@@ -69,56 +70,62 @@ blockquote:before, blockquote:after, q:before, q:after {
 blockquote, q {
   quotes: "" ""; }
 
-.em {
+body {
   font-size: 0.75em;
-  line-height: 1.333em; }
-  .em p {
-    margin-bottom: 1.333em; }
-  .em h1 {
-    font-size: 3em;
-    line-height: 1.333em;
-    margin-bottom: 0.44433em; }
-  .em h2 {
-    font-size: 1.5em;
-    line-height: 1.333em;
-    margin-bottom: 0.44433em; }
-  .em h3 {
-    font-size: 1.75em;
-    line-height: 1.333em;
-    margin-bottom: 0.19043em; }
-
-.percent {
-  font-size: 75%;
   line-height: 1.34em; }
-  .percent p {
-    margin-bottom: 1.34em; }
-  .percent h1 {
-    font-size: 3em;
-    line-height: 1.34em;
-    margin-bottom: 0.44667em; }
-  .percent h2 {
-    font-size: 1.5em;
-    line-height: 1.34em;
-    margin-bottom: 0.44667em; }
-  .percent h3 {
-    font-size: 1.75em;
-    line-height: 1.34em;
-    margin-bottom: 0.19143em; }
 
-.pixels {
-  font-size: 12px;
-  line-height: 1.33333em; }
-  .pixels p {
-    margin-bottom: 1.33333em; }
-  .pixels h1 {
-    font-size: 3em;
-    line-height: 1.33333em;
-    margin-bottom: 0.44444em; }
-  .pixels h2 {
-    font-size: 1.5em;
-    line-height: 1.33333em;
-    margin-bottom: 0.44444em; }
-  .pixels h3 {
-    font-size: 1.75em;
-    line-height: 1.33333em;
-    margin-bottom: 0.19048em; }
+h1 {
+  font-size: 3em;
+  line-height: 1.34em;
+  margin-bottom: 0.44667em;
+  line-height: 1.33333em;
+  margin-bottom: 0.44444em; }
+
+h2 {
+  font-size: 2em;
+  line-height: 1.34em;
+  margin-bottom: 0.67em;
+  line-height: 1.33333em;
+  margin-bottom: 0.66667em; }
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.34em;
+  margin-bottom: 0.19143em;
+  line-height: 1.33333em;
+  margin-bottom: 0.19048em; }
+
+h4 {
+  font-size: 1.5em;
+  line-height: 1.34em;
+  margin-bottom: 0.44667em;
+  line-height: 1.33333em;
+  margin-bottom: 0.44444em; }
+
+h5 {
+  font-size: 1.16667em;
+  line-height: 1.34em;
+  margin-bottom: 0.95714em;
+  line-height: 1.35714em;
+  margin-bottom: 0.92857em; }
+
+h6 {
+  font-size: 1em;
+  line-height: 1.34em;
+  margin-bottom: 1.34em;
+  line-height: 1.33333em;
+  margin-bottom: 1.33333em; }
+
+p, ul, ol {
+  margin-bottom: 1.34em; }
+
+/*ul {
+	list-style-type: disc;
+	margin-left: @grid;
+}
+ol {
+	list-style-type: decimal;
+	margin-left: 21px;
+}*/
+body {
+  padding: 1.34em; }
