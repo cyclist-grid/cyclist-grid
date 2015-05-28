@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var path = require('path');
+var plumber = require('gulp-plumber');
+var jade = require('gulp-jade');
 
 // Paths
 
