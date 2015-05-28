@@ -3,31 +3,37 @@ var sass = require('gulp-sass');
 var path = require('path');
 var plumber = require('gulp-plumber');
 var jade = require('gulp-jade');
+var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
 // Paths
 
-function makePaths(basePath) {
+function sharedPaths(basePath) {
   var paths = {};
-  var srcPath = path.join(basePath, 'src');
-  var buildPath = path.join(basePath, 'build');
-  paths.src = srcPath;
-  paths.build = buildPath;
+  paths.src = path.join(basePath, 'src');
+  paths.build = path.join(basePath, 'build');
   // Sass
   paths.sass = {};
-  paths.sass.src = path.join(srcPath, 'sass');
-  paths.sass.build = path.join(buildPath, 'css');
+  paths.sass.src = path.join(paths.src, 'sass');
+  paths.sass.build = path.join(paths.build, 'css');
   paths.sass.srcGlob = paths.sass.src + '/*.scss';
-  // Jade
-  paths.jade = {};
-  paths.jade.src = path.join(srcPath, 'jade');
-  paths.jade.build = path.join(buildPath, 'html');
-  paths.jade.srcGlob = paths.jade.src + '/*.jade';
 
   return paths;
 }
 var paths = {};
-paths.examples = makePaths('example');
-paths.test = makePaths('test');
+// Examples
+paths.examples = sharedPaths('example');
+// Test
+paths.test = sharedPaths('test');
+paths.test.lib = path.join('test', 'lib');
+// Jade Test
+paths.test.jade = {};
+paths.test.jade.src = path.join(paths.test.src, 'jade');
+paths.test.jade.build = path.join(paths.test.build, 'html');
+paths.test.jade.srcGlob = paths.jade.src + '/*.jade';
+// Mocha PhantomJS
+paths.test.mochaPhantomJS = {};
+paths.test.mochaPhantomJS.lib = path.join(paths.test.lib, 'tests');
+paths.test.mochaPhantomJS.libGlob = paths.test.mochaPhantomJS.lib + '/*.js';
 
 // Sass
 
@@ -59,6 +65,16 @@ function doJade(srcPath, buildPath) {
 gulp.task('jade-test', function() {
   doJade(paths.test.jade.srcGlob, paths.test.jade.build);
 });
+
+
+// Mocha PhantomJS
+
+gulp.task('test', function () {
+    return gulp
+    .src(paths.test.mochaPhantomJS.libGlob)
+    .pipe(mochaPhantomJS());
+});
+
 
 // Watch
 
