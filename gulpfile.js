@@ -29,7 +29,9 @@ paths.test.lib = path.join('test', 'lib');
 paths.test.jade = {};
 paths.test.jade.src = path.join(paths.test.src, 'jade');
 paths.test.jade.build = path.join(paths.test.build, 'html');
-paths.test.jade.srcGlob = paths.jade.src + '/*.jade';
+paths.test.jade.srcGlob = paths.test.jade.src + '/*.jade';
+paths.test.jade.srcWarchGlob = paths.test.jade.src + '/**/*.jade';
+
 // Mocha PhantomJS
 paths.test.mochaPhantomJS = {};
 paths.test.mochaPhantomJS.lib = path.join(paths.test.lib, 'tests');
@@ -81,7 +83,7 @@ gulp.task('test', function () {
 gulp.task('watch', function () {
   gulp.watch(paths.examples.sass.srcGlob, ['sass-examples']);
   gulp.watch(paths.test.sass.srcGlob, ['sass-test']);
-  gulp.watch(paths.test.jade.srcGlob, ['jade-test']);
+  gulp.watch(paths.test.jade.srcWarchGlob, ['jade-test']);
 });
 
 gulp.task('jade', ['jade-test']);

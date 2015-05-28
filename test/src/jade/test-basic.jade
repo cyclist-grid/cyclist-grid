@@ -2,8 +2,8 @@ doctype html
 html(lang="en")
   title= "Basic"
   include ./includes/head
-  script(src='../../lib/test-basic.js')
-  link(rel='stylesheet', href='../css/test-basic.scss')
+  script(src='../../lib/tests/test-basic.js')
+  link(rel='stylesheet', href='../css/test-basic.css')
 body
-  h1 A Test
+  h1#test-header A Test Header
   include ./includes/mocha
