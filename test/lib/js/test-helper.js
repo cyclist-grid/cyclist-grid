@@ -1,12 +1,17 @@
 var testHelper = {
+  leading: function() {
+    var style = window.getComputedStyle(document.body);
+    return parseFloat(style.lineHeight, 10);
+  },
   totalHeightForElement: function(element) {
-    console.log("element.id = " + element.id);
-    console.log("element.clientHeight = " + element.clientHeight);
     var style = window.getComputedStyle(element);
-    console.log("style.lineHeight = " + style.lineHeight);
-    console.log("style.marginBottom = " + style.marginBottom);
-    var total = element.clientHeight + parseFloat(style.marginBottom, 10);
-    console.log("total = " + total);
-    return total;
+    var computedHeight = element.clientHeight;
+    computedHeight += parseFloat(style.marginTop, 10);
+    computedHeight += parseFloat(style.marginBottom, 10);
+    computedHeight += parseFloat(style.paddingTop, 10);
+    computedHeight += parseFloat(style.paddingBottom, 10);
+    computedHeight += parseFloat(style.borderTopWidth, 10);
+    computedHeight += parseFloat(style.borderBottomWidth, 10);
+    return computedHeight;
   }
 };
