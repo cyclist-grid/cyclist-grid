@@ -12,7 +12,15 @@ describe('Raster default', function() {
       for (var i = nodeList.length - 1; i >= 0; --i) {
       	var element = nodeList[i];
         var totalHeight = testHelper.totalHeightForElement(element);
+        if (!element.id) {
+          // Only test items with an ID
+          continue;
+        }
+
+
+console.log("element = " + element);
 console.log("element.id = " + element.id);
+console.log("element.outerHTML = " + element.outerHTML);
 console.log("totalHeight = " + totalHeight);
 console.log("leading = " + leading);
         totalHeight.should.be.above(0);
