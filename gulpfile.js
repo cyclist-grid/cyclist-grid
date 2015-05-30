@@ -3,7 +3,6 @@ var sass = require('gulp-sass');
 var path = require('path');
 var plumber = require('gulp-plumber');
 var jade = require('gulp-jade');
-var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
 // Paths
 
@@ -32,10 +31,6 @@ paths.test.jade.build = path.join(paths.test.build, 'html');
 paths.test.jade.srcGlob = paths.test.jade.src + '/*.jade';
 paths.test.jade.srcWarchGlob = paths.test.jade.src + '/**/*.jade';
 
-// Mocha PhantomJS
-paths.test.mochaPhantomJS = {};
-paths.test.mochaPhantomJS.lib = path.join(paths.test.lib, 'tests');
-paths.test.mochaPhantomJS.libGlob = paths.test.mochaPhantomJS.lib + '/*.js';
 
 // Sass
 
@@ -68,14 +63,6 @@ gulp.task('jade-test', function() {
   doJade(paths.test.jade.srcGlob, paths.test.jade.build);
 });
 
-
-// Mocha PhantomJS
-
-gulp.task('test', function () {
-    return gulp
-    .src(paths.test.mochaPhantomJS.libGlob)
-    .pipe(mochaPhantomJS());
-});
 
 
 // Watch
