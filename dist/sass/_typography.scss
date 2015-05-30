@@ -7,14 +7,12 @@ body {
 
 @mixin header($ratio) {
 	font-size: 1em * $ratio;
-	line-height: $leading;
 
 	$margin: $leading / $ratio; // This is a margin the size of the leading
 	$remainder: ceil($ratio) - $ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
 	@if $remainder > 0 {
 		$margin: $margin * $remainder;
 	}
-	margin-bottom: $margin;
 
 	// Sub-pixel rendering correction
 	// Add & subtract .0001 to prevent values that have a decimal of exactly .5 from adding 1px to both
