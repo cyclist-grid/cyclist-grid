@@ -49,6 +49,9 @@ h6 {
 p, ul, ol {
   	margin-bottom: em-calc($leading-ratio);
 }
+ul ol, ol ol, ul ul, ol ul {
+  	margin-bottom: 0;
+}
 ul {
 	list-style-type: disc;
 	margin-left: $indent;

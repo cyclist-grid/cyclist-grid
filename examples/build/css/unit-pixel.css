@@ -107,6 +107,9 @@ h6 {
 p, ul, ol {
   margin-bottom: calc(1em * (17 / 12)); }
 
+ul ol, ol ol, ul ul, ol ul {
+  margin-bottom: 0; }
+
 ul {
   list-style-type: disc;
   margin-left: 2em; }
