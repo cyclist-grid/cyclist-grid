@@ -17,17 +17,9 @@ describe('Raster default', function() {
           continue;
         }
 
-
-console.log("element = " + element);
-console.log("element.id = " + element.id);
-console.log("element.outerHTML = " + element.outerHTML);
-console.log("totalHeight = " + totalHeight);
-console.log("leading = " + leading);
         totalHeight.should.be.above(0);
         var remainder = totalHeight % leading;
-console.log("remainder = " + remainder);
         remainder.should.equal(0);
-console.log("");
       }
     });
     // TODO: All height and margin values should be whole integer values
