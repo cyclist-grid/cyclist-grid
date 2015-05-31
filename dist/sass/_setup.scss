@@ -1,30 +1,9 @@
 // Typography Defaults
 $font-size: 12px !default;
 $line-height: 17px !default;
-// A leading that doesn't result in whole number multiples of the font size will 
-// result in an irregular baseline grid due to how browsers render decimal pixel 
-// values calculated from ems. (Unless the leading is never multiplied.)
 
-// Typography Constants
-$browser-default-font-size: 16px;
-
-// Convert font sizes and leading in pixels and percents to ems
-//@if unit($font-size) == "%" {
-//	$font-size: $font-size / 1% / 100 * 1em;
-//} @else if unit($font-size) == "px" {
-//	$font-size: $font-size / $browser-default-font-size * 1em;
-//}
-
-
-//@if unit($line-height) == "%" {
-//	$leading: $line-height / 1% / 100 * 1em;
-//} @else if unit($line-height) == "px" {
-//	$leading: $line-height / ($line-height / 1em * $browser-default-font-size) * 1em;
-//}
-
+// Leading
 $leading-ratio: make-ratio($line-height, $font-size);
-//$leading: calc(#{$leading-ratio});
-
 
 // Layout Defaults
 $gutter: 1em !default;
