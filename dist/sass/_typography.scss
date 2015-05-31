@@ -8,11 +8,16 @@ body {
 	$denumerator: nth($values, 2);
 	$ratio: make-ratio($numerator, $denumerator);
 
+	// Set the bottom margin to be equal to the line height
 	font-size: em-calc($ratio);
 	margin-bottom: em-translate-calc($leading-ratio, $ratio); // This returns a calc that equals the line height from this headers font size
 
-	$line-height-multiplier: ceil($numerator / $denumerator);
-
+	// Set the line height to be the smallest multiple of line height that fits the 
+	// TODO: A good feature would be an option to offer an option to simplify this calculation to the following:
+	// $line-height-multiplier: ceil($numerator / $denumerator);
+	// If the margins are removed from below a header, than that math will provide a better line height for the header
+	$header-font-size-pixels: $font-size * ($numerator / $denumerator);
+	$line-height-multiplier: ceil($header-font-size-pixels / $line-height);
 	line-height: em-translate-multiplier-calc($leading-ratio, $ratio, $line-height-multiplier);
 }
 
