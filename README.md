@@ -72,6 +72,10 @@ Raster aligns elements to the baseline grid using the following rules:
 * All block level elements are given a bottom margin equal to the leading. (The exception to this is hierarchical sublists, which have a bottom margin of zero. I.e., a list within a list does not have a bottom margin)
 * Headers are fitted to the closest matching line height that's a multiple of the leading. E.g., if the calculated header height is `21px` and the leading is `17px`, then the line height of the header will be `34px`. (This is in addition to having a bottom margin since headers are block level elements.)
 
+## Implementation Notes
+
+* Only pixels can be used to set the `$font-size` and `$line-height` variables. This is because that ratio of one to the other is used in various calculations, so it's necessary for their implementation to be simple and consistent.
+
 ## Resources
 
 * [Compose to a Vertical Rhythm ◆ 24 ways](http://24ways.org/2006/compose-to-a-vertical-rhythm)
