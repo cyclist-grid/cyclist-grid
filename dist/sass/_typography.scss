@@ -1,24 +1,26 @@
-@import "setup";
-
 body {
 	font-size: $font-size;
-	line-height: $leading;
+	line-height: $line-height;
 }
 
 @mixin header($ratio) {
-	font-size: 1em * $ratio;
+	font-size: calc(1em * #{$ratio});
+	margin-bottom: calc(1em * #{$leading-ratio} / #{$ratio});
+	
 
-	$margin: $leading / $ratio; // This is a margin the size of the leading
-	$remainder: ceil($ratio) - $ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
-	@if $remainder > 0 {
-		$margin: $margin * $remainder;
-	}
+//	font-size: 1em * $ratio;
 
-	// Sub-pixel rendering correction
-	// Add & subtract .0001 to prevent values that have a decimal of exactly .5 from adding 1px to both
-	// line-height and margin-bottom.
-	line-height: roundEms($ratio, $leading + .0001); 
-	margin-bottom: roundEms($ratio, $margin - .0001);
+//	$margin: $leading / $ratio; // This is a margin the size of the leading
+//	$remainder: ceil($ratio) - $ratio; // But if there is a remainder we have to adjust for the missing portion in relation to the baseline
+//	@if $remainder > 0 {
+//		$margin: $margin * $remainder;
+//	}
+//
+//	// Sub-pixel rendering correction
+//	// Add & subtract .0001 to prevent values that have a decimal of exactly .5 from adding 1px to both
+//	// line-height and margin-bottom.
+//	line-height: roundEms($ratio, $leading + .0001);
+//	margin-bottom: roundEms($ratio, $margin - .0001);
 }
 
 @function roundEms($ratio, $value) {
@@ -35,12 +37,12 @@ body {
 	@return $new;
 }
 
-$double-great-primer-ratio: 36 / 12;
-$double-pica-ratio: 24 / 12;
-$double-small-pica-ratio: 21 / 12;
-$great-primer-ratio: 18 / 12;
-$english-ratio: 14 / 12;
-$pica-ratio: 12 / 12;
+$double-great-primer-ratio: make-ratio(36, 12);
+$double-pica-ratio: make-ratio(24, 12);
+$double-small-pica-ratio: make-ratio(21, 12);
+$great-primer-ratio: make-ratio(18, 12);
+$english-ratio: make-ratio(14, 12);
+$pica-ratio: make-ratio(12, 12);
 
 h1 {
 	@include header($double-great-primer-ratio);
@@ -50,7 +52,6 @@ h2 {
 }
 h3 {
 	@include header($double-small-pica-ratio);
-//	padding-bottom: 1px;
 }
 h4 {
 	@include header($great-primer-ratio);
