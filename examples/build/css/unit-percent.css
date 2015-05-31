@@ -71,53 +71,41 @@ blockquote, q {
   quotes: "" ""; }
 
 body {
-  font-size: 0.75em;
-  line-height: 1.34em; }
+  font-size: 75%;
+  line-height: 17px; }
 
 h1 {
-  font-size: 3em;
-  line-height: 1.34em;
-  margin-bottom: 0.44667em;
-  line-height: 1.33333em;
-  margin-bottom: 0.44444em; }
+  font-size: calc(1em * (36 / 12));
+  margin-bottom: calc(1em * (17 / 75) / (36 / 12));
+  line-height: calc(3em * (17 / 75) / (36 / 12)); }
 
 h2 {
-  font-size: 2em;
-  line-height: 1.34em;
-  margin-bottom: 0.67em;
-  line-height: 1.33333em;
-  margin-bottom: 0.66667em; }
+  font-size: calc(1em * (24 / 12));
+  margin-bottom: calc(1em * (17 / 75) / (24 / 12));
+  line-height: calc(2em * (17 / 75) / (24 / 12)); }
 
 h3 {
-  font-size: 1.75em;
-  line-height: 1.34em;
-  margin-bottom: 0.19143em;
-  line-height: 1.33333em;
-  margin-bottom: 0.19048em; }
+  font-size: calc(1em * (21 / 12));
+  margin-bottom: calc(1em * (17 / 75) / (21 / 12));
+  line-height: calc(2em * (17 / 75) / (21 / 12)); }
 
 h4 {
-  font-size: 1.5em;
-  line-height: 1.34em;
-  margin-bottom: 0.44667em;
-  line-height: 1.33333em;
-  margin-bottom: 0.44444em; }
+  font-size: calc(1em * (18 / 12));
+  margin-bottom: calc(1em * (17 / 75) / (18 / 12));
+  line-height: calc(2em * (17 / 75) / (18 / 12)); }
 
 h5 {
-  font-size: 1.16667em;
-  line-height: 1.34em;
-  margin-bottom: 0.95714em;
-  line-height: 1.35714em;
-  margin-bottom: 0.92857em; }
+  font-size: calc(1em * (14 / 12));
+  margin-bottom: calc(1em * (17 / 75) / (14 / 12));
+  line-height: calc(2em * (17 / 75) / (14 / 12)); }
 
 h6 {
-  font-size: 1em;
-  line-height: 1.34em;
-  margin-bottom: 1.34em;
-  line-height: 1.33333em;
-  margin-bottom: 1.33333em; }
+  font-size: calc(1em * (12 / 12));
+  margin-bottom: calc(1em * (17 / 75) / (12 / 12));
+  line-height: calc(1em * (17 / 75) / (12 / 12)); }
 
 p, ul, ol {
-  margin-bottom: 1.34em; }
+  margin-bottom: calc(1em * (17 / 75)); }
 
 ul {
   list-style-type: disc;
@@ -126,6 +114,3 @@ ul {
 ol {
   list-style-type: decimal;
   margin-left: 2em; }
-
-body {
-  padding: 2.68em 2em; }

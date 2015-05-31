@@ -20,7 +20,7 @@ function sharedPaths(basePath) {
 }
 var paths = {};
 // Examples
-paths.examples = sharedPaths('example');
+paths.examples = sharedPaths('examples');
 // Test
 paths.test = sharedPaths('test');
 paths.test.lib = path.join('test', 'lib');

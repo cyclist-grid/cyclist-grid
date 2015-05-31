@@ -3,10 +3,21 @@ body {
 	line-height: $line-height;
 }
 
-@mixin header($ratio) {
-	font-size: calc(1em * #{$ratio});
-	margin-bottom: calc(1em * #{$leading-ratio} / #{$ratio});
-	
+@mixin header($values) {
+	$numerator: nth($values, 1);
+	$denumerator: nth($values, 2);
+	$ratio: make-ratio($numerator, $denumerator);
+
+	font-size: em-calc($ratio);
+	margin-bottom: em-translate-calc($leading-ratio, $ratio); // This returns a calc that equals the line height from this headers font size
+
+	$line-height-multiplier: ceil($numerator / $denumerator);
+
+	line-height: em-translate-multiplier-calc($leading-ratio, $ratio, $line-height-multiplier);
+
+//	line-height: em-calc($leading-ratio);
+
+	// Just calculate a line height multiplier
 
 //	font-size: 1em * $ratio;
 
@@ -37,33 +48,39 @@ body {
 	@return $new;
 }
 
-$double-great-primer-ratio: make-ratio(36, 12);
-$double-pica-ratio: make-ratio(24, 12);
-$double-small-pica-ratio: make-ratio(21, 12);
-$great-primer-ratio: make-ratio(18, 12);
-$english-ratio: make-ratio(14, 12);
-$pica-ratio: make-ratio(12, 12);
+//$double-great-primer-ratio: make-ratio(36, 12);
+//$double-pica-ratio: make-ratio(24, 12);
+//$double-small-pica-ratio: make-ratio(21, 12);
+//$great-primer-ratio: make-ratio(18, 12);
+//$english-ratio: make-ratio(14, 12);
+//$pica-ratio: make-ratio(12, 12);
+$double-great-primer: 36, 12;
+$double-pica: 24, 12;
+$double-small-pica: 21, 12;
+$great-primer: 18, 12;
+$english: 14, 12;
+$pica: 12, 12;
 
 h1 {
-	@include header($double-great-primer-ratio);
+	@include header($double-great-primer);
 }
 h2 {
-  	@include header($double-pica-ratio);
+  	@include header($double-pica);
 }
 h3 {
-	@include header($double-small-pica-ratio);
+	@include header($double-small-pica);
 }
 h4 {
-	@include header($great-primer-ratio);
+	@include header($great-primer);
 }
 h5 {
-	@include header($english-ratio);
+	@include header($english);
 }
 h6 {
-	@include header($pica-ratio);
+	@include header($pica);
 }
 p, ul, ol {
-  	margin-bottom: $leading;
+  	margin-bottom: em-calc($leading-ratio);
 }
 ul {
 	list-style-type: disc;

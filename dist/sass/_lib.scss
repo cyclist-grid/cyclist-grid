@@ -1,8 +1,21 @@
 @function strip-units($number) {
 	@return $number / ($number * 0 + 1);
 }
+
 @function make-ratio($numerator, $denumerator) {
 	$numerator: strip-units($numerator);
 	$denumerator: strip-units($denumerator);
-	@return unquote("(#{$numerator} / #{$denumerator})") ;
+	@return unquote("#{$numerator} / #{$denumerator}");
+}
+
+@function em-calc($ratio) {
+	@return unquote("calc(1em * (#{$ratio}))");
+}
+
+@function em-translate-calc($to-ratio, $from-ratio) {
+	@return unquote("calc(1em * (#{$to-ratio}) / (#{$from-ratio}))");
+}
+
+@function em-translate-multiplier-calc($to-ratio, $from-ratio, $multiplier) {
+	@return unquote("calc(#{$multiplier}em * (#{$to-ratio}) / (#{$from-ratio}))");
 }

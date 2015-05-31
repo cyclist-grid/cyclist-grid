@@ -23,7 +23,7 @@ $browser-default-font-size: 16px;
 //}
 
 $leading-ratio: make-ratio($line-height, $font-size);
-$leading: calc(#{$leading-ratio});;
+//$leading: calc(#{$leading-ratio});
 
 
 // Layout Defaults
