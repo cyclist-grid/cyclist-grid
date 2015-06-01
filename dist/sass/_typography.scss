@@ -12,7 +12,7 @@ body {
 	font-size: em-calc($ratio);
 	margin-bottom: em-translate-calc($leading-ratio, $ratio); // This returns a calc that equals the line height from this headers font size
 
-	// Set the line height to be the smallest multiple of line height that fits the 
+	// Set the line height to be the smallest multiple of line height that fits the font size
 	// TODO: A good feature would be an option to offer an option to simplify this calculation to the following:
 	// $line-height-multiplier: ceil($numerator / $denumerator);
 	// If the margins are removed from below a header, than that math will provide a better line height for the header
