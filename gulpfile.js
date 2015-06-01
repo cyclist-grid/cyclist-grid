@@ -33,6 +33,9 @@ paths.test.jade.srcWatchGlob = paths.test.jade.src + '/**/*.jade';
 // Dist
 paths.dist = {};
 paths.dist.sass = {};
+paths.dist.sass.src = 'dist';
+paths.dist.sass.srcGlob = paths.dist.sass.src + '/*.scss';
+paths.dist.sass.build = paths.dist.sass.src;
 paths.dist.sass.srcWatchGlob = 'dist/**/*.scss';
 
 // Sass
@@ -49,6 +52,10 @@ gulp.task('sass-examples', function () {
 
 gulp.task('sass-test', function () {
   doSass(paths.test.sass.srcGlob, paths.test.sass.build);
+});
+
+gulp.task('sass-dist', function () {
+  doSass(paths.dist.sass.srcGlob, paths.dist.sass.build);
 });
 
 // Jade
@@ -71,6 +78,8 @@ gulp.task('jade-test', function() {
 // Watch
 
 gulp.task('watch', function () {
+  gulp.watch(paths.dist.sass.srcWatchGlob, ['sass-dist']);
+
   var examplesSassPaths = [paths.dist.sass.srcWatchGlob, paths.examples.sass.srcGlob];
   gulp.watch(examplesSassPaths, ['sass-examples']);
   // Test sass
@@ -80,5 +89,5 @@ gulp.task('watch', function () {
 });
 
 gulp.task('jade', ['jade-test']);
-gulp.task('sass', ['sass-examples', 'sass-test']);
+gulp.task('sass', ['sass-examples', 'sass-test', 'sass-dist']);
 gulp.task('default', ['sass', 'jade']);

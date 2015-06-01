@@ -1,0 +1,118 @@
+/* Eric Meyer's Reset
+============================================================================*/
+/* Details here:
+   http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+
+   Some of the rules have been broken up for cleaner display in firebug. */
+/* First the resets ... */
+/* Structural Tags
+----------------------------------------------------------------------------*/
+html, body, div, span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* Text Tags
+----------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, ol, ul, li, strong, em {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* Less Used Tags
+----------------------------------------------------------------------------*/
+applet, object, iframe, abbr, acronym, address, big, cite, code, del, dfn,
+font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* ... and now everything else */
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+body {
+  font-size: 12px;
+  line-height: 17px; }
+
+h1 {
+  font-size: calc(1em * (36 / 12));
+  margin-bottom: calc(1em * (17 / 12) / (36 / 12));
+  line-height: calc(3em * (17 / 12) / (36 / 12)); }
+
+h2 {
+  font-size: calc(1em * (24 / 12));
+  margin-bottom: calc(1em * (17 / 12) / (24 / 12));
+  line-height: calc(2em * (17 / 12) / (24 / 12)); }
+
+h3 {
+  font-size: calc(1em * (21 / 12));
+  margin-bottom: calc(1em * (17 / 12) / (21 / 12));
+  line-height: calc(2em * (17 / 12) / (21 / 12)); }
+
+h4 {
+  font-size: calc(1em * (18 / 12));
+  margin-bottom: calc(1em * (17 / 12) / (18 / 12));
+  line-height: calc(2em * (17 / 12) / (18 / 12)); }
+
+h5 {
+  font-size: calc(1em * (14 / 12));
+  margin-bottom: calc(1em * (17 / 12) / (14 / 12));
+  line-height: calc(1em * (17 / 12) / (14 / 12)); }
+
+h6 {
+  font-size: calc(1em * (12 / 12));
+  margin-bottom: calc(1em * (17 / 12) / (12 / 12));
+  line-height: calc(1em * (17 / 12) / (12 / 12)); }
+
+p, ul, ol {
+  margin-bottom: calc(1em * (17 / 12)); }
+
+ul ol, ol ol, ul ul, ol ul {
+  margin-bottom: 0; }
+
+ul {
+  list-style-type: disc;
+  margin-left: 2em; }
+
+ol {
+  list-style-type: decimal;
+  margin-left: 2em; }
