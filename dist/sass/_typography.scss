@@ -1,24 +1,16 @@
-body {
-	font-size: $font-size;
-	line-height: $line-height;
+html {
+	line-height: $leading-height;
 }
 
 @mixin header($values) {
 	$numerator: nth($values, 1);
 	$denumerator: nth($values, 2);
-	$ratio: make-ratio($numerator, $denumerator);
 
-	// Set the bottom margin to be equal to the line height
-	font-size: em-calc($ratio);
-	margin-bottom: em-translate-calc($leading-ratio, $ratio); // This returns a calc that equals the line height from this headers font size
+	font-size: calc(1em * (#{$numerator} / #{$denumerator}));
+	margin-bottom: $leading-height;
 
-	// Set the line height to be the smallest multiple of line height that fits the font size
-	// TODO: A good feature would be an option to offer an option to simplify this calculation to the following:
-	// $line-height-multiplier: ceil($numerator / $denumerator);
-	// If the margins are removed from below a header, than that math will provide a better line height for the header
-	$header-font-size-pixels: $font-size * ($numerator / $denumerator);
-	$line-height-multiplier: ceil($header-font-size-pixels / $line-height);
-	line-height: em-translate-multiplier-calc($leading-ratio, $ratio, $line-height-multiplier);
+	$line-height-multiplier: ceil($numerator / $denumerator);
+	line-height: $line-height-multiplier * $leading-height;
 }
 
 $double-great-primer: 36, 12;
@@ -47,16 +39,16 @@ h6 {
 	@include header($pica);
 }
 p, ul, ol {
-  	margin-bottom: em-calc($leading-ratio);
+  	margin-bottom: $leading-height;
 }
 ul ol, ol ol, ul ul, ol ul {
   	margin-bottom: 0;
 }
 ul {
 	list-style-type: disc;
-	margin-left: $indent;
+	margin-left: $indent-width;
 }
 ol {
 	list-style-type: decimal;
-	margin-left: $indent;
+	margin-left: $indent-width;
 }

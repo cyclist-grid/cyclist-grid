@@ -1,23 +1,21 @@
-// Typography Defaults
+// Line Height & Leading
 
-$font-size: 12px !default;
-$line-height: 17px !default;
+$line-height-rems: 1.4 !default;
+$leading-height: $line-height-rems * 1rem;
 
-// Leading
-$leading: $line-height;
-$leading-ratio: make-ratio($line-height, $font-size);
+// Grid
 
-// Layout Defaults
+$gutter-width: 1rem !default;
+$num-indent-gutters: 2 !default;
+$num-unit-gutters: 4 !default;
+$num-column-units: 2 !default;
 
-$gutter: 1em !default;
-$indent-gutters: 2 !default;
-$unit-gutters: 4 !default;
-$column-units: 2 !default;
+// Page Margin
 
-$page-margin: $leading * 2 $gutter * 2 !default;
+$page-margin: ($leading-height * 2) ($gutter-width * 2) !default;
 
 // Calculations
 
-$indent: $gutter * $indent-gutters !default;
-$unit: $gutter * $unit-gutters !default;
-$column: $unit * $column-units + $gutter * ($column-units - 1) !default;
+$indent-width: $gutter-width * $num-indent-gutters !default;
+$unit-width: $gutter-width * $num-unit-gutters !default;
+$column-width: $unit-width * $num-column-units + $gutter-width * ($num-column-units - 1) !default;
