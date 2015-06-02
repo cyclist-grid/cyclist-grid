@@ -52,40 +52,40 @@ blockquote, q {
   quotes: "" ""; }
 
 html {
-  line-height: 1.4rem; }
+  line-height: 1.25rem; }
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  margin-bottom: 1.4rem;
-  line-height: 4.2rem; }
+  margin-bottom: 1.25rem;
+  line-height: 3.75rem; }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  margin-bottom: 1.4rem;
-  line-height: 2.8rem; }
+  margin-bottom: 1.25rem;
+  line-height: 2.5rem; }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  margin-bottom: 1.4rem;
-  line-height: 2.8rem; }
+  margin-bottom: 1.25rem;
+  line-height: 2.5rem; }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  margin-bottom: 1.4rem;
-  line-height: 2.8rem; }
+  margin-bottom: 1.25rem;
+  line-height: 2.5rem; }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  margin-bottom: 1.4rem;
-  line-height: 2.8rem; }
+  margin-bottom: 1.25rem;
+  line-height: 2.5rem; }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  margin-bottom: 1.4rem;
-  line-height: 1.4rem; }
+  margin-bottom: 1.25rem;
+  line-height: 1.25rem; }
 
 p, ul, ol {
-  margin-bottom: 1.4rem; }
+  margin-bottom: 1.25rem; }
 
 ul ol, ol ol, ul ul, ol ul {
   margin-bottom: 0; }
