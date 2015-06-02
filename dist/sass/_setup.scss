@@ -1,19 +1,23 @@
 // Typography Defaults
+
 $font-size: 12px !default;
 $line-height: 17px !default;
 
 // Leading
+$leading: $line-height;
 $leading-ratio: make-ratio($line-height, $font-size);
 
 // Layout Defaults
+
 $gutter: 1em !default;
 $indent-gutters: 2 !default;
 $unit-gutters: 4 !default;
 $column-units: 2 !default;
 
-//$margin: $leading * 2 $gutter * 2 !default;
+$page-margin: $leading * 2 $gutter * 2 !default;
 
 // Calculations
+
 $indent: $gutter * $indent-gutters !default;
 $unit: $gutter * $unit-gutters !default;
 $column: $unit * $column-units + $gutter * ($column-units - 1) !default;
