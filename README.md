@@ -2,12 +2,24 @@
 
 Raster is a simple typography and grid framework written in Sass.
 
-## Features
+* It replaces the default sizes for header level elements (i.e., `H1`-`H6`) based on the [traditional point scale](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4).
+* The header font sizes are not fixed. Instead they are defined as ratios from `12px` body type. If the body type size is less than or over `12px`, the sizes of the headers maintain their proportional size relative to the body type size.
+* Text is [aligned to the baseline grid](http://24ways.org/2006/compose-to-a-vertical-rhythm):
+	* Headers are given a `line-height` that's a multiple of the [leading](http://en.wikipedia.org/wiki/Leading).
+	* All block level elements are given a `top-margin` of `0` and a `bottom-margin` equal to the leading.
 
-* Starts by applying a CSS reset
-* Replaces the default style of text tags (e.g., `P`, `H1`-`H6`, `Li`) with styles that follow traditional typography principles such as "typographical hierarchy" and "vertical rhythm".
+## How to use?
+
+* Just as a css file
+* Recompile with a new leading
+* Use the exposed `$leading` Sass variable
+
 
 ## Usage
+
+You can think of Raster having two "modes". 
+
+And just live with the fact that some ratios 
 
 Raster requires Sass.
 
@@ -19,6 +31,11 @@ Raster requires Sass.
 		@import "[path to raster]/dist/raster";
 
 Alternatively, a pre-compiled default CSS file is also included in the `dist` folder.
+
+## Caveats
+
+* Raster is only tested in WebKit derivative browsers: Chrome and Safari.
+
 
 ## Typography
 
