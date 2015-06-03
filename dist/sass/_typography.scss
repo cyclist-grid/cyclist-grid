@@ -1,5 +1,11 @@
-html {
-	line-height: $leading-height-calc;
+@if $font-size {
+	html {
+		font-size: $font-size;
+	}
+}
+
+body {
+	line-height: $line-height;
 }
 
 @mixin header($values) {
@@ -7,11 +13,11 @@ html {
 	$denumerator: nth($values, 2);
 
 	font-size: calc(1em * (#{$numerator} / #{$denumerator}));
-	margin-bottom: $leading-height-calc;
+	margin-bottom: $leading-height;
 
 	$leading-multiplier: ceil($numerator / $denumerator);
 
-	line-height: calc(#{$leading-multiplier}rem * #{$leading-height-multiplier});
+	line-height: calc(#{$leading-multiplier} * #{$leading-height});
 }
 
 $double-great-primer: 36, 12;
@@ -40,7 +46,7 @@ h6 {
 	@include header($pica);
 }
 p, ul, ol {
-  	margin-bottom: $leading-height-calc;
+  	margin-bottom: $leading-height;
 }
 ul ol, ol ol, ul ul, ol ul {
   	margin-bottom: 0;

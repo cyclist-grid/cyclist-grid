@@ -1,22 +1,6 @@
-/* Settings */
+//$line-height: 17px;
 
+$font-size: 1em;
+$line-height: 19px;
 
-
-// Uncomment what you want to override and update the import to the path to raster.
-
-//$font-size: 14px;
-//$leading: 1.4em;
-//$unit: 1em;
-//$margin: $unit * 2 $leading * 2;
-
-//$gutter @unit
-//$margin: $unit * 2 $leading * 2;
-
-// Update to point to raster relative to this directory
-
-$line-height-ratio: 12, 17;
 @import "../../../dist/raster";
-html {
-	font-size: 12px;
-	line-height: 17px;
-}

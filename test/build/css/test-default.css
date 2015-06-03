@@ -51,41 +51,41 @@ blockquote:before, blockquote:after, q:before, q:after {
 blockquote, q {
   quotes: "" ""; }
 
-html {
-  line-height: calc(1.25 * 1rem); }
+body {
+  line-height: 1.25rem; }
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(3rem * 1.25); }
+  margin-bottom: 1.25rem;
+  line-height: calc(3 * 1.25rem); }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 1.25rem;
+  line-height: calc(2 * 1.25rem); }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 1.25rem;
+  line-height: calc(2 * 1.25rem); }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 1.25rem;
+  line-height: calc(2 * 1.25rem); }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 1.25rem;
+  line-height: calc(2 * 1.25rem); }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(1rem * 1.25); }
+  margin-bottom: 1.25rem;
+  line-height: calc(1 * 1.25rem); }
 
 p, ul, ol {
-  margin-bottom: calc(1.25 * 1rem); }
+  margin-bottom: 1.25rem; }
 
 ul ol, ol ol, ul ul, ol ul {
   margin-bottom: 0; }

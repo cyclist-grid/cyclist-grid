@@ -1,4 +1,3 @@
-/* Settings */
 /* Reset */
 /* Structure */
 html, body, div, span {
@@ -53,40 +52,43 @@ blockquote, q {
   quotes: "" ""; }
 
 html {
-  line-height: calc((17 / 12) * 1rem); }
+  font-size: 1em; }
+
+body {
+  line-height: 19px; }
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  margin-bottom: calc((17 / 12) * 1rem);
-  line-height: calc(3rem * (17 / 12)); }
+  margin-bottom: 19px;
+  line-height: calc(3 * 19px); }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  margin-bottom: calc((17 / 12) * 1rem);
-  line-height: calc(2rem * (17 / 12)); }
+  margin-bottom: 19px;
+  line-height: calc(2 * 19px); }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  margin-bottom: calc((17 / 12) * 1rem);
-  line-height: calc(2rem * (17 / 12)); }
+  margin-bottom: 19px;
+  line-height: calc(2 * 19px); }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  margin-bottom: calc((17 / 12) * 1rem);
-  line-height: calc(2rem * (17 / 12)); }
+  margin-bottom: 19px;
+  line-height: calc(2 * 19px); }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  margin-bottom: calc((17 / 12) * 1rem);
-  line-height: calc(2rem * (17 / 12)); }
+  margin-bottom: 19px;
+  line-height: calc(2 * 19px); }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  margin-bottom: calc((17 / 12) * 1rem);
-  line-height: calc(1rem * (17 / 12)); }
+  margin-bottom: 19px;
+  line-height: calc(1 * 19px); }
 
 p, ul, ol {
-  margin-bottom: calc((17 / 12) * 1rem); }
+  margin-bottom: 19px; }
 
 ul ol, ol ol, ul ul, ol ul {
   margin-bottom: 0; }
@@ -98,7 +100,3 @@ ul {
 ol {
   list-style-type: decimal;
   margin-left: 2rem; }
-
-html {
-  font-size: 12px;
-  line-height: 17px; }

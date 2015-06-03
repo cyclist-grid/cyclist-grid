@@ -17,6 +17,10 @@ Raster is a simple typography and grid framework written in Sass.
 
 ## Usage
 
+The `font-size` property must be specified higher in the hierarchy than the `line-height` (this is because Raster relies on `rem` unit which is relative to the `font-size` on the root `html` element).
+
+You can set the optional `$font-size` variable, and Raster will take care of setting the `font-size` on the `html` element for you. Or you can simply sent the `font-size` on the `html` tag in CSS yourself.
+
 You can think of Raster having two "modes". 
 
 And just live with the fact that some ratios 
@@ -35,7 +39,15 @@ Alternatively, a pre-compiled default CSS file is also included in the `dist` fo
 ## Caveats
 
 * Raster is only tested in WebKit derivative browsers: Chrome and Safari.
+* Due to the imprecisions of CSS math, `font-size` and `line-height` combinations that result in a decimal number leading will not align properly to the baseline grid. For example, a `font-size` of `16px` and `line-height` of `120%` results in a decimal leading of `19.2` (i.e., `1.2 * 16 = 19.2`). The browsers handling of the decimal number results (perhaps browsers could handle this better, but it's also an inevitable result of rendering fractions to whole number pixel positions.)
 
+	There are essentially three work-arounds for this problem:
+	
+	1. Specify a `line-height` in pixels. (probably a `$font-size` too)
+	2. Make sure your `font-size` and `line-height` combination result in a whole number leading: (e.g., a `$font-size`  `12px × 1.25 = 15px`)
+	3. Just don't worry about slight drift caused by the off by one errors in rendering to the baseline grid.
+
+The easiest way around this is to set both the `font-size` and `line-height` in pixels.
 
 ## Typography
 

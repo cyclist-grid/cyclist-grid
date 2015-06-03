@@ -52,40 +52,43 @@ blockquote, q {
   quotes: "" ""; }
 
 html {
-  line-height: calc(1.25 * 1rem); }
+  font-size: 15px; }
+
+body {
+  line-height: 20px; }
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(3rem * 1.25); }
+  margin-bottom: 20px;
+  line-height: calc(3 * 20px); }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 20px;
+  line-height: calc(2 * 20px); }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 20px;
+  line-height: calc(2 * 20px); }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 20px;
+  line-height: calc(2 * 20px); }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(2rem * 1.25); }
+  margin-bottom: 20px;
+  line-height: calc(2 * 20px); }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  margin-bottom: calc(1.25 * 1rem);
-  line-height: calc(1rem * 1.25); }
+  margin-bottom: 20px;
+  line-height: calc(1 * 20px); }
 
 p, ul, ol {
-  margin-bottom: calc(1.25 * 1rem); }
+  margin-bottom: 20px; }
 
 ul ol, ol ol, ul ul, ol ul {
   margin-bottom: 0; }

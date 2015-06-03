@@ -1,18 +1,14 @@
 // Line Height & Leading
 
-$line-height-ratio: false !default;
-$line-height-rems: 1.25 !default;
+$font-size: false !default;
+$line-height: 1.25rem !default;
+$leading-height: $line-height !default;
 
-// TODO: When Sass 3.3 is the standard use `global-variable-exists`
-@if $line-height-ratio {
-	$denumerator: nth($line-height-ratio, 1);
-	$numerator: nth($line-height-ratio, 2);
-	$leading-height-multiplier: unquote("(#{$numerator} / #{$denumerator})");
-} @else {
-	$leading-height-multiplier: $line-height-rems;
+@if unit($line-height) == "%" {
+	$leading-height: $line-height / 100% * 1rem;
+} @else if unit($line-height) == "em" {
+	$leading-height: $line-height / 1em * 1rem;
 }
-
-$leading-height-calc: calc(#{$leading-height-multiplier} * 1rem);
 
 // Grid
 
