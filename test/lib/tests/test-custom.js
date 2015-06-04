@@ -1,8 +1,8 @@
-describe('Raster basic 2', function() {
-  describe('a Mocha example', function() {
-    it('the header should equal its text', function () {
-      var element = document.getElementById("test-header");
-      element.innerText.should.equal("A Test Header");
+describe('Raster custom', function() {
+  describe('The custom style', function() {
+    it('the baseline should be correct', function () {
+      var contentElement = document.getElementById('content');
+      testHelper.baselineIsCorrect(contentElement);
     });
   });
 });
