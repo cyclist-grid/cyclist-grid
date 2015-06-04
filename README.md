@@ -43,7 +43,7 @@ Alternatively, a pre-compiled default CSS file is also included in the `dist` fo
 
 	There are essentially three work-arounds for this problem:
 	
-	1. Specify a `line-height` in pixels. (probably a `$font-size` too)
+	1. Specify a `$line-height` (and probably a `$font-size` too) in pixels. If both the `$line-height` and `$font-size` are specified in pixels the text will always be positioned correctly on the baseline.
 	2. Make sure your `font-size` and `line-height` combination result in a whole number leading: (e.g., a `$font-size`  `12px × 1.25 = 15px`)
 	3. Just don't worry about slight drift caused by the off by one errors in rendering to the baseline grid.
 
