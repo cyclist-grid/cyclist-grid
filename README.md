@@ -24,9 +24,9 @@ This pre-compiled version uses the browsers default font size and a `line-height
 
 Recompile Sass with a new `line-height`, `font-size`, or both by importing the Sass file at `dist/raster.scss`. Simply set the `$font-size` and `$line-height` variables before importing the Sass file.
 
-		$font-size: 15px;
-		$line-height: 20px;
-		@import "[path to raster]/dist/raster";
+	$font-size: 15px;
+	$line-height: 20px;
+	@import "[path to raster]/dist/raster";
 
 ## Caveats
 
@@ -90,14 +90,36 @@ Raster aligns elements to the baseline grid using the following rules:
 
 ## Layout
 
-* `$gutter-width`: 1rem !default;
-* `$num-indent-gutters`: 2 !default; // Size to indent hierarchical elements (e.g., block quotes and lists) 
-* `$num-unit-gutters`: 4 !default; // Size of the unit
-* `$num-column-units`: 2 !default;
-* `$indent-width`: $gutter-width * $num-indent-gutters !default;
-* `$unit-width`: $gutter-width * $num-unit-gutters !default;
-* `$column-width`: $unit-width * $num-column-units + $gutter-width * ($num-column-units - 1) !default;
+Raster's grid approach is to expose Sass variables that can then be used to position elements. For example, to specify an element that spans two columns in Sass:
 
+	#sidebar {
+		width: 2 * $column-width;
+	}
+
+To override variables, simply set them before importing `raster.scss`:
+
+	$num-column-units: 4;
+	@import "[path to raster]/dist/raster";
+
+### Grid Variables
+
+The variables that intended to be used to position elements:
+
+* `$gutter-width`: The width of the gutter between columns.
+* `$unit-width`: The width of the smallest vertical division, the column is made of up multiples of this.
+* `$column-width`: The width of the smallest *usable* vertical division.
+
+All of these variables can be overridden.
+
+### Calculation Variables
+
+While the grid variables can be overridden directly, a better approach is to use the calculation variables which in turn define the grid variables by default (q.v. `dist/sass/_setup.scss`). The idea is for the `$gutter-width` to be defined based on the font size, and then have all the vertical divisions be defined based on the `$gutter-width`. As a result all the vertical divisions will end up being proportional to the font size of the body text. So the calculation variables allow the sizes of the grid variables to be adjusted (for example, adjusting the `$column-width`), while maintaining the proportional relationship of the body font size to the sizes of the vertical divisions.
+
+* `$num-indent-gutters`: The multiple of `$gutter-width` for indenting hierarchical elements (e.g., `blockquote` and `li`).
+* `$num-unit-gutters`: The multiple of `$gutter-width` used to set the `$unit-width`.
+* `$num-column-units`: The multiple of `$unit-width` used to set the `$column-width`.
+
+By default, the `$gutter-width` is set to `1rem`, this variable can also be overridden.
 
 ## Debugging Tools
 
