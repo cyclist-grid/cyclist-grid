@@ -111,27 +111,3 @@ ol {
   margin: 0 auto;
   padding: 51px 0;
   width: 36rem; }
-
-#container {
-  position: relative; }
-
-.raster-guidelines {
-  position: absolute;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-content: stretch;
-  align-content: stretch;
-  height: 800px; }
-
-.raster-guidelines > div.raster-column {
-  background-color: rgba(148, 235, 255, 0.25);
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-content: stretch;
-  align-content: stretch; }
-
-.raster-column > div.raster-unit {
-  background-color: rgba(148, 235, 255, 0.25); }
-
-.raster-column > div.raster-unit:last-child {
-  margin-right: 0; }
