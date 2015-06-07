@@ -100,3 +100,8 @@ ul {
 ol {
   list-style-type: decimal;
   margin-left: 2rem; }
+
+#container {
+  width: 36rem;
+  margin: 0 auto;
+  padding: 51px 0; }
