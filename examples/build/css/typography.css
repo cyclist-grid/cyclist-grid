@@ -108,6 +108,20 @@ ol {
   margin-right: 1rem; }
 
 #container {
-  width: 36rem;
   margin: 0 auto;
-  padding: 51px 0; }
+  padding: 51px 0;
+  width: 36rem; }
+
+#container {
+  position: relative; }
+
+.raster-guidelines {
+  position: absolute;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  height: 800px; }
+
+.raster-guidelines > div {
+  background-color: rgba(148, 235, 255, 0.25); }

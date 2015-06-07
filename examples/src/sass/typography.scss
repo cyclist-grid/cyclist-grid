@@ -1,12 +1,31 @@
 $font-size: 12px;
 $line-height: 17px;
 
-@import "../../../dist/raster";
+@import '../../../dist/raster';
 
 #container {
-	width: $column-width * 4;
-	margin: 0 auto;
-	padding: ($leading-height * 3) 0;
+  margin: 0 auto;
+  padding: ($leading-height * 3) 0;
+  width: $column-width * 4;
 }
 
+// Move to raster
+#container {
+  position: relative;
+}
 
+.raster-guidelines {
+  position: absolute;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  height: 800px;
+}
+
+.raster-guidelines > div {
+  // border-bottom-color: rgb(0, 0, 0);
+
+  background-color: rgba(148, 235, 255, .25);
+  // background-color: #00f;
+}
