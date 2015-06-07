@@ -23,9 +23,22 @@ $line-height: 17px;
   height: 800px;
 }
 
-.raster-guidelines > div {
+.raster-guidelines > div.raster-column {
   // border-bottom-color: rgb(0, 0, 0);
 
   background-color: rgba(148, 235, 255, .25);
   // background-color: #00f;
+
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+
+.raster-column > div.raster-unit {
+  background-color: rgba(148, 235, 255, .25);
+}
+
+.raster-column > div.raster-unit:last-child {
+  margin-right: 0;
 }
