@@ -1,11 +1,11 @@
 @import "setup";
 
-.unit {
+.raster-unit {
 	width: $unit-width;
 	margin-right: $gutter-width;
 }
 
-.column {
+.raster-column {
 	width: $column-width;
 	margin-right: $gutter-width;
 }
