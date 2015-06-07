@@ -2,7 +2,7 @@ window.addEventListener('load', function () { setup(); }, false);
 
 function setup() {
 
-	var elements = document.getElementsByClassName("baseline");
+	var elements = document.getElementsByClassName("show-baseline");
 	for (var i = 0; i < elements.length; i++) {
 		var element = elements[i];
 		var container = containerForElement(element);

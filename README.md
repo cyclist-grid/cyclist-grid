@@ -88,6 +88,35 @@ Raster aligns elements to the baseline grid using the following rules:
 * All block level elements are given a bottom margin equal to the leading. (The exception to this is hierarchical sublists, which have a bottom margin of zero, i.e., a list within a list does not have a bottom margin).
 * Headers are fitted to the closest matching line height that's a multiple of the leading. For example, if the calculated header height is `21px` and the leading is `17px`, then the line height of the header will be `34px`. (This is in addition to having a bottom margin because headers are also block level elements).
 
+## Layout
+
+* `$gutter-width`: 1rem !default;
+* `$num-indent-gutters`: 2 !default; // Size to indent hierarchical elements (e.g., block quotes and lists) 
+* `$num-unit-gutters`: 4 !default; // Size of the unit
+* `$num-column-units`: 2 !default;
+* `$indent-width`: $gutter-width * $num-indent-gutters !default;
+* `$unit-width`: $gutter-width * $num-unit-gutters !default;
+* `$column-width`: $unit-width * $num-column-units + $gutter-width * ($num-column-units - 1) !default;
+
+
+## Debugging Tools
+
+Raster comes with tools to display the baseline grid, to use them:
+
+1. Import the JavaScript file at `dist/raster.js`:
+
+		<script src="[path to raster]/dist/raster.js"></script>
+
+2. Add the class `show-baseline` to the element to show the baseline in (usually the `body` tag):
+
+		<body class="show-baseline">
+
+## Tests
+
+Tests can be run by opening the `test-*.html` files in `test/build/html/` in a WebKit browser.
+
+If `mocha-phantomjs` is installed, tests can also be run on the command line with `npm test`. But `phantomjs` doesn't fully simulate the DOM, so it's better to just run the tests this way to debug the tests themselves, and then run the tests in the browser to fully confirm they are passing.
+
 ## Resources
 
 * [Compose to a Vertical Rhythm ◆ 24 ways](http://24ways.org/2006/compose-to-a-vertical-rhythm)
