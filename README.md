@@ -2,58 +2,45 @@
 
 Raster is a simple typography and grid framework written in Sass.
 
-* It replaces the default sizes for header level elements (i.e., `H1`-`H6`) based on the [traditional point scale](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4).
-* The header font sizes are not fixed. Instead they are defined as ratios from `12px` body type. If the body type size is less than or over `12px`, the sizes of the headers maintain their proportional size relative to the body type size.
-* Text is [aligned to the baseline grid](http://24ways.org/2006/compose-to-a-vertical-rhythm):
+* It replaces the default sizes for header elements (i.e., `H1`-`H6`) based on the [traditional point scale](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4).
+* But the header font sizes are not fixed, instead they're defined as ratios (based on `12px` body type). This means of the body font size is not `12px`, then the sizes of the headers maintain their proportional size relative to the body font size. For example, at a font size of `12px`, the `H1` element will have a font size of `36px` (the "double great primer" size), but if the body font size is `11px`, then the `H1` element will have a font size of `33px` (`36/12 * 11 = 33`).
+* Text is [aligned to the baseline grid](http://24ways.org/2006/compose-to-a-vertical-rhythm) using the following rules:
 	* Headers are given a `line-height` that's a multiple of the [leading](http://en.wikipedia.org/wiki/Leading).
 	* All block level elements are given a `top-margin` of `0` and a `bottom-margin` equal to the leading.
 
-## How to use?
-
-* Just as a css file
-* Recompile with a new leading
-* Use the exposed `$leading` Sass variable
-
-
 ## Usage
 
-The `font-size` property must be specified higher in the hierarchy than the `line-height` (this is because Raster relies on `rem` unit which is relative to the `font-size` on the root `html` element).
+There are three ways to use Raster:
 
-You can set the optional `$font-size` variable, and Raster will take care of setting the `font-size` on the `html` element for you. Or you can simply sent the `font-size` on the `html` tag in CSS yourself.
+### Default CSS
 
-You can think of Raster having two "modes". 
+Simply import the compiled CSS file from `dist/raster.css` in HTML:
 
-And just live with the fact that some ratios 
+	<link rel="stylesheet" href="[path to raster]/dist/raster.css">
 
-Raster requires Sass.
+This pre-compiled version uses the browsers default font size and a `line-height` equal to `1.25rem`. Since all the `line-height` and `font-size` calculations are done in `rem` units, any font size can be specified on the root `HTML` element and the header elements will continue to maintain their proportional sizes and all text elements will stay aligned to the baseline grid.
 
-1. Import the `raster.scss` file from the `dist` folder into your own `scss` file. E.g., `@import "[path to raster]/dist/raster";`
-2. Optionally, override the default `$font-size` and `$line-height` settings before the import line. For example:
+### Sass
+
+Recompile Sass with a new `line-height`, `font-size`, or both by importing the Sass file at `dist/raster.scss`. Simply set the `$font-size` and `$line-height` variables before importing the Sass file.
 
 		$font-size: 15px;
 		$line-height: 20px;
 		@import "[path to raster]/dist/raster";
 
-Alternatively, a pre-compiled default CSS file is also included in the `dist` folder.
-
 ## Caveats
 
 * Raster is only tested in WebKit derivative browsers: Chrome and Safari.
-* Due to the imprecisions of CSS math, `font-size` and `line-height` combinations that result in a decimal number leading will not align properly to the baseline grid. For example, a `font-size` of `16px` and `line-height` of `120%` results in a decimal leading of `19.2` (i.e., `1.2 * 16 = 19.2`). The browsers handling of the decimal number results (perhaps browsers could handle this better, but it's also an inevitable result of rendering fractions to whole number pixel positions.)
-
-	There are essentially three work-arounds for this problem:
-	
-	1. Specify a `$line-height` (and probably a `$font-size` too) in pixels. If both the `$line-height` and `$font-size` are specified in pixels the text will always be positioned correctly on the baseline.
-	2. Make sure your `font-size` and `line-height` combination result in a whole number leading: (e.g., a `$font-size`  `12px × 1.25 = 15px`)
-	3. Just don't worry about slight drift caused by the off by one errors in rendering to the baseline grid.
-
-The easiest way around this is to set both the `font-size` and `line-height` in pixels.
+* Due to the imprecisions of CSS math, `font-size` and `line-height` combinations that result in a leading with a decimal will not align to the baseline grid. For example, a `font-size` of `16px` and `line-height` of `120%` results in a decimal number leading of `19.2` (`1.2 * 16 = 19.2`). WebKit's handling of the decimal results in inconsistent leading sizes causing the text to drift from the baseline. There are seceral three work-arounds for this problem:
+	1. Specify a `$line-height` and `$font-size` in pixels. The text will always align properly to the baseline grid if the `$line-height` and `$font-size` are specified in pixels.
+	2. Make sure your `font-size` and `line-height` combination results in a whole number leading. For example, a `$font-size` of `12px` and a line-height of `125%`, results in a leading of `15px` (`12px × 1.25 = 15px`). Since `15px` is a whole number, the text will align to the baseline.
+	3. Just don't worry about the slight drift caused by off-by-one errors rendering text to the baseline.
 
 ## Typography
 
 ### Typographic Hierarchy
 
-[Traditional typography defines](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4) the following font sizes:
+[Traditional typography defines](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4) defines the following font sizes:
 
 * `6pt`: nonpareil
 * `7pt`: minion
@@ -68,9 +55,9 @@ The easiest way around this is to set both the `font-size` and `line-height` in 
 * `24pt`: double pica or two-line pica
 * `36pt`: double great primer or 2-line great primer
 
-Using those values as is in CSS is simple, but then only a few appropriate font sizes are available for body text (e.g., perhaps `10pt` to `18pt` or "long primer" to "great primer").
+It's easy to use these values as is in CSS, but then only a few font sizes are available for body text. I.e., only the sizes between `10pt` to `18pt` (or "long primer" to "great primer") are really appropriate as body font sizes.
 
-Raster's solution is to instead treat the traditional font sizes as *ratios* of these traditional sizes in order to define header sizes based on a body font size. Raster uses the `12pt` pica as to define the hierarchical font sizes as ratios as follows:
+Raster's solution to this problem is to treat these as proportional font sizes rather than specific font sizes. Raster uses `12pt` ("pica") as the default font size and defines the rest as ratios as follows:
 
 * "double great primer": 36 / 12
 * "double pica": 24 / 12
@@ -79,7 +66,7 @@ Raster's solution is to instead treat the traditional font sizes as *ratios* of 
 * "english": 14 / 12
 * "pica": 12 / 12
 
-It then maps these ratios to HTML header tags:
+These ratios are then mapped to these HTML header tags:
 
 * `H1`: double great primer
 * `H2`: double pica
@@ -88,22 +75,18 @@ It then maps these ratios to HTML header tags:
 * `H5`: english
 * `H6`: pica
 
-Since the header sizes are defined as ratios to the body size, this means that any header will remain in proportion regardless of which body size is defined. The header font sizes are calculated as follows: `[body size] * [ratio]`. E.g., if the body font size is `15px`, then the `H1` header font size will be `15 * (36 / 12) = 45px`.
+Since these header sizes are defined as ratios to the body size, the header sizes will stay in proportion to the body size, even if the body size is change from `12px`. The header font size calculation is `[body size] * [ratio]`. For example, a body font of `15px` will result in an `H1` header font size of `45px` (`15 * (36 / 12) = 45px`).
 
 ### Vertical Rhythm
 
-A [vertical rhythm](http://24ways.org/2006/compose-to-a-vertical-rhythm) is making sure the spacing of elements consistently aligns to the baseline grid.
+A [vertical rhythm](http://24ways.org/2006/compose-to-a-vertical-rhythm) means making the spacing of elements consistently align to the baseline grid.
 
 Raster aligns elements to the baseline grid using the following rules:
 
 * All default margins and padding are set to zero by the CSS reset.
 * The line height is used as the leading.
-* All block level elements are given a bottom margin equal to the leading. (The exception to this is hierarchical sublists, which have a bottom margin of zero. I.e., a list within a list does not have a bottom margin)
-* Headers are fitted to the closest matching line height that's a multiple of the leading. E.g., if the calculated header height is `21px` and the leading is `17px`, then the line height of the header will be `34px`. (This is in addition to having a bottom margin since headers are block level elements.)
-
-## Implementation Notes
-
-* Only pixels can be used to set the `$font-size` and `$line-height` variables. This is because that ratio of one to the other is used in various calculations, so it's necessary for their implementation to be simple and consistent.
+* All block level elements are given a bottom margin equal to the leading. (The exception to this is hierarchical sublists, which have a bottom margin of zero, i.e., a list within a list does not have a bottom margin).
+* Headers are fitted to the closest matching line height that's a multiple of the leading. For example, if the calculated header height is `21px` and the leading is `17px`, then the line height of the header will be `34px`. (This is in addition to having a bottom margin because headers are also block level elements).
 
 ## Resources
 
