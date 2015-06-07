@@ -44,5 +44,12 @@ var testHelper = {
     computedHeight += parseFloat(style.borderTopWidth, 10);
     computedHeight += parseFloat(style.borderBottomWidth, 10);
     return computedHeight;
+  },
+
+  testElement: function() {
+    var testElements = document.getElementsByTagName('li');
+    var testElement = testElements[0];
+    testElement.should.be.an('object');
+    return testElement;
   }
 };

@@ -12,9 +12,7 @@ describe('Raster default', function() {
 
         // Assert that the font size has been set properly
         htmlElement.style.fontSize.should.equal(fontSize);
-        var testElements = htmlElement.getElementsByTagName('li');
-        var testElement = testElements[0];
-        testElement.should.be.an('object');
+        var testElement = testHelper.testElement();
         var testClientHeight = parseInt(fontSize, 10) * leadingRems;
         testElement.clientHeight.should.equal(testClientHeight);
 

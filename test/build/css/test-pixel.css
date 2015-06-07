@@ -52,43 +52,43 @@ blockquote, q {
   quotes: "" ""; }
 
 html {
-  font-size: 15px; }
+  font-size: 14px; }
 
 body {
-  line-height: 20px; }
+  line-height: 17px; }
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  margin-bottom: 20px;
-  line-height: calc(3 * 20px); }
+  margin-bottom: 17px;
+  line-height: calc(3 * 17px); }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  margin-bottom: 20px;
-  line-height: calc(2 * 20px); }
+  margin-bottom: 17px;
+  line-height: calc(2 * 17px); }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  margin-bottom: 20px;
-  line-height: calc(2 * 20px); }
+  margin-bottom: 17px;
+  line-height: calc(2 * 17px); }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  margin-bottom: 20px;
-  line-height: calc(2 * 20px); }
+  margin-bottom: 17px;
+  line-height: calc(2 * 17px); }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  margin-bottom: 20px;
-  line-height: calc(2 * 20px); }
+  margin-bottom: 17px;
+  line-height: calc(2 * 17px); }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  margin-bottom: 20px;
-  line-height: calc(1 * 20px); }
+  margin-bottom: 17px;
+  line-height: calc(1 * 17px); }
 
 p, ul, ol {
-  margin-bottom: 20px; }
+  margin-bottom: 17px; }
 
 ul ol, ol ol, ul ul, ol ul {
   margin-bottom: 0; }
