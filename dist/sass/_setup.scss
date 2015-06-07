@@ -1,4 +1,4 @@
-// Line Height & Leading
+// Line Height & Leading Variables
 
 $font-size: false !default;
 $line-height: 1.25rem !default;
@@ -10,18 +10,14 @@ $leading-height: $line-height !default;
 	$leading-height: $line-height / 1em * 1rem;
 }
 
-// Grid
+// Grid Variables
 
 $gutter-width: 1rem !default;
 $num-indent-gutters: 2 !default;
 $num-unit-gutters: 4 !default;
 $num-column-units: 2 !default;
 
-// Page Margin
-
-//$page-margin: ($leading-height-multiplier * 2rem) ($gutter-width * 2) !default;
-
-// Calculations
+// Calculation Variables
 
 $indent-width: $gutter-width * $num-indent-gutters !default;
 $unit-width: $gutter-width * $num-unit-gutters !default;

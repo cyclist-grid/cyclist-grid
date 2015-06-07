@@ -1,11 +1,11 @@
 @import "setup";
 
 .unit {
-	width: $unit;
-	margin-right: $gutter;
+	width: $unit-width;
+	margin-right: $gutter-width;
 }
 
 .column {
-	width: $column;
-	margin-right: $gutter;
+	width: $column-width;
+	margin-right: $gutter-width;
 }
