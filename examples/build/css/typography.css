@@ -99,6 +99,14 @@ ol {
   list-style-type: decimal;
   margin-left: 2rem; }
 
+.raster-unit {
+  width: 4rem;
+  margin-right: 1rem; }
+
+.raster-column {
+  width: 9rem;
+  margin-right: 1rem; }
+
 #container {
   width: 36rem;
   margin: 0 auto;
