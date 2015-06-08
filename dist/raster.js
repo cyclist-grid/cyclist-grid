@@ -90,9 +90,29 @@ var Raster = {
 			}
 		},
 		showGuidelines: function(container) {
+			// var element = document.createElement("div");
+			// container.appendChild(element);
+			
 
+			// TODO: Add the `raster-guidelines` div
+
+
+		},
+
+		containerForElement: function(element) {
+			var container = document.createElement("div");
+			element.appendChild(container);
+
+			container.classList.add('raster-guidelines');
+			var height = element.offsetHeight;
+			container.setAttribute("height", height);
+			container.style.height = height + "px";
+
+
+			element.style.position = "relative";
+
+			return container;
 		}
-
 	},
 
 	setup: function() {
