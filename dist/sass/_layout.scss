@@ -1,0 +1,9 @@
+@function columns-width($columns) {
+  $width: $columns * ($column-width + $gutter-width) - $gutter-width;
+  @return max($width, 0);
+}
+
+@function units-width($units) {
+  $width: $units * ($unit-width + $gutter-width) - $gutter-width;
+  @return max($width, 0);
+}

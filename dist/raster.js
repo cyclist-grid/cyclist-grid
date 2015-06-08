@@ -90,37 +90,35 @@ var Raster = {
 			}
 		},
 		showGuidelines: function(container) {
-
 			var computedWidth = 0;
 			var containerWidth = container.clientWidth;
-console.log("container = " + container);
-console.log("containerWidth = " + containerWidth);
 			while (computedWidth < containerWidth) {
 				var element = document.createElement("div");
-				container.appendChild(element);
 				element.classList.add('raster-column');
-
-				// TODO: Only add the column if the margin
-
-				// TODO: Add the `raster-guidelines` div
-				computedWidth += element.clientWidth;
+				container.appendChild(element);
+				computedWidth = this.widthForChildElementsWithClassName(container, 'raster-column');
 			}
-
-
 		},
-
+		widthForChildElementsWithClassName: function(parent, className) {
+			var nodeList = parent.getElementsByClassName(className);
+			var calculateWidth = function(initial, element) {
+				var style = window.getComputedStyle(element);
+				var marginRight = parseInt(style.marginRight, 10);
+				var width = element.clientWidth;
+				var totalWidth = width + marginRight;
+				return initial + totalWidth;
+			};
+			var width = Array.prototype.reduce.call(nodeList, calculateWidth, 0);
+			return width;
+		},
 		containerForElement: function(element) {
 			var container = document.createElement("div");
 			element.appendChild(container);
-
 			container.classList.add('raster-guidelines');
 			var height = element.offsetHeight;
 			container.setAttribute("height", height);
 			container.style.height = height + "px";
-
-
 			element.style.position = "relative";
-
 			return container;
 		}
 	},

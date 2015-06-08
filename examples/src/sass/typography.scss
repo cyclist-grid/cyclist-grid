@@ -6,7 +6,7 @@ $line-height: 17px;
 #container {
   margin: 0 auto;
   padding: ($leading-height * 3) 0;
-  width: $column-width * 4;
+  width: columns-width(4);
 }
 
 // TODO: Delete this, move to Raster
