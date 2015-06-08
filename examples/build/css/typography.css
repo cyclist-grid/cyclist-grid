@@ -99,14 +99,6 @@ ol {
   list-style-type: decimal;
   margin-left: 2rem; }
 
-.raster-unit {
-  margin-right: 1rem;
-  width: 4rem; }
-
-.raster-column {
-  margin-right: 1rem;
-  width: 9rem; }
-
 .raster-guidelines {
   display: -webkit-flex;
   display: flex;
@@ -115,17 +107,28 @@ ol {
   height: 800px;
   position: absolute;
   left: 0;
-  top: 0; }
+  top: 0;
+  bottom: 0;
+  right: 0; }
 
 .raster-guidelines > div.raster-column {
   display: -webkit-flex;
   display: flex;
   background-color: rgba(148, 235, 255, 0.25);
   -webkit-align-content: stretch;
-  align-content: stretch; }
+  align-content: stretch;
+  margin-right: 1rem;
+  -webkit-flex: 0 0 9rem;
+  flex: 0 0 9rem; }
+
+.raster-guidelines > div.raster-column:last-child {
+  margin-right: 0; }
 
 .raster-column > div.raster-unit {
-  background-color: rgba(148, 235, 255, 0.25); }
+  background-color: rgba(148, 235, 255, 0.25);
+  margin-right: 1rem;
+  -webkit-flex: 0 0 4rem;
+  flex: 0 0 4rem; }
 
 .raster-column > div.raster-unit:last-child {
   margin-right: 0; }
@@ -134,3 +137,37 @@ ol {
   margin: 0 auto;
   padding: 51px 0;
   width: 36rem; }
+
+.test-raster-guidelines {
+  position: absolute;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  height: 800px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0; }
+
+.test-raster-guidelines > div.test-raster-column {
+  background-color: rgba(148, 235, 255, 0.25);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  margin-right: 1rem;
+  -webkit-flex: 0 0 9rem;
+  flex: 0 0 9rem; }
+
+.test-raster-guidelines > div.test-raster-column:last-child {
+  margin-right: 0; }
+
+.test-raster-column > div.test-raster-unit {
+  background-color: rgba(148, 235, 255, 0.25);
+  margin-right: 1rem;
+  -webkit-flex: 0 0 4rem;
+  flex: 0 0 4rem; }
+
+.test-raster-column > div.test-raster-unit:last-child {
+  margin-right: 0; }

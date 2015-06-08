@@ -90,11 +90,21 @@ var Raster = {
 			}
 		},
 		showGuidelines: function(container) {
-			// var element = document.createElement("div");
-			// container.appendChild(element);
-			
 
-			// TODO: Add the `raster-guidelines` div
+			var computedWidth = 0;
+			var containerWidth = container.clientWidth;
+console.log("container = " + container);
+console.log("containerWidth = " + containerWidth);
+			while (computedWidth < containerWidth) {
+				var element = document.createElement("div");
+				container.appendChild(element);
+				element.classList.add('raster-column');
+
+				// TODO: Only add the column if the margin
+
+				// TODO: Add the `raster-guidelines` div
+				computedWidth += element.clientWidth;
+			}
 
 
 		},
