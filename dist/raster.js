@@ -90,15 +90,26 @@ var Raster = {
 			}
 		},
 		showGuidelines: function(container) {
-			var computedWidth = 0;
-			var containerWidth = container.clientWidth;
-			while (computedWidth < containerWidth) {
-				var element = document.createElement("div");
-				element.classList.add('raster-column');
-				container.appendChild(element);
-				computedWidth = this.widthForChildElementsWithClassName(container, 'raster-column');
+			this.fillContainerWithClassName(container, 'raster-column');
+			var rasterColumns = container.getElementsByClassName('raster-column');
+			for (var i = 0; i < rasterColumns.length; i++) {
+				var rasterColmun = rasterColumns[i];
+				this.fillContainerWithClassName(rasterColmun, 'raster-unit');
 			}
 		},
+		fillContainerWithClassName: function(container, className) {
+			var computedWidth = 0;
+			var containerWidth = container.clientWidth;
+			var counter = 0; // Use a counter to limit to 30 children to prevent infinite loops
+			while (computedWidth < containerWidth && counter < 30) {
+				var element = document.createElement("div");
+				element.classList.add(className);
+				container.appendChild(element);
+				computedWidth = this.widthForChildElementsWithClassName(container, className);
+				counter++;
+			}
+		},
+
 		widthForChildElementsWithClassName: function(parent, className) {
 			var nodeList = parent.getElementsByClassName(className);
 			var calculateWidth = function(initial, element) {
