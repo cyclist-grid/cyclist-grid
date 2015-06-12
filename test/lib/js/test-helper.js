@@ -3,7 +3,6 @@ var testHelper = {
     // The heights and margins should be multiples of the leading
 
     var leading = this.leading();
-
     var nodeList = rootElement.querySelectorAll('*');
 
     for (var i = nodeList.length - 1; i >= 0; --i) {
@@ -28,6 +27,16 @@ var testHelper = {
 
     return true;
   },
+
+  layoutIsCorrect: function(rootElement) {
+    var nodeList = rootElement.querySelectorAll('*:not(.raster-guidelines):not(.raster-column):not(.raster-unit)');
+    for (var i = nodeList.length - 1; i >= 0; --i) {
+      var element = nodeList[i];
+      console.log("element.outerHTML = " + element.outerHTML);
+    }
+  },
+
+  // Helpers
 
   leading: function() {
     var style = window.getComputedStyle(document.body);
