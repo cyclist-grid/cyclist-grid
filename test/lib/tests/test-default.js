@@ -2,7 +2,7 @@ describe('Raster default', function() {
   var leadingRems = 1.25;
   describe('The default style', function() {
     it('the baseline should be correct with the default font size', function () {
-      var contentElement = document.getElementById('content');
+      var contentElement = document.getElementById('baseline');
       var htmlElement = document.getElementsByTagName("html")[0];
       var wholeNumberFontSizes = ["8px", "12px", "16px", "20px"];
       for (var i = 0; i < wholeNumberFontSizes.length; i++) {

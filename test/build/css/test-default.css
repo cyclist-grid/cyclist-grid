@@ -134,3 +134,12 @@ ol {
 
 .raster-column > div.raster-unit:last-child {
   margin-right: 0; }
+
+article#layout {
+  margin: 0 auto; }
+
+.two-columns {
+  width: 19rem; }
+
+.three-columns {
+  width: 29rem; }

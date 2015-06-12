@@ -1,0 +1,15 @@
+article#layout {
+  margin: 0 auto;
+}
+
+// .1.units {
+//   width: units-width(1);
+// }
+
+.two-columns {
+  width: columns-width(2);
+}
+
+.three-columns {
+  width: columns-width(3);
+}

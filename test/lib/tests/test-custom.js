@@ -7,7 +7,7 @@ describe('Raster ' + units, function() {
       var testElement = testHelper.testElement();
       testElement.clientHeight.should.not.equal(defaultLineHeight);
 
-      var contentElement = document.getElementById('content');
+      var contentElement = document.getElementById('baseline');
       testHelper.baselineIsCorrect(contentElement);
     });
   });
