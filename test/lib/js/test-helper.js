@@ -32,11 +32,28 @@ var testHelper = {
     var nodeList = rootElement.querySelectorAll('*:not(.raster-guidelines):not(.raster-column):not(.raster-unit)');
     for (var i = nodeList.length - 1; i >= 0; --i) {
       var element = nodeList[i];
+      var testValue = parseInt(this.trimmedInnerText(element));
+
       console.log("element.outerHTML = " + element.outerHTML);
+      console.log("testValue = " + testValue);
+
+      if (element.classList.contains('columns')) {
+
+      }
+
     }
   },
 
   // Helpers
+
+  trimmedInnerText: function(element) {
+    var text = element.innerText.trim();
+    var index = text.indexOf('\n');
+    if (index > 0) {
+      text = text.substring(0, index);
+    }
+    return text;
+  },
 
   leading: function() {
     var style = window.getComputedStyle(document.body);
