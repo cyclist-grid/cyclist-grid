@@ -13,10 +13,11 @@ var Raster = {
 			container.style.height = "auto";
 			container.style.width = "100%";
 
-			var containerHeightInt = parseInt(window.getComputedStyle(container, null).getPropertyValue("height"));
-			var parentHeightInt = parseInt(window.getComputedStyle(container.parentNode, null).getPropertyValue("height"));
+			var containerHeightInt = container.clientHeight;
+			var parentHeightInt = container.parentNode.clientHeight;
 
-			while (containerHeightInt < parentHeightInt) {
+			var counter = 0; // Use a counter to limit to 30 children to prevent infinite loops
+			while (containerHeightInt < parentHeightInt && counter < 200) {
 				// Add an element to contain the baseline
 				var baselineElement = document.createElement("p");
 				this.resetCSS(baselineElement);
@@ -40,7 +41,8 @@ var Raster = {
 				}
 				baselineElement.appendChild(canvas);
 				container.appendChild(baselineElement);
-				containerHeightInt = parseInt(window.getComputedStyle(container, null).getPropertyValue("height"));
+				containerHeightInt = container.clientHeight;
+				counter++;
 			}
 		},
 
