@@ -1,6 +1,6 @@
 # Raster
 
-Raster is a simple typography and grid framework written in Sass.
+Raster is a simple typography and grid framework written in SCSS.
 
 * It replaces the default sizes for header elements (i.e., `H1`-`H6`) based on the [traditional point scale](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4).
 * But the header font sizes are not fixed, instead they're defined as ratios (based on `12px` body type). This means of the body font size is not `12px`, then the sizes of the headers maintain their proportional size relative to the body font size. For example, at a font size of `12px`, the `H1` element will have a font size of `36px` (the "double great primer" size), but if the body font size is `11px`, then the `H1` element will have a font size of `33px` (`36/12 * 11 = 33`).
@@ -20,9 +20,9 @@ Simply import the compiled CSS file from `dist/raster.css` in HTML:
 
 This pre-compiled version uses the browsers default font size and a `line-height` equal to `1.25rem`. Since all the `line-height` and `font-size` calculations are done in `rem` units, any font size can be specified on the root `HTML` element and the header elements will continue to maintain their proportional sizes and all text elements will stay aligned to the baseline grid.
 
-### Sass
+### SCSS
 
-Recompile Sass with a new `line-height`, `font-size`, or both by importing the Sass file at `dist/raster.scss`. Simply set the `$font-size` and `$line-height` variables before importing the Sass file.
+Recompile Sass with a new `line-height`, `font-size`, or both by importing the SCSS file at `dist/raster.scss`. Simply set the `$font-size` and `$line-height` variables before importing the SCSS file.
 
 	$font-size: 15px;
 	$line-height: 20px;
@@ -90,26 +90,29 @@ Raster aligns elements to the baseline grid using the following rules:
 
 ## Layout
 
-Raster's grid approach is to expose Sass variables that can then be used to position elements. For example, to specify an element that spans two columns in Sass:
+Raster's grid approach is to expose Sass variables and functions for positioning elements. In most cases, the `columns-width` and `units-width` functions should be used when specifying widths (and horizontal padding and margins). These functions return the width for an integer count multiplier *while accounting for the gutter space spanned between the specified division size*. For example, to specify an element that spans two columns and is indented two units:
 
 	#sidebar {
-		width: 2 * $column-width;
+		margin-left: units-width(2);
+		width: columns-width(2);
 	}
 
-To override variables, simply set them before importing `raster.scss`:
+### Grid Functions
 
-	$num-column-units: 4;
-	@import "[path to raster]/dist/raster";
+These functions are designed to specify the widths of elements that to be laid out on the grid.
+
+* `@function columns-width($num-columns)`: Returns a width equal to the number of columns, while adding space for gutters between columns.
+* `@function units-width($num-units)`: Returns a width equal to the number of units, while adding space for gutters between units.
 
 ### Grid Variables
 
-The variables that intended to be used to position elements:
+While in most cases, it's preferable to use the grid functions to horizontally space elements, it can be useful in some cases to access the widths from the backing Sass variables directly:
 
 * `$gutter-width`: The width of the gutter between columns.
 * `$unit-width`: The width of the smallest vertical division, the column is made of up multiples of this.
 * `$column-width`: The width of the smallest *usable* vertical division.
 
-All of these variables can be overridden.
+Any of these variables can be overridden.
 
 ### Calculation Variables
 
@@ -120,6 +123,13 @@ While the grid variables can be overridden directly, a better approach is to use
 * `$num-column-units`: The multiple of `$unit-width` used to set the `$column-width`.
 
 By default, the `$gutter-width` is set to `1rem`, this variable can also be overridden.
+
+### Overriding Variables
+
+To override any of these variables, simply set them before importing `raster.scss`:
+
+	$num-column-units: 4;
+	@import "[path to raster]/dist/raster";
 
 ## Debugging Tools
 
