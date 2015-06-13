@@ -1,7 +1,8 @@
 var Raster = {
 	baselineHelper: {
+		BASELINE_CLASS_NAME: 'show-baseline',
 		setup: function() {
-			var showBaselineElements = document.getElementsByClassName("show-baseline");
+			var showBaselineElements = document.getElementsByClassName(this.BASELINE_CLASS_NAME);
 			for (var i = 0; i < showBaselineElements.length; i++) {
 				var baselineElement = showBaselineElements[i];
 				var baselineContainer = this.containerForElement(baselineElement);
@@ -83,8 +84,9 @@ var Raster = {
 	},
 
 	guidelineHelper: {
+		GUIDELINES_CLASS_NAME: 'show-guidelines',
 		setup: function() {
-			var showGuidelinesElements = document.getElementsByClassName("show-guidelines");
+			var showGuidelinesElements = document.getElementsByClassName(this.GUIDELINES_CLASS_NAME);
 			for (var j = 0; j < showGuidelinesElements.length; j++) {
 				var guidelinesElement = showGuidelinesElements[j];
 				var guidelinesContainer = this.containerForElement(guidelinesElement);
@@ -134,6 +136,16 @@ var Raster = {
 			element.style.position = "relative";
 			return container;
 		}
+	},
+
+	redraw: function() {
+		var selectors = [this.baselineHelper.BASELINE_CLASS_NAME, this.guidelineHelper.GUIDELINES_CLASS_NAME];
+		var nodeList = document.querySelectorAll(selectors);
+		for (var i = nodeList.length - 1; i >= 0; --i) {
+			var element = nodeList[i];
+			element.parentNode.removeChild(element);
+		}
+		this.setup();
 	},
 
 	setup: function() {

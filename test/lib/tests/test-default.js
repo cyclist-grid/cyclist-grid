@@ -28,6 +28,7 @@ describe('Raster default', function() {
         // Run the layout tests
         testHelper.layoutIsCorrect(layoutElement);
       }
+      Raster.redraw();
     });
   });
 });
