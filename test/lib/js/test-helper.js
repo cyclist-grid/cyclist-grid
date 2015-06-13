@@ -32,46 +32,58 @@ var testHelper = {
     return true;
   },
 
-  layoutIsCorrect: function(rootElement) {
+
+
+  layoutIsCorrect: function(rootElement, layoutSizes) {
+    layoutSizes = layoutSizes || this.layoutSizes(this.gutterWidth(), defaultNumUnitGutters, defaultNumColumnUnits);
+
     var nodeList = rootElement.querySelectorAll('*:not(.raster-guidelines):not(.raster-column):not(.raster-unit)');
     for (var i = nodeList.length - 1; i >= 0; --i) {
       var element = nodeList[i];
-      var testValue = parseInt(this.trimmedInnerText(element));
-
-      console.log("element.outerHTML = " + element.outerHTML);
-      console.log("testValue = " + testValue);
-
+      var multiplier = parseInt(this.trimmedInnerText(element));
       var testProperty = element.classList.contains('width') ? 'width' : 'marginLeft';
-      // var testType = element.classList.contains('columns') ? 'column' : 'unit';
-
-      var boundingRect = element.getBoundingClientRect();
-      var parentBoundingRect = element.parentNode.getBoundingClientRect();
-
       var style = window.getComputedStyle(element);
-      console.log("style.marginLeft = " + style.marginLeft);
+      var valueStyle = style[testProperty];
+      var value = parseFloat(valueStyle, 10);
 
-
-      // console.log(JSON.stringify(element));
-      // console.log("boundingRect.left = " + boundingRect.left);
-      // console.log("boundingRect.right = " + boundingRect.right);
-      // console.log("boundingRect.top = " + boundingRect.top);
-      // console.log("boundingRect.bottom = " + boundingRect.bottom);
-      // console.log("parentBoundingRect.left = " + parentBoundingRect.left);
-      // console.log("parentBoundingRect.right = " + parentBoundingRect.right);
-      // console.log("parentBoundingRect.top = " + parentBoundingRect.top);
-      // console.log("parentBoundingRect.bottom = " + parentBoundingRect.bottom);
-
+      var base;
+      var gutterWidth;
       if (element.classList.contains('columns')) {
         // Test columns
-
-      } else {
+        gutterWidth = layoutSizes.gutterWidth;
+        base = layoutSizes.columnWidth;
+      } else if (element.classList.contains('units')) {
         // Test units
+        gutterWidth = layoutSizes.gutterWidth;
+        base = layoutSizes.unitWidth;
+      } else {
+        // Test Gutters
+        base = layoutSizes.gutterWidth;
       }
-
+      var result = this.widthPropertyMatches(base, multiplier, value, gutterWidth);
+      result.should.equal(true);
     }
   },
 
   // Helpers
+
+  widthPropertyMatches: function(base, multiplier, value, gutterWidth) {
+    var testValue = base * multiplier;
+    if (!!gutterWidth) {
+      testValue += gutterWidth * (multiplier - 1);
+    }
+    return testValue == value;
+  },
+
+  layoutSizes: function(gutterWidth, numUnitGutters, numColumnUnits) {
+    var unitWidth = numUnitGutters * gutterWidth;
+    var columnWidth = numColumnUnits * (unitWidth + gutterWidth) - gutterWidth;
+    return {
+      gutterWidth: gutterWidth,
+      unitWidth: unitWidth,
+      columnWidth: columnWidth
+    };
+  },
 
   trimmedInnerText: function(element) {
     var text = element.innerText.trim();
@@ -85,6 +97,10 @@ var testHelper = {
   leading: function() {
     var style = window.getComputedStyle(document.body);
     return parseFloat(style.lineHeight, 10);
+  },
+
+  gutterWidth: function() {
+    return parseFloat(this.gutterWidthStyle(), 10);
   },
 
   gutterWidthStyle: function() {
