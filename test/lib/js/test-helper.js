@@ -32,14 +32,13 @@ var testHelper = {
     return true;
   },
 
-
-
   layoutIsCorrect: function(rootElement, layoutSizes) {
     layoutSizes = layoutSizes || this.layoutSizes(this.gutterWidth(), defaultNumUnitGutters, defaultNumColumnUnits);
 
     var nodeList = rootElement.querySelectorAll('*:not(.raster-guidelines):not(.raster-column):not(.raster-unit)');
     for (var i = nodeList.length - 1; i >= 0; --i) {
       var element = nodeList[i];
+console.log("element.outerHTML = " + element.outerHTML);
       var multiplier = parseInt(this.trimmedInnerText(element));
       var testProperty = element.classList.contains('width') ? 'width' : 'marginLeft';
       var style = window.getComputedStyle(element);
@@ -47,7 +46,7 @@ var testHelper = {
       var value = parseFloat(valueStyle, 10);
 
       var base;
-      var gutterWidth;
+      var gutterWidth = null;
       if (element.classList.contains('columns')) {
         // Test columns
         gutterWidth = layoutSizes.gutterWidth;
@@ -68,10 +67,15 @@ var testHelper = {
   // Helpers
 
   widthPropertyMatches: function(base, multiplier, value, gutterWidth) {
+console.log("base = " + base);
+console.log("multiplier = " + multiplier);
+console.log("gutterWidth = " + gutterWidth);
     var testValue = base * multiplier;
     if (!!gutterWidth) {
       testValue += gutterWidth * (multiplier - 1);
     }
+console.log("testValue = " + testValue);
+console.log("value = " + value);
     return testValue == value;
   },
 

@@ -147,5 +147,23 @@ article#layout {
 .indent-one-column {
   margin-left: 9rem; }
 
+.indent-two-gutter {
+  margin-left: 2rem; }
+
+.indent-two-unit {
+  margin-left: 9rem; }
+
+.indent-two-column {
+  margin-left: 19rem; }
+
+.indent-three-gutter {
+  margin-left: 3rem; }
+
+.indent-three-unit {
+  margin-left: 14rem; }
+
+.indent-three-column {
+  margin-left: 29rem; }
+
 .width-three-columns {
   width: 29rem; }
