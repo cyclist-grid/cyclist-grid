@@ -1,3 +1,7 @@
+var defaultNumIndentGutters = 2;
+var defaultNumUnitGutters = 4;
+var defaultNumColumnUnits = 2;
+
 var testHelper = {
   baselineIsCorrect: function(rootElement) {
     // The heights and margins should be multiples of the leading
@@ -37,8 +41,31 @@ var testHelper = {
       console.log("element.outerHTML = " + element.outerHTML);
       console.log("testValue = " + testValue);
 
-      if (element.classList.contains('columns')) {
+      var testProperty = element.classList.contains('width') ? 'width' : 'marginLeft';
+      // var testType = element.classList.contains('columns') ? 'column' : 'unit';
 
+      var boundingRect = element.getBoundingClientRect();
+      var parentBoundingRect = element.parentNode.getBoundingClientRect();
+
+      var style = window.getComputedStyle(element);
+      console.log("style.marginLeft = " + style.marginLeft);
+
+
+      // console.log(JSON.stringify(element));
+      // console.log("boundingRect.left = " + boundingRect.left);
+      // console.log("boundingRect.right = " + boundingRect.right);
+      // console.log("boundingRect.top = " + boundingRect.top);
+      // console.log("boundingRect.bottom = " + boundingRect.bottom);
+      // console.log("parentBoundingRect.left = " + parentBoundingRect.left);
+      // console.log("parentBoundingRect.right = " + parentBoundingRect.right);
+      // console.log("parentBoundingRect.top = " + parentBoundingRect.top);
+      // console.log("parentBoundingRect.bottom = " + parentBoundingRect.bottom);
+
+      if (element.classList.contains('columns')) {
+        // Test columns
+
+      } else {
+        // Test units
       }
 
     }
@@ -58,6 +85,12 @@ var testHelper = {
   leading: function() {
     var style = window.getComputedStyle(document.body);
     return parseFloat(style.lineHeight, 10);
+  },
+
+  gutterWidthStyle: function() {
+    var gutterElement = document.getElementsByClassName('indent-one-gutter')[0];
+    var style = window.getComputedStyle(gutterElement);
+    return style.marginLeft;
   },
 
   totalHeightForElement: function(element) {

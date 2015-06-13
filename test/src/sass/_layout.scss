@@ -2,14 +2,18 @@ article#layout {
   margin: 0 auto;
 }
 
-// .1.units {
-//   width: units-width(1);
-// }
-
-.two-columns {
-  width: columns-width(2);
+.indent-one-gutter {
+  margin-left: $gutter-width;
 }
 
-.three-columns {
+.indent-one-unit {
+  margin-left: units-width(1);
+}
+
+.indent-one-column {
+  margin-left: columns-width(1);
+}
+
+.width-three-columns {
   width: columns-width(3);
 }
