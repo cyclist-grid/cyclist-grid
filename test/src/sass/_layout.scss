@@ -1,5 +1,6 @@
 article#layout {
   margin: 0 auto;
+  width: columns-width(3);
 }
 
 // Indent
@@ -44,38 +45,60 @@ article#layout {
 
 // TODO: Implement flexbox
 
+article#layout-width {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+article#layout-width > .columns,
+article#layout-width > .units {
+  // margin-right: $gutter-width;
+  background-color: rgb(252, 251, 1);
+}
+
+@mixin flex-width($width) {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 $width;
+  flex: 0 0 $width;
+}
+
 .width-one-gutter {
-  width: $gutter-width * 1;
+  @include flex-width($gutter-width * 1);
 }
 
 .width-one-unit {
-  width: unit-width(1);
+  @include flex-width(unit-width(1));
 }
 
 .width-one-column {
-  width: columns-width(1);
+  @include flex-width(columns-width(1));
 }
 
 .width-two-gutter {
-  width: $gutter-width * 2;
+  @include flex-width($gutter-width * 2);
 }
 
 .width-two-unit {
-  width: unit-width(2);
+  @include flex-width(unit-width(2));
 }
 
 .width-two-column {
-  width: columns-width(2);
+  @include flex-width(columns-width(2));
 }
 
 .width-three-gutter {
-  width: $gutter-width * 3;
+  @include flex-width($gutter-width * 3);
 }
 
 .width-three-unit {
-  width: unit-width(3);
+  @include flex-width(unit-width(3));
 }
 
 .width-three-column {
-  width: columns-width(3);
+  @include flex-width(columns-width(3));
 }

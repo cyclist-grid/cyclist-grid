@@ -34,8 +34,7 @@ var testHelper = {
 
   layoutIsCorrect: function(rootElement, layoutSizes) {
     layoutSizes = layoutSizes || this.layoutSizes(this.gutterWidth(), defaultNumUnitGutters, defaultNumColumnUnits);
-
-    var nodeList = rootElement.querySelectorAll('*:not(.raster-guidelines):not(.raster-column):not(.raster-unit)');
+    var nodeList = rootElement.querySelectorAll('.columns', '.gutters', '.units');
     for (var i = nodeList.length - 1; i >= 0; --i) {
       var element = nodeList[i];
 console.log("element.outerHTML = " + element.outerHTML);

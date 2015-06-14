@@ -104,8 +104,6 @@ ol {
 .raster-guidelines {
   display: -webkit-flex;
   display: flex;
-  -webkit-align-content: stretch;
-  align-content: stretch;
   position: absolute;
   left: 0;
   top: 0;
@@ -116,8 +114,6 @@ ol {
   display: -webkit-flex;
   display: flex;
   background-color: rgba(148, 235, 255, 0.25);
-  -webkit-align-content: stretch;
-  align-content: stretch;
   margin-right: 1rem;
   -webkit-flex: 0 0 9rem;
   flex: 0 0 9rem; }

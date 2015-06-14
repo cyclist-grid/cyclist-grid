@@ -107,8 +107,6 @@ ol {
 .raster-guidelines {
   display: -webkit-flex;
   display: flex;
-  -webkit-align-content: stretch;
-  align-content: stretch;
   position: absolute;
   left: 0;
   top: 0;
@@ -119,8 +117,6 @@ ol {
   display: -webkit-flex;
   display: flex;
   background-color: rgba(148, 235, 255, 0.25);
-  -webkit-align-content: stretch;
-  align-content: stretch;
   margin-right: 1rem;
   -webkit-flex: 0 0 9rem;
   flex: 0 0 9rem; }
@@ -138,7 +134,8 @@ ol {
   margin-right: 0; }
 
 article#layout {
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 29rem; }
 
 .indent-one-gutter {
   margin-left: 1rem; }
@@ -167,29 +164,68 @@ article#layout {
 .indent-three-column {
   margin-left: 29rem; }
 
+article#layout-width {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between; }
+
+article#layout-width > .columns,
+article#layout-width > .units {
+  background-color: #fcfb01; }
+
 .width-one-gutter {
-  width: 1rem; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 1rem;
+  flex: 0 0 1rem; }
 
 .width-one-unit {
-  width: unit-width(1); }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 unit-width(1);
+  flex: 0 0 unit-width(1); }
 
 .width-one-column {
-  width: 9rem; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 9rem;
+  flex: 0 0 9rem; }
 
 .width-two-gutter {
-  width: 2rem; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 2rem;
+  flex: 0 0 2rem; }
 
 .width-two-unit {
-  width: unit-width(2); }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 unit-width(2);
+  flex: 0 0 unit-width(2); }
 
 .width-two-column {
-  width: 19rem; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 19rem;
+  flex: 0 0 19rem; }
 
 .width-three-gutter {
-  width: 3rem; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 3rem;
+  flex: 0 0 3rem; }
 
 .width-three-unit {
-  width: unit-width(3); }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 unit-width(3);
+  flex: 0 0 unit-width(3); }
 
 .width-three-column {
-  width: 29rem; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 0 0 29rem;
+  flex: 0 0 29rem; }
