@@ -165,5 +165,29 @@ article#layout {
 .indent-three-column {
   margin-left: 29rem; }
 
-.width-three-columns {
+.width-one-gutter {
+  width: 1rem; }
+
+.width-one-unit {
+  width: unit-width(1); }
+
+.width-one-column {
+  width: 9rem; }
+
+.width-two-gutter {
+  width: 2rem; }
+
+.width-two-unit {
+  width: unit-width(2); }
+
+.width-two-column {
+  width: 19rem; }
+
+.width-three-gutter {
+  width: 3rem; }
+
+.width-three-unit {
+  width: unit-width(3); }
+
+.width-three-column {
   width: 29rem; }

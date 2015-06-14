@@ -2,6 +2,8 @@ article#layout {
   margin: 0 auto;
 }
 
+// Indent
+
 .indent-one-gutter {
   margin-left: $gutter-width;
 }
@@ -38,6 +40,42 @@ article#layout {
   margin-left: columns-width(3);
 }
 
-.width-three-columns {
+// Width
+
+// TODO: Implement flexbox
+
+.width-one-gutter {
+  width: $gutter-width * 1;
+}
+
+.width-one-unit {
+  width: unit-width(1);
+}
+
+.width-one-column {
+  width: columns-width(1);
+}
+
+.width-two-gutter {
+  width: $gutter-width * 2;
+}
+
+.width-two-unit {
+  width: unit-width(2);
+}
+
+.width-two-column {
+  width: columns-width(2);
+}
+
+.width-three-gutter {
+  width: $gutter-width * 3;
+}
+
+.width-three-unit {
+  width: unit-width(3);
+}
+
+.width-three-column {
   width: columns-width(3);
 }
