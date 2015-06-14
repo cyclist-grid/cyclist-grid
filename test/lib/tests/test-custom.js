@@ -8,8 +8,13 @@ describe('Raster ' + units, function() {
       var testElement = testHelper.testElement();
       testElement.clientHeight.should.not.equal(defaultLineHeight);
 
+      // Baseline
       var contentElement = document.getElementById('baseline');
       testHelper.baselineIsCorrect(contentElement);
+
+      // Layout
+      var layoutElement = document.getElementById('layout');
+      testHelper.layoutIsCorrect(layoutElement);
     });
   });
 });

@@ -59,7 +59,6 @@ var testHelper = {
       }
 
       var result = this.widthPropertyMatches(base, multiplier, value, gutterWidth);
-
       if (!window.mochaPhantomJS && testProperty == 'width') {
         // Skip this test when running in `phantomjs` because `phantomjs` doesn't support flexbox
         result.should.equal(true);
