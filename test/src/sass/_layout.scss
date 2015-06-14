@@ -54,9 +54,9 @@ article#layout-width {
   -webkit-justify-content: space-between;
 }
 
-article#layout-width > .columns,
-article#layout-width > .units {
-  // margin-right: $gutter-width;
+article#layout-width > .gutters,
+article#layout-width > .units,
+article#layout-width > .columns {
   background-color: rgb(252, 251, 1);
 }
 
@@ -72,7 +72,7 @@ article#layout-width > .units {
 }
 
 .width-one-unit {
-  @include flex-width(unit-width(1));
+  @include flex-width(units-width(1));
 }
 
 .width-one-column {
@@ -84,7 +84,7 @@ article#layout-width > .units {
 }
 
 .width-two-unit {
-  @include flex-width(unit-width(2));
+  @include flex-width(units-width(2));
 }
 
 .width-two-column {
@@ -96,7 +96,7 @@ article#layout-width > .units {
 }
 
 .width-three-unit {
-  @include flex-width(unit-width(3));
+  @include flex-width(units-width(3));
 }
 
 .width-three-column {

@@ -148,7 +148,6 @@ var Raster = {
 			var nodeList = document.getElementsByClassName(className);
 			for (var j = nodeList.length - 1; j >= 0; --j) {
 				var element = nodeList[j];
-				console.log("element = " + element);
 				element.parentNode.removeChild(element);
 			}
 		}
