@@ -139,9 +139,9 @@ Raster comes with tools to display the baseline grid, to use them:
 
 		<script src="[path to raster]/dist/raster.js"></script>
 
-2. Add the class `show-baseline` to the element to show the baseline in (usually the `body` tag):
+2. Add the class `raster-show-baseline` to the element to show the baseline in (usually the `body` tag):
 
-		<body class="show-baseline">
+		<body class="raster-show-baseline">
 
 ## Tests
 
@@ -154,3 +154,4 @@ If `mocha-phantomjs` is installed, tests can also be run on the command line wit
 * [Compose to a Vertical Rhythm ◆ 24 ways](http://24ways.org/2006/compose-to-a-vertical-rhythm)
 * [Five simple steps to better typography - Part 4 | Journal | The Personal Disquiet of Mark Boulton](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4)
 * [Thinking with Type | Contents](http://www.thinkingwithtype.com/contents/grid/)
+

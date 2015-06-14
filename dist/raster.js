@@ -1,6 +1,6 @@
 var Raster = {
 	baselineHelper: {
-		SHOW_BASELINE_CLASS_NAME: 'show-baseline',
+		SHOW_BASELINE_CLASS_NAME: 'raster-show-baseline',
 		BASELINE_CLASS_NAME: 'raster-baseline',
 		setup: function() {
 			var showBaselineElements = document.getElementsByClassName(this.SHOW_BASELINE_CLASS_NAME);
@@ -86,7 +86,7 @@ var Raster = {
 	},
 
 	guidelineHelper: {
-		SHOW_GUIDELINES_CLASS_NAME: 'show-guidelines',
+		SHOW_GUIDELINES_CLASS_NAME: 'raster-show-guidelines',
 		GUIDELINES_CLASS_NAME: 'raster-guidelines',
 		setup: function() {
 			var showGuidelinesElements = document.getElementsByClassName(this.SHOW_GUIDELINES_CLASS_NAME);
