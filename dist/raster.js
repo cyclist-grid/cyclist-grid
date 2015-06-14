@@ -1,8 +1,9 @@
 var Raster = {
 	baselineHelper: {
-		BASELINE_CLASS_NAME: 'show-baseline',
+		SHOW_BASELINE_CLASS_NAME: 'show-baseline',
+		BASELINE_CLASS_NAME: 'raster-baseline',
 		setup: function() {
-			var showBaselineElements = document.getElementsByClassName(this.BASELINE_CLASS_NAME);
+			var showBaselineElements = document.getElementsByClassName(this.SHOW_BASELINE_CLASS_NAME);
 			for (var i = 0; i < showBaselineElements.length; i++) {
 				var baselineElement = showBaselineElements[i];
 				var baselineContainer = this.containerForElement(baselineElement);
@@ -63,6 +64,7 @@ var Raster = {
 			var height = parent.offsetHeight;
 			var width = parent.offsetWidth;
 
+			element.classList.add(this.BASELINE_CLASS_NAME);
 			element.setAttribute("width", width);
 			element.setAttribute("height", height);
 			element.style.width = width + "px";
@@ -84,9 +86,10 @@ var Raster = {
 	},
 
 	guidelineHelper: {
-		GUIDELINES_CLASS_NAME: 'show-guidelines',
+		SHOW_GUIDELINES_CLASS_NAME: 'show-guidelines',
+		GUIDELINES_CLASS_NAME: 'raster-guidelines',
 		setup: function() {
-			var showGuidelinesElements = document.getElementsByClassName(this.GUIDELINES_CLASS_NAME);
+			var showGuidelinesElements = document.getElementsByClassName(this.SHOW_GUIDELINES_CLASS_NAME);
 			for (var j = 0; j < showGuidelinesElements.length; j++) {
 				var guidelinesElement = showGuidelinesElements[j];
 				var guidelinesContainer = this.containerForElement(guidelinesElement);
@@ -129,7 +132,7 @@ var Raster = {
 		containerForElement: function(element) {
 			var container = document.createElement("div");
 			element.appendChild(container);
-			container.classList.add('raster-guidelines');
+			container.classList.add(this.GUIDELINES_CLASS_NAME);
 			var height = element.offsetHeight;
 			container.setAttribute("height", height);
 			container.style.height = height + "px";
@@ -139,12 +142,17 @@ var Raster = {
 	},
 
 	redraw: function() {
-		var selectors = [this.baselineHelper.BASELINE_CLASS_NAME, this.guidelineHelper.GUIDELINES_CLASS_NAME];
-		var nodeList = document.querySelectorAll(selectors);
-		for (var i = nodeList.length - 1; i >= 0; --i) {
-			var element = nodeList[i];
-			element.parentNode.removeChild(element);
+		var classNames = [this.baselineHelper.BASELINE_CLASS_NAME, this.guidelineHelper.GUIDELINES_CLASS_NAME];
+		for (var i = 0; i < classNames.length; i++) {
+			var className = classNames[i];
+			var nodeList = document.getElementsByClassName(className);
+			for (var j = nodeList.length - 1; j >= 0; --j) {
+				var element = nodeList[j];
+				console.log("element = " + element);
+				element.parentNode.removeChild(element);
+			}
 		}
+
 		this.setup();
 	},
 
