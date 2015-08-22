@@ -55,7 +55,7 @@ Recompile Sass with a new `line-height`, `font-size`, or both by importing the S
 * `24pt`: double pica or two-line pica
 * `36pt`: double great primer or 2-line great primer
 
-It's easy to use these values "as is" in CSS, but then only a few font sizes are available for body text. I.e., only the sizes between `10pt` to `18pt` (or "long primer" to "great primer") are really appropriate as body font sizes, and going above `12pt` throws off the proportional harmony with the larger sizes.
+It's easy to use these values "as is" in CSS, but then only a few font sizes are available for body text. Only the sizes between `10pt` to `18pt` are appropriate as body font sizes, and going above `12pt` throws off the proportional harmony with the larger sizes.
 
 Raster's solution to this problem is to treat these as proportional font sizes rather than specific font sizes. Raster uses `12pt` ("pica") as the default font size and defines the rest as ratios as follows:
 
