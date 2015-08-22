@@ -31,7 +31,7 @@ Recompile Sass with a new `line-height`, `font-size`, or both by importing the S
 ## Caveats
 
 * Raster is only tested in WebKit derivative browsers: Chrome and Safari.
-* Due to the imprecisions of CSS math, `font-size` and `line-height` combinations that result in a leading with a decimal will not align to the baseline grid. For example, a `font-size` of `16px` and `line-height` of `120%` results in a decimal number leading of `19.2` (`1.2 * 16 = 19.2`). WebKit's handling of the decimal results in inconsistent leading sizes causing the text to drift from the baseline. There are seceral three work-arounds for this problem:
+* Due to the imprecisions of CSS math, `font-size` and `line-height` combinations that result in a leading with a decimal will not align to the baseline grid. For example, a `font-size` of `16px` and `line-height` of `120%` results in a decimal number leading of `19.2` (`1.2 * 16 = 19.2`). WebKit's handling of the decimal results in inconsistent leading sizes causing the text to drift from the baseline. There are three work-arounds for this problem:
 	1. Specify a `$line-height` and `$font-size` in pixels. The text will always align properly to the baseline grid if the `$line-height` and `$font-size` are specified in pixels.
 	2. Make sure your `font-size` and `line-height` combination results in a whole number leading. For example, a `$font-size` of `12px` and a line-height of `125%`, results in a leading of `15px` (`12px × 1.25 = 15px`). Since `15px` is a whole number, the text will align to the baseline.
 	3. Just don't worry about the slight drift caused by off-by-one errors rendering text to the baseline.
