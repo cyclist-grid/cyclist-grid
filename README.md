@@ -16,7 +16,9 @@ There are three ways to use Raster:
 
 Simply import the compiled CSS file from `dist/raster.css` in HTML:
 
-	<link rel="stylesheet" href="[path to raster]/dist/raster.css">
+``` html
+<link rel="stylesheet" href="[path to raster]/dist/raster.css">
+```
 
 This pre-compiled version uses the browsers default font size and a `line-height` equal to `1.25rem`. Since all the `line-height` and `font-size` calculations are done in `rem` units, any font size can be specified on the root `HTML` element and the header elements will continue to maintain their proportional sizes and all text elements will stay aligned to the baseline grid.
 
@@ -24,9 +26,12 @@ This pre-compiled version uses the browsers default font size and a `line-height
 
 Recompile Sass with a new `line-height`, `font-size`, or both by importing the SCSS file at `dist/raster.scss`. Simply set the `$font-size` and `$line-height` variables before importing the SCSS file.
 
-	$font-size: 15px;
-	$line-height: 20px;
-	@import "[path to raster]/dist/raster";
+
+``` scss
+$font-size: 15px;
+$line-height: 20px;
+@import "[path to raster]/dist/raster";
+```
 
 ## Caveats
 
@@ -59,12 +64,12 @@ It's easy to use these values "as is" in CSS, but then only a few font sizes are
 
 Raster's solution to this problem is to treat these as proportional font sizes rather than specific font sizes. Raster uses `12pt` ("pica") as the default font size and defines the rest as ratios as follows:
 
-* "double great primer": 36 / 12
-* "double pica": 24 / 12
-* "double small pica": 21 / 12
-* "great primer": 18 / 12
-* "english": 14 / 12
-* "pica": 12 / 12
+* "double great primer": `36 / 12`
+* "double pica": `24 / 12`
+* "double small pica": `21 / 12`
+* "great primer": `18 / 12`s
+* "english": `14 / 12`
+* "pica": `12 / 12`
 
 These ratios are then mapped to these HTML header tags:
 
@@ -90,12 +95,18 @@ Raster aligns elements to the baseline grid using the following rules:
 
 ## Layout
 
-Raster's grid approach is to expose Sass variables and functions for positioning elements. In most cases, the `columns-width` and `units-width` functions should be used when specifying widths (and horizontal padding and margins). These functions return the width for an integer count multiplier *while accounting for the gutter space spanned between the specified division size*. For example, to specify an element that spans two columns and is indented two units:
+Raster's grid approach is to expose Sass variables and functions for positioning elements. In most cases, the `columns-width` and `units-width` functions should be used when specifying widths (and horizontal padding and margins). These functions return the width for an integer count multiplier *while accounting for the gutter space spanning between the specified division size*. For example, to specify an element that spans two columns and is indented two units:
 
-	#sidebar {
-		margin-left: units-width(2);
-		width: columns-width(2);
-	}
+``` css
+#sidebar {
+	margin-left: units-width(2);
+	width: columns-width(2);
+}
+```
+
+### Semantic Classes
+
+Raster does not expose any classes of its own, allowing HTML authors to choose semantic classes without interfering.
 
 ### Grid Functions
 
@@ -128,8 +139,10 @@ By default, the `$gutter-width` is set to `1rem`, this variable can also be over
 
 To override any of these variables, simply set them before importing `raster.scss`:
 
-	$num-column-units: 4;
-	@import "[path to raster]/dist/raster";
+``` scss
+$num-column-units: 4;
+@import "[path to raster]/dist/raster";
+```
 
 ## Debugging Tools
 
@@ -137,11 +150,15 @@ Raster comes with tools to display the baseline grid, to use them:
 
 1. Import the JavaScript file at `dist/raster.js`:
 
-		<script src="[path to raster]/dist/raster.js"></script>
+	``` html
+	<script src="[path to raster]/dist/raster.js"></script>
+	```
 
 2. Add the class `raster-show-baseline` to the element to show the baseline in (usually the `body` tag):
 
-		<body class="raster-show-baseline">
+	``` html
+	<body class="raster-show-baseline">
+	```
 
 ## Tests
 
@@ -154,4 +171,3 @@ If `mocha-phantomjs` is installed, tests can also be run on the command line wit
 * [Compose to a Vertical Rhythm ◆ 24 ways](http://24ways.org/2006/compose-to-a-vertical-rhythm)
 * [Five simple steps to better typography - Part 4 | Journal | The Personal Disquiet of Mark Boulton](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4)
 * [Thinking with Type | Contents](http://www.thinkingwithtype.com/contents/grid/)
-
