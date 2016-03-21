@@ -10,7 +10,7 @@ Raster is a simple typography and grid framework written in SCSS.
 
 ## Usage
 
-There are three ways to use Raster:
+There are two ways to use Raster:
 
 ### Default CSS
 
