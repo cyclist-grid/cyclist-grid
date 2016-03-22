@@ -10,9 +10,9 @@ Raster is a simple typography and grid framework written in SCSS.
 
 ## Usage
 
-There are two ways to use Raster:
+There are two ways to use Raster: either by simply linking the default CSS, or by recompiling the SCSS for finer-grained control.
 
-### Default CSS
+### Use Default CSS
 
 Simply import the compiled CSS file from `dist/raster.css` in HTML:
 
@@ -22,7 +22,7 @@ Simply import the compiled CSS file from `dist/raster.css` in HTML:
 
 This pre-compiled version uses the browsers default font size and a `line-height` equal to `1.25rem`. Since all the `line-height` and `font-size` calculations are done in `rem` units, any font size can be specified on the root `HTML` element and the header elements will continue to maintain their proportional sizes and all text elements will stay aligned to the baseline grid.
 
-### SCSS
+### Recompile SCSS
 
 Recompile Sass with a new `line-height`, `font-size`, or both by importing the SCSS file at `dist/raster.scss`. Simply set the `$font-size` and `$line-height` variables before importing the SCSS file.
 
