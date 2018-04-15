@@ -63,13 +63,18 @@ $line-height: 20px;
 It's easy to use these values "as is" in CSS, but then only a few font sizes are available for body text. Only the sizes between `10pt` to `18pt` are appropriate as body font sizes, and going above `12pt` throws off the proportional harmony with the larger sizes.
 
 Raster's solution to this problem is to treat these as proportional font sizes rather than specific font sizes. Raster uses `12pt` ("pica") as the default font size and defines the rest as ratios as follows:
-
 * "double great primer": `36 / 12`
 * "double pica": `24 / 12`
 * "double small pica": `21 / 12`
 * "great primer": `18 / 12`s
 * "english": `14 / 12`
 * "pica": `12 / 12`
+* "small pica": `11 / 12`
+* "long primer": `10 / 12`
+* "bourgeois": `9 / 12`
+* "brevier": `8 / 12`
+* "minion": `7 / 12`
+* "nonpareil": `6 / 12`
 
 These ratios are then mapped to these HTML header tags:
 
@@ -81,6 +86,21 @@ These ratios are then mapped to these HTML header tags:
 * `H6`: pica
 
 Since these header sizes are defined as ratios to the body size, the header sizes will stay in proportion to the body size, even if the body size is change from `12px`. The header font size calculation is `[body size] * [ratio]`. For example, a body font of `15px` will result in an `H1` header font size of `45px` (`15 * (36 / 12) = 45px`).
+
+The full range of font sizes can also be used directly as SCSS variables:
+
+* `$double-great-primer`
+* `$double-pica`
+* `$double-small-pica`
+* `$great-primer`
+* `$english`
+* `$pica`
+* `$small-pica`
+* `$long-primer`
+* `$bourgeois`
+* `$brevier`
+* `$minion`
+* `$nonpareil`
 
 ### Vertical Rhythm
 
