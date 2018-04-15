@@ -34,9 +34,10 @@ paths.test.jade.srcWatchGlob = paths.test.jade.src + '/**/*.jade';
 // Dist
 paths.dist = {};
 paths.dist.sass = {};
-paths.dist.sass.src = 'dist';
+paths.dist.sass.root = 'dist';
+paths.dist.sass.src = paths.dist.sass.root + 'scss';
 paths.dist.sass.srcGlob = paths.dist.sass.src + '/*.scss';
-paths.dist.sass.build = paths.dist.sass.src;
+paths.dist.sass.build = paths.dist.sass.root + 'css';
 paths.dist.sass.srcWatchGlob = 'dist/**/*.scss';
 
 // Sass

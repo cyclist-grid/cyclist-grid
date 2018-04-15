@@ -57,33 +57,33 @@ body {
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  margin-bottom: 2rem;
-  line-height: calc(3 * 2rem); }
+  line-height: calc(3 * 2rem);
+  margin-bottom: 2rem; }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  margin-bottom: 2rem;
-  line-height: calc(2 * 2rem); }
+  line-height: calc(2 * 2rem);
+  margin-bottom: 2rem; }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  margin-bottom: 2rem;
-  line-height: calc(2 * 2rem); }
+  line-height: calc(2 * 2rem);
+  margin-bottom: 2rem; }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  margin-bottom: 2rem;
-  line-height: calc(2 * 2rem); }
+  line-height: calc(2 * 2rem);
+  margin-bottom: 2rem; }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  margin-bottom: 2rem;
-  line-height: calc(2 * 2rem); }
+  line-height: calc(2 * 2rem);
+  margin-bottom: 2rem; }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  margin-bottom: 2rem;
-  line-height: calc(1 * 2rem); }
+  line-height: calc(1 * 2rem);
+  margin-bottom: 2rem; }
 
 p,
 ul,
@@ -103,6 +103,16 @@ ul {
 ol {
   list-style-type: decimal;
   margin-left: 2rem; }
+
+sub {
+  line-height: 0;
+  vertical-align: sub;
+  font-size: calc(1em * (10 / 12)); }
+
+sup {
+  line-height: 0;
+  vertical-align: super;
+  font-size: calc(1em * (10 / 12)); }
 
 .raster-guidelines {
   display: -webkit-flex;

@@ -57,33 +57,33 @@ body {
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  margin-bottom: 17px;
-  line-height: calc(3 * 17px); }
+  line-height: calc(3 * 17px);
+  margin-bottom: 17px; }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  margin-bottom: 17px;
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+  margin-bottom: 17px; }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  margin-bottom: 17px;
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+  margin-bottom: 17px; }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  margin-bottom: 17px;
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+  margin-bottom: 17px; }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  margin-bottom: 17px;
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+  margin-bottom: 17px; }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  margin-bottom: 17px;
-  line-height: calc(1 * 17px); }
+  line-height: calc(1 * 17px);
+  margin-bottom: 17px; }
 
 p,
 ul,
@@ -103,6 +103,16 @@ ul {
 ol {
   list-style-type: decimal;
   margin-left: 2rem; }
+
+sub {
+  line-height: 0;
+  vertical-align: sub;
+  font-size: calc(1em * (10 / 12)); }
+
+sup {
+  line-height: 0;
+  vertical-align: super;
+  font-size: calc(1em * (10 / 12)); }
 
 .raster-guidelines {
   display: -webkit-flex;
