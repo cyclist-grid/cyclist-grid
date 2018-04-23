@@ -1,6 +1,6 @@
 {
   "name": "raster-grid",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "An HTML5 typographic-grid system using Sass.",
   "author": "Roben Kleene <contact@robenkleene.com>",
   "contributors": [{
