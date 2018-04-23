@@ -29,5 +29,6 @@
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.1",
     "mocha": "^2.2.5"
-  }
+  },
+  "license": "MIT"
 }
