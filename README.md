@@ -1,12 +1,16 @@
 # Raster
 
-Raster is a simple typography and grid framework written in SCSS.
+
+[![Cyclist Grid](cyclist-grid.png)](cyclist-grid.png/)
+
+Raster is an HTML/CSS typography and grid framework written in SCSS.
 
 * It replaces the default sizes for header elements (i.e., `H1`-`H6`) based on the [traditional point scale](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4).
-* But the header font sizes are not fixed, instead they're defined as ratios (based on `12px` body type). This means if the body font size is not `12px`, then the sizes of the headers maintain their proportional size relative to the body font size. For example, at a font size of `12px`, the `H1` element will have a font size of `36px` (the "double great primer" size), but if the body font size is `11px`, then the `H1` element will have a font size of `33px` (`36/12 * 11 = 33`).
+  * The header font sizes are not fixed, instead they're defined as ratios (based on `12px` body type). This means if the body font size is not `12px`, then the sizes of the headers maintain their proportional size relative to the body font size. For example, at a font size of `12px`, the `H1` element will have a font size of `36px` (the "double great primer" size), but if the body font size is `11px`, then the `H1` element will have a font size of `33px` (`36/12 * 11 = 33`).
 * Text is [aligned to the baseline grid](http://24ways.org/2006/compose-to-a-vertical-rhythm) using the following rules:
 	* Headers are given a `line-height` that's a multiple of the [leading](http://en.wikipedia.org/wiki/Leading).
 	* All block level elements are given a `top-margin` of `0` and a `bottom-margin` equal to the leading.
+* Raster also includes features for defining a horizontal layout grid based on the leading, so that the horizontal spacing is also derived from the vertical rhythm of the typography.
 
 ## Usage
 
