@@ -1,20 +1,20 @@
-# Raster
+# Cyclist Grid
 
 
 [![Cyclist Grid](cyclist-grid.png)](cyclist-grid.png/)
 
-Raster is an HTML/CSS typography and grid framework written in SCSS.
+Cyclist Grid is an HTML/CSS typography and grid framework written in SCSS.
 
 * It replaces the default sizes for header elements (i.e., `H1`-`H6`) based on the [traditional point scale](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-4).
   * The header font sizes are not fixed, instead they're defined as ratios (based on `12px` body type). This means if the body font size is not `12px`, then the sizes of the headers maintain their proportional size relative to the body font size. For example, at a font size of `12px`, the `H1` element will have a font size of `36px` (the "double great primer" size), but if the body font size is `11px`, then the `H1` element will have a font size of `33px` (`36/12 * 11 = 33`).
 * Text is [aligned to the baseline grid](http://24ways.org/2006/compose-to-a-vertical-rhythm) using the following rules:
 	* Headers are given a `line-height` that's a multiple of the [leading](http://en.wikipedia.org/wiki/Leading).
 	* All block level elements are given a `top-margin` of `0` and a `bottom-margin` equal to the leading.
-* Raster also includes features for defining a horizontal layout grid based on the leading, so that the horizontal spacing is also derived from the vertical rhythm of the typography.
+* Cyclist Grid also includes features for defining a horizontal layout grid based on the leading, so that the horizontal spacing is also derived from the vertical rhythm of the typography.
 
 ## Usage
 
-There are two ways to use Raster: either by simply linking the default CSS, or by recompiling the SCSS for finer-grained control.
+There are two ways to use Cyclist Grid: either by simply linking the default CSS, or by recompiling the SCSS for finer-grained control.
 
 ### Use Default CSS
 
@@ -39,7 +39,6 @@ $line-height: 20px;
 
 ## Caveats
 
-* Raster is only tested in WebKit derivative browsers: Chrome and Safari.
 * Due to the imprecisions of CSS math, `font-size` and `line-height` combinations that result in a leading with a decimal will not align to the baseline grid. For example, a `font-size` of `16px` and `line-height` of `120%` results in a decimal number leading of `19.2` (`1.2 * 16 = 19.2`). WebKit's handling of the decimal results in inconsistent leading sizes causing the text to drift from the baseline. There are three work-arounds for this problem:
 	1. Specify a `$line-height` and `$font-size` in pixels. The text will always align properly to the baseline grid if the `$line-height` and `$font-size` are specified in pixels.
 	2. Make sure your `font-size` and `line-height` combination results in a whole number leading. For example, a `$font-size` of `12px` and a line-height of `125%`, results in a leading of `15px` (`12px × 1.25 = 15px`). Since `15px` is a whole number, the text will align to the baseline.
@@ -66,7 +65,7 @@ $line-height: 20px;
 
 It's easy to use these values "as is" in CSS, but then only a few font sizes are available for body text. Only the sizes between `10pt` to `18pt` are appropriate as body font sizes, and going above `12pt` throws off the proportional harmony with the larger sizes.
 
-Raster's solution to this problem is to treat these as proportional font sizes rather than specific font sizes. Raster uses `12pt` ("pica") as the default font size and defines the rest as ratios as follows:
+Cyclist Grid's solution to this problem is to treat these as proportional font sizes rather than specific font sizes. Cyclist Grid uses `12pt` ("pica") as the default font size and defines the rest as ratios as follows:
 * "double great primer": `36 / 12`
 * "double pica": `24 / 12`
 * "double small pica": `21 / 12`
@@ -110,7 +109,7 @@ The full range of font sizes can also be used directly as SCSS variables:
 
 A [vertical rhythm](http://24ways.org/2006/compose-to-a-vertical-rhythm) means making the spacing of elements consistently align to the baseline grid.
 
-Raster aligns elements to the baseline grid using the following rules:
+Cyclist Grid aligns elements to the baseline grid using the following rules:
 
 * All default margins and padding are set to zero by the CSS reset.
 * The line height is used as the leading.
@@ -119,7 +118,7 @@ Raster aligns elements to the baseline grid using the following rules:
 
 ## Layout
 
-Raster's grid approach is to expose Sass variables and functions for positioning elements. In most cases, the `columns-width` and `units-width` functions should be used when specifying widths (and horizontal padding and margins). These functions return the width for an integer count multiplier *while accounting for the gutter space spanning between the specified division size*. For example, to specify an element that spans two columns and is indented two units:
+Cyclist Grid's grid approach is to expose Sass variables and functions for positioning elements. In most cases, the `columns-width` and `units-width` functions should be used when specifying widths (and horizontal padding and margins). These functions return the width for an integer count multiplier *while accounting for the gutter space spanning between the specified division size*. For example, to specify an element that spans two columns and is indented two units:
 
 ``` css
 #sidebar {
@@ -130,7 +129,7 @@ Raster's grid approach is to expose Sass variables and functions for positioning
 
 ### Semantic Classes
 
-Raster does not expose any classes of its own, allowing HTML authors to choose semantic classes without interfering.
+Cyclist Grid does not expose any classes of its own, allowing HTML authors to choose semantic classes without interfering.
 
 ### Grid Functions
 
@@ -170,7 +169,7 @@ $num-column-units: 4;
 
 ## Debugging Tools
 
-Raster comes with tools to display the baseline grid, to use them:
+Cyclist Grid comes with tools to display the baseline grid, to use them:
 
 1. Import the JavaScript file at `dist/js/raster.js`:
 
