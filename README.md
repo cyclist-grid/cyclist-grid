@@ -1,7 +1,8 @@
 # Cyclist Grid
 
+[![Cyclist](cyclist.svg)](cyclist.svg)
 
-[![Cyclist Grid](cyclist-grid.png)](cyclist-grid.png/)
+[![Cyclist Grid](cyclist-grid.png)](cyclist-grid.png)
 
 Cyclist Grid is an HTML/CSS typography and grid framework written in SCSS.
 
