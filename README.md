@@ -1,6 +1,6 @@
 # Cyclist Grid
 
-[![Cyclist](cyclist.svg)](cyclist.svg)
+[![Cyclist](cyclist-background.svg)](cyclist-background.svg)
 
 [![Cyclist Grid](cyclist-grid.png)](cyclist-grid.png)
 
