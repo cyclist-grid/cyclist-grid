@@ -13,7 +13,8 @@
     "url": "https://github.com/robenkleene/raster.git"
   },
   "scripts": {
-    "test": "test/scripts/run_tests.js"
+    "test": "test/scripts/run_tests.js",
+    "gulp-serve" : "gulp serve"
   },
   "keywords": [
     "css",
