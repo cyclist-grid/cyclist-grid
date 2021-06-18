@@ -23,13 +23,13 @@
     "grid"
   ],
   "devDependencies": {
-    "chai": "^2.3.0",
-    "glob": "^5.0.10",
-    "gulp": "^3.8.11",
-    "gulp-jade": "^1.0.1",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.0.1",
-    "mocha": "^2.2.5"
+    "chai": "^4.3.4",
+    "glob": "^7.1.7",
+    "gulp": "^4.0.2",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "mocha": "^9.0.1"
   },
   "license": "MIT"
 }
