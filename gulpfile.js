@@ -2,7 +2,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
-const jade = require('gulp-jade');
+const pug = require('gulp-pug');
 
 // Built-in
 const path = require('path');
@@ -26,12 +26,12 @@ paths.examples = sharedPaths('examples');
 // Test
 paths.test = sharedPaths('test');
 paths.test.lib = path.join('test', 'lib');
-// Jade Test
-paths.test.jade = {};
-paths.test.jade.src = path.join(paths.test.src, 'jade');
-paths.test.jade.build = path.join(paths.test.build, 'html');
-paths.test.jade.srcGlob = paths.test.jade.src + '/*.jade';
-paths.test.jade.srcWatchGlob = paths.test.jade.src + '/**/*.jade';
+// Pug Test
+paths.test.pug = {};
+paths.test.pug.src = path.join(paths.test.src, 'pug');
+paths.test.pug.build = path.join(paths.test.build, 'html');
+paths.test.pug.srcGlob = paths.test.pug.src + '/*.pug';
+paths.test.pug.srcWatchGlob = paths.test.pug.src + '/**/*.pug';
 // Dist
 paths.dist = {};
 paths.dist.sass = {};
@@ -61,19 +61,19 @@ gulp.task('sass-dist', function () {
   doSass(paths.dist.sass.srcGlob, paths.dist.sass.build);
 });
 
-// Jade
+// Pug
 
-function doJade(srcPath, buildPath) {
+function doPug(srcPath, buildPath) {
   gulp.src(srcPath)
     .pipe(plumber())
-    .pipe(jade({
+    .pipe(pug({
       pretty: true
     }))
     .pipe(gulp.dest(buildPath));
 }
 
-gulp.task('jade-test', function() {
-  doJade(paths.test.jade.srcGlob, paths.test.jade.build);
+gulp.task('pug-test', function() {
+  doPug(paths.test.pug.srcGlob, paths.test.pug.build);
 });
 
 gulp.task('sass', gulp.parallel(['sass-examples', 'sass-test', 'sass-dist']));
@@ -88,8 +88,8 @@ gulp.task('watch', function () {
   // Test sass
   var testSassPaths = [paths.dist.sass.srcWatchGlob, paths.test.sass.srcGlob];
   gulp.watch(testSassPaths, gulp.series('sass-test'));
-  gulp.watch(paths.test.jade.srcWatchGlob, gulp.series('jade-test'));
+  gulp.watch(paths.test.pug.srcWatchGlob, gulp.series('pug-test'));
 });
 
-gulp.task('jade', gulp.series('jade-test'));
-gulp.task('default', gulp.parallel(['sass', 'jade']));
+gulp.task('pug', gulp.series('pug-test'));
+gulp.task('default', gulp.parallel(['sass', 'pug']));
