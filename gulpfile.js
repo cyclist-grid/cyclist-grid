@@ -1,12 +1,13 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var path = require('path');
-var plumber = require('gulp-plumber');
-var jade = require('gulp-jade');
+// devDependencies
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const plumber = require('gulp-plumber');
+const jade = require('gulp-jade');
 
+// Built-in
+const path = require('path');
 
 // Paths
-
 function sharedPaths(basePath) {
   var paths = {};
   paths.src = path.join(basePath, 'src');
@@ -75,21 +76,20 @@ gulp.task('jade-test', function() {
   doJade(paths.test.jade.srcGlob, paths.test.jade.build);
 });
 
-
+gulp.task('sass', gulp.parallel(['sass-examples', 'sass-test', 'sass-dist']));
 
 // Watch
 
 gulp.task('watch', function () {
-  gulp.watch(paths.dist.sass.srcWatchGlob, ['sass-dist']);
+  gulp.watch(paths.dist.sass.srcWatchGlob, gulp.series('sass-dist'));
 
   var examplesSassPaths = [paths.dist.sass.srcWatchGlob, paths.examples.sass.srcGlob];
-  gulp.watch(examplesSassPaths, ['sass-examples']);
+  gulp.watch(examplesSassPaths, gulp.series('sass-examples'));
   // Test sass
   var testSassPaths = [paths.dist.sass.srcWatchGlob, paths.test.sass.srcGlob];
-  gulp.watch(testSassPaths, ['sass-test']);
-  gulp.watch(paths.test.jade.srcWatchGlob, ['jade-test']);
+  gulp.watch(testSassPaths, gulp.series('sass-test'));
+  gulp.watch(paths.test.jade.srcWatchGlob, gulp.series('jade-test'));
 });
 
-gulp.task('jade', ['jade-test']);
-gulp.task('sass', ['sass-examples', 'sass-test', 'sass-dist']);
-gulp.task('default', ['sass', 'jade']);
+gulp.task('jade', gulp.series('jade-test'));
+gulp.task('default', gulp.parallel(['sass', 'jade']));
