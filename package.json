@@ -16,7 +16,8 @@
   },
   "scripts": {
     "test": "test/scripts/run_tests.js",
-    "gulp-serve": "gulp serve"
+    "gulp-serve": "gulp serve",
+    "gulp": "gulp"
   },
   "keywords": [
     "css",
