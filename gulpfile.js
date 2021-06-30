@@ -3,6 +3,7 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
 const pug = require("gulp-pug");
+const connect = require("gulp-connect");
 
 // Built-in
 const path = require("path");
@@ -100,3 +101,11 @@ gulp.task("watch", function () {
 
 gulp.task("pug", gulp.series("pug-test"));
 gulp.task("default", gulp.parallel(["sass", "pug"]));
+gulp.task("connect", function () {
+  connect.server({
+    root: "public",
+    livereload: true,
+  });
+});
+
+gulp.task("serve", gulp.parallel(["connect", "watch"]));
