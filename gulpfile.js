@@ -103,7 +103,6 @@ gulp.task("pug", gulp.series("pug-test"));
 gulp.task("default", gulp.parallel(["sass", "pug"]));
 gulp.task("connect", function () {
   connect.server({
-    root: "examples",
     livereload: true,
   });
 });

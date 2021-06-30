@@ -10,7 +10,7 @@
       "console": "integratedTerminal",
       "serverReadyAction": {
         "pattern": "https?://localhost:([0-9]+)",
-        "uriFormat": "http://localhost:%s"
+        "uriFormat": "http://localhost:%s/examples/typography.html"
       }
     }
   ]
