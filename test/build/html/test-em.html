@@ -60,8 +60,7 @@
   </article>
 	<div id="mocha"></div>
 	<script>
-	  if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-	  else { mocha.run(); }
+	  if (!navigator.userAgent.includes("jsdom")) { mocha.run(); }
 	</script>
 
 </body>
