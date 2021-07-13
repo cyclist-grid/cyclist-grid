@@ -15,7 +15,7 @@
     "url": "https://github.com/robenkleene/raster.git"
   },
   "scripts": {
-    "test": "mocha test/lib/tests/test-*.js",
+    "test": "mocha test/lib/tests/test-jsdom.js",
     "gulp-serve": "gulp serve",
     "gulp": "gulp"
   },
