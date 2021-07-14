@@ -1,8 +1,11 @@
+var jsdom = require('mocha-jsdom')
 var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1, 2, 3].indexOf(4), -1);
-    });
+describe('All Raster tests', function() {
+  ["../../test-default.html"].forEach(file => {
+    describe(file, function() {
+      jsdom.fromFile(file).then((dom) => {
+        dom.window.mocha.run();
+      });
+    });      
   });
 });
