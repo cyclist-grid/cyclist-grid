@@ -5,7 +5,6 @@ describe('All Raster tests', function() {
     describe(file, function() {
       it('should run without error', function(done) {
         JSDOM.fromFile(path).then((dom) => {
-          console.log("got here");
           dom.window.mocha.run();
         })
         .then(done, done);  
