@@ -15,7 +15,6 @@
     "url": "https://github.com/robenkleene/raster.git"
   },
   "scripts": {
-    "test": "mocha test/lib/tests/test-jsdom.js",
     "gulp-serve": "gulp serve",
     "gulp": "gulp"
   },
@@ -33,7 +32,6 @@
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^4.1.0",
-    "jsdom": "^16.6.0",
     "mocha": "^9.0.1"
   },
   "license": "MIT"
