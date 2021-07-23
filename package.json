@@ -15,7 +15,6 @@
     "url": "https://github.com/robenkleene/raster.git"
   },
   "scripts": {
-    "test": "test/scripts/run_tests.js",
     "gulp-serve": "gulp serve",
     "gulp": "gulp"
   },
@@ -29,6 +28,7 @@
     "chai": "^4.3.4",
     "glob": "^7.1.7",
     "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^4.1.0",

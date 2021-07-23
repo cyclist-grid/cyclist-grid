@@ -125,7 +125,7 @@ var testHelper = {
   testElement: function() {
     var testElements = document.getElementsByTagName('li');
     var testElement = testElements[0];
-    testElement.should.be.an('object');
+    testElement.should.be.an('HTMLLIElement');
     return testElement;
   }
 };

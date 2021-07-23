@@ -186,9 +186,7 @@ Cyclist Grid comes with tools to display the baseline grid, to use them:
 
 ## Tests
 
-Tests can be run by opening the `test-*.html` files in `test/build/html/` in a WebKit browser.
-
-If `mocha-phantomjs` is installed, tests can also be run on the command line with `npm test`. But `phantomjs` doesn't fully simulate the DOM, so it's better to just run the tests this way to debug the tests themselves, and then run the tests in the browser to fully confirm they are passing.
+Tests can be run by opening the `test-*.html` files in `test/build/html/` in a browser.
 
 ## Resources
 

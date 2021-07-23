@@ -5,10 +5,10 @@ describe('Raster default', function() {
       var baselineElement = document.getElementById('baseline');
       var layoutElement = document.getElementById('layout');
       var htmlElement = document.getElementsByTagName("html")[0];
-      var wholeNumberfontSizeStyles = ["8px", "12px", "16px", "20px"];
-      for (var i = 0; i < wholeNumberfontSizeStyles.length; i++) {
+      var wholeNumberFontSizeStyles = ["8px", "12px", "16px", "20px"];
+      for (var i = 0; i < wholeNumberFontSizeStyles.length; i++) {
         // Set the font size on the HTML Element
-        var fontSizeStyle = wholeNumberfontSizeStyles[i];
+        var fontSizeStyle = wholeNumberFontSizeStyles[i];
         var fontSize = parseFloat(fontSizeStyle, 10);
         htmlElement.style.fontSize = fontSizeStyle;
 

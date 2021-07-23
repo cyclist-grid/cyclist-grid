@@ -3,6 +3,7 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
 const pug = require("gulp-pug");
+const connect = require("gulp-connect");
 
 // Built-in
 const path = require("path");
@@ -32,6 +33,10 @@ paths.test.pug.src = path.join(paths.test.src, "pug");
 paths.test.pug.build = path.join(paths.test.build, "html");
 paths.test.pug.srcGlob = paths.test.pug.src + "/*.pug";
 paths.test.pug.srcWatchGlob = paths.test.pug.src + "/**/*.pug";
+// HTML
+paths.test.html = {};
+paths.test.html.src = path.join(paths.test.src, "html");
+paths.test.html.srcWatchGlob = paths.test.html.src + "/**/*.html";
 // Dist
 paths.dist = {};
 paths.dist.sass = {};
@@ -95,8 +100,16 @@ gulp.task("watch", function () {
   // Test sass
   var testSassPaths = [paths.dist.sass.srcWatchGlob, paths.test.sass.srcGlob];
   gulp.watch(testSassPaths, gulp.series("sass-test"));
-  gulp.watch(paths.test.pug.srcWatchGlob, gulp.series("pug-test"));
+  var testPugPaths = [paths.test.pug.srcWatchGlob, paths.test.html.srcWatchGlob];
+  gulp.watch(testPugPaths, gulp.series("pug-test"));
 });
 
 gulp.task("pug", gulp.series("pug-test"));
 gulp.task("default", gulp.parallel(["sass", "pug"]));
+gulp.task("connect", function () {
+  connect.server({
+    livereload: true,
+  });
+});
+
+gulp.task("serve", gulp.parallel(["connect", "watch"]));
