@@ -5,6 +5,22 @@ $line-height: 17px;
 
 #container {
   margin: 0 auto;
-  padding: ($leading-height * 3) 0;
+  padding: $leading-height 0;
   width: columns-width(4);
+}
+
+nav {
+  margin-bottom: $leading-height;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  list-style: none;
+  flex-grow: 1;
 }
