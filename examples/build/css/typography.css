@@ -149,7 +149,9 @@ sup {
   width: 39rem; }
 
 nav {
-  margin-bottom: 17px; }
+  margin-bottom: 17px;
+  position: relative;
+  z-index: 1; }
 
 nav ul {
   display: flex;

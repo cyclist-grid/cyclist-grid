@@ -11,6 +11,8 @@ $line-height: 17px;
 
 nav {
   margin-bottom: $leading-height;
+  position: relative;
+  z-index: 1;
 }
 
 nav ul {
