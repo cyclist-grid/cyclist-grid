@@ -1,5 +1,5 @@
 {
-  "name": "raster-grid",
+  "name": "cyclist-grid",
   "version": "0.2.3",
   "description": "An HTML5 typographic-grid system using Sass.",
   "author": "Roben Kleene <contact@robenkleene.com>",
@@ -9,10 +9,10 @@
       "email": "contact@robenkleene.com"
     }
   ],
-  "homepage": "https://github.com/robenkleene/raster",
+  "homepage": "https://github.com/robenkleene/cyclist",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robenkleene/raster.git"
+    "url": "https://github.com/robenkleene/cyclist.git"
   },
   "scripts": {
     "gulp-serve": "gulp serve",

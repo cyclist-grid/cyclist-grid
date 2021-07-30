@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |s|
-  s.name        = 'raster'
+  s.name        = 'cyclist'
   s.version     = '0.2.3'
   s.date        = '2019-08-29'
   s.summary     = 'Grid System'
@@ -10,6 +10,6 @@ Gem::Specification.new do |s|
   s.email       = 'contact@robenkleene.com'
   s.files       = Dir['dist/**/*.*']
   s.homepage    =
-    'https://github.com/robenkleene/raster.git'
+    'https://github.com/robenkleene/cyclist.git'
   s.license = 'MIT'
 end
