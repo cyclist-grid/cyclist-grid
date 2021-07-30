@@ -1,4 +1,4 @@
-describe('Raster default', function() {
+describe('Cyclist default', function() {
   var defaultLeadingRems = 1.25;
   describe('The default style', function() {
     it('the baseline and layout should be correct', function () {
@@ -28,7 +28,7 @@ describe('Raster default', function() {
         // Run the layout tests
         testHelper.layoutIsCorrect(layoutElement);
       }
-      Raster.redraw();
+      Cyclist.redraw();
     });
   });
 });

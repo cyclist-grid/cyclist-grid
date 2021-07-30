@@ -1,5 +1,5 @@
 var units = document.title;
-describe('Raster ' + units, function() {
+describe('Cyclist ' + units, function() {
   var defaultLineHeight = 20;
   describe('A custom style', function() {
     it('the baseline should be correct', function () {

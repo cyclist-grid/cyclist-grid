@@ -1,4 +1,4 @@
-var Raster = {
+var Cyclist = {
 	baselineHelper: {
 		SHOW_BASELINE_CLASS_NAME: 'cyclist-show-baseline',
 		BASELINE_CLASS_NAME: 'cyclist-baseline',
@@ -161,4 +161,4 @@ var Raster = {
 	}
 };
 
-window.addEventListener('load', function () { Raster.setup(); }, false);
+window.addEventListener('load', function () { Cyclist.setup(); }, false);
