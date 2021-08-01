@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |s|
-  s.name        = 'cyclist'
+  s.name        = 'cyclist-grid'
   s.version     = '0.3.0'
   s.summary     = 'Grid System'
   s.description = 'An HTML5 typographic-grid system using Sass.'
