@@ -19,23 +19,23 @@ There are two ways to use Cyclist Grid: either by simply linking the default CSS
 
 ### Use Default CSS
 
-Simply import the compiled CSS file from `dist/css/raster.css` in HTML:
+Simply import the compiled CSS file from `dist/css/cyclist.css` in HTML:
 
 ``` html
-<link rel="stylesheet" href="[path to raster]/dist/css/raster.css">
+<link rel="stylesheet" href="[path to cyclist]/dist/css/cyclist.css">
 ```
 
 This pre-compiled version uses the browsers default font size and a `line-height` equal to `1.25rem`. Since all the `line-height` and `font-size` calculations are done in `rem` units, any font size can be specified on the root `HTML` element and the header elements will continue to maintain their proportional sizes and all text elements will stay aligned to the baseline grid.
 
 ### Recompile SCSS
 
-Recompile Sass with a new `line-height`, `font-size`, or both by importing the SCSS file at `dist/scss/raster.scss`. Simply set the `$font-size` and `$line-height` variables before importing the SCSS file.
+Recompile Sass with a new `line-height`, `font-size`, or both by importing the SCSS file at `dist/scss/cyclist.scss`. Simply set the `$font-size` and `$line-height` variables before importing the SCSS file.
 
 
 ``` scss
 $font-size: 15px;
 $line-height: 20px;
-@import "[path to raster]/dist/scss/raster";
+@import "[path to cyclist]/dist/scss/cyclist";
 ```
 
 ## Caveats
@@ -161,27 +161,27 @@ By default, the `$gutter-width` is set to `1rem`, this variable can also be over
 
 ### Overriding Variables
 
-To override any of these variables, simply set them before importing `raster.scss`:
+To override any of these variables, simply set them before importing `cyclist.scss`:
 
 ``` scss
 $num-column-units: 4;
-@import "[path to raster]/dist/raster";
+@import "[path to cyclist]/dist/cyclist";
 ```
 
 ## Debugging Tools
 
 Cyclist Grid comes with tools to display the baseline grid, to use them:
 
-1. Import the JavaScript file at `dist/js/raster.js`:
+1. Import the JavaScript file at `dist/js/cyclist.js`:
 
 	``` html
-	<script src="[path to raster]/dist/js/raster.js"></script>
+	<script src="[path to cyclist]/dist/js/cyclist.js"></script>
 	```
 
-2. Add the class `raster-show-baseline` to the element to show the baseline in (usually the `body` tag):
+2. Add the class `cyclist-show-baseline` to the element to show the baseline in (usually the `body` tag):
 
 	``` html
-	<body class="raster-show-baseline">
+	<body class="cyclist-show-baseline">
 	```
 
 ## Tests
