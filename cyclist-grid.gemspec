@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
   s.email       = 'contact@robenkleene.com'
   s.files       = Dir['dist/**/*.*']
   s.homepage    =
-    'https://github.com/robenkleene/cyclist.git'
+    'https://github.com/cyclist-grid/cyclist-grid'
   s.license = 'MIT'
 end

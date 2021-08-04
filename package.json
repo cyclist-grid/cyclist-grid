@@ -9,10 +9,10 @@
       "email": "contact@robenkleene.com"
     }
   ],
-  "homepage": "https://github.com/robenkleene/cyclist",
+  "homepage": "https://github.com/cyclist-grid/cyclist-grid",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robenkleene/cyclist.git"
+    "url": "https://github.com/cyclist-grid/cyclist-grid"
   },
   "scripts": {
     "gulp-serve": "gulp serve",
