@@ -19,7 +19,7 @@ There are two ways to use Cyclist Grid: either by simply linking the default CSS
 
 ### Use Default CSS
 
-Simply import the compiled CSS file from `dist/css/cyclist.css` in HTML:
+Simply import the compiled CSS file from `dist/css/cyclist-grid.css` in HTML:
 
 ``` html
 <link rel="stylesheet" href="[path to cyclist]/dist/css/cyclist.css">
@@ -29,13 +29,13 @@ This pre-compiled version uses the browsers default font size and a `line-height
 
 ### Recompile SCSS
 
-Recompile Sass with a new `line-height`, `font-size`, or both by importing the SCSS file at `dist/scss/cyclist.scss`. Simply set the `$font-size` and `$line-height` variables before importing the SCSS file.
+Recompile Sass with a new `line-height`, `font-size`, or both by importing the SCSS file at `dist/scss/cyclist-grid.scss`. Simply set the `$font-size` and `$line-height` variables before importing the SCSS file.
 
 
 ``` scss
 $font-size: 15px;
 $line-height: 20px;
-@import "[path to cyclist]/dist/scss/cyclist";
+@import "[path to cyclist]/dist/scss/cyclist-grid";
 ```
 
 ## Caveats
@@ -161,21 +161,21 @@ By default, the `$gutter-width` is set to `1rem`, this variable can also be over
 
 ### Overriding Variables
 
-To override any of these variables, simply set them before importing `cyclist.scss`:
+To override any of these variables, simply set them before importing `cyclist-grid.scss`:
 
 ``` scss
 $num-column-units: 4;
-@import "[path to cyclist]/dist/cyclist";
+@import "[path to cyclist]/dist/cyclist-grid";
 ```
 
 ## Debugging Tools
 
 Cyclist Grid comes with tools to display the baseline grid, to use them:
 
-1. Import the JavaScript file at `dist/js/cyclist.js`:
+1. Import the JavaScript file at `dist/js/cyclist-grid.js`:
 
 	``` html
-	<script src="[path to cyclist]/dist/js/cyclist.js"></script>
+	<script src="[path to cyclist]/dist/js/cyclist-grid.js"></script>
 	```
 
 2. Add the class `cyclist-show-baseline` to the element to show the baseline in (usually the `body` tag):
