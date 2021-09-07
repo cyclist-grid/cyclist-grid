@@ -52,7 +52,7 @@ var Cyclist = {
 
 		containerForElement: function(element) {
 			var container = document.createElement("div");
-			element.prepend(container);
+			element.appendChild(container);
 			this.makeContainer(container);
 			return container;
 		},
@@ -131,7 +131,7 @@ var Cyclist = {
 		},
 		containerForElement: function(element) {
 			var container = document.createElement("div");
-			element.prepend(container);
+			element.appendChild(container);
 			container.classList.add(this.GUIDELINES_CLASS_NAME);
 			var height = element.offsetHeight;
 			container.setAttribute("height", height);
