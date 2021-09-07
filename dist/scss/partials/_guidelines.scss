@@ -31,3 +31,8 @@
 .cyclist-column > div.cyclist-unit:last-child {
   margin-right: 0;
 }
+
+// So Inspect Element won't prioritize the grid
+.cyclist-baseline {
+  z-index: -1;
+}

@@ -143,6 +143,9 @@ sup {
 .cyclist-column > div.cyclist-unit:last-child {
   margin-right: 0; }
 
+.cyclist-baseline {
+  z-index: -1; }
+
 article#layout {
   margin: 0 auto;
   width: 29rem; }

@@ -143,6 +143,9 @@ sup {
 .cyclist-column > div.cyclist-unit:last-child {
   margin-right: 0; }
 
+.cyclist-baseline {
+  z-index: -1; }
+
 #container {
   margin: 0 auto;
   padding: 17px 0;
