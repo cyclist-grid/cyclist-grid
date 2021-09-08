@@ -41,10 +41,10 @@ paths.test.html.srcWatchGlob = paths.test.html.src + "/**/*.html";
 paths.dist = {};
 paths.dist.sass = {};
 paths.dist.sass.root = "dist";
-paths.dist.sass.src = paths.dist.sass.root + "scss";
+paths.dist.sass.src = paths.dist.sass.root + "/scss";
 paths.dist.sass.srcGlob = paths.dist.sass.src + "/*.scss";
-paths.dist.sass.build = paths.dist.sass.root + "css";
-paths.dist.sass.srcWatchGlob = "dist/**/*.scss";
+paths.dist.sass.build = paths.dist.sass.root + "/css";
+paths.dist.sass.srcWatchGlob = paths.dist.sass.src + "/**/*.scss";
 
 // Sass
 
