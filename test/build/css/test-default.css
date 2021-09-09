@@ -241,3 +241,7 @@ article#layout-width > .columns {
   display: flex;
   -webkit-flex: 0 0 29rem;
   flex: 0 0 29rem; }
+
+@-moz-document url-prefix() {
+  ul {
+    list-style: none; } }

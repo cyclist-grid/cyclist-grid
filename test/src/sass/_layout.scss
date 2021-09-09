@@ -102,3 +102,10 @@ article#layout-width > .columns {
 .width-three-column {
   @include flex-width(columns-width(3));
 }
+
+@-moz-document url-prefix() {
+  ul {
+    // Firefox doesn't use the correct `line-height` without `list-style: none`
+    list-style: none;
+  }
+}
