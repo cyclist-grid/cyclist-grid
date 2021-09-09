@@ -26,3 +26,10 @@ nav ul li {
   list-style: none;
   flex-grow: 1;
 }
+
+@-moz-document url-prefix() {
+  ul {
+    // Firefox doesn't use the correct `line-height` without `list-style: none`
+    list-style: none;
+  }
+}
