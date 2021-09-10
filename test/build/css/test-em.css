@@ -248,3 +248,7 @@ article#layout-width > .columns {
 @-moz-document url-prefix() {
   ul {
     list-style: none; } }
+
+#mocha li.test h2 {
+  font-size: 12px;
+  line-height: 16px; }
