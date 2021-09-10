@@ -166,3 +166,7 @@ nav ul {
 nav ul li {
   list-style: none;
   flex-grow: 1; }
+
+@-moz-document url-prefix() {
+  ul {
+    list-style: none; } }
