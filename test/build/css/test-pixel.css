@@ -57,33 +57,27 @@ body {
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  line-height: calc(3 * 17px);
-  margin-bottom: 17px; }
+  line-height: calc(3 * 17px); }
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  line-height: calc(2 * 17px);
-  margin-bottom: 17px; }
+  line-height: calc(2 * 17px); }
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  line-height: calc(2 * 17px);
-  margin-bottom: 17px; }
+  line-height: calc(2 * 17px); }
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  line-height: calc(2 * 17px);
-  margin-bottom: 17px; }
+  line-height: calc(2 * 17px); }
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  line-height: calc(2 * 17px);
-  margin-bottom: 17px; }
+  line-height: calc(2 * 17px); }
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  line-height: calc(1 * 17px);
-  margin-bottom: 17px; }
+  line-height: calc(1 * 17px); }
 
 p,
 ul,
