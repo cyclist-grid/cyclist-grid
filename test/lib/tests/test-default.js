@@ -21,9 +21,9 @@ describe('Cyclist default', function() {
         // Run the baseline tests
         testHelper.baselineIsCorrect(baselineElement);
 
-        // Test that the gutter width is equal to the font size
-        var gutterWidthStyle = testHelper.gutterWidthStyle();
-        gutterWidthStyle.should.equal(fontSizeStyle);
+        // Test that the gutter width is equal to the leading
+        var gutterOffset = testHelper.gutterOffset();
+        gutterOffset.should.equal(testClientHeight);
 
         // Run the layout tests
         testHelper.layoutIsCorrect(layoutElement);

@@ -104,10 +104,18 @@ var testHelper = {
     return parseFloat(this.gutterWidthStyle(), 10);
   },
 
-  gutterWidthStyle: function() {
+  gutterStyle: function() {
     var gutterElement = document.getElementsByClassName('indent-one-gutter')[0];
-    var style = window.getComputedStyle(gutterElement);
+    return window.getComputedStyle(gutterElement);
+  },
+
+  gutterWidthStyle: function() {
+    var style = this.gutterStyle();
     return style.marginLeft;
+  },
+
+  gutterOffset: function() {
+    return parseInt(this.gutterWidthStyle());
   },
 
   totalHeightForElement: function(element) {
