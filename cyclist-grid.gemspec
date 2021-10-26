@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'cyclist-grid'
-  s.version     = '0.3.0'
+  s.version     = '0.3.1'
   s.summary     = 'Grid System'
   s.description = 'An HTML5 typographic-grid system using Sass.'
   s.authors     = ['Roben Kleene']
