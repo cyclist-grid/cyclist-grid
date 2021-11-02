@@ -1,6 +1,6 @@
 {
   "name": "cyclist-grid",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "An HTML5 typographic-grid system using Sass.",
   "author": "Roben Kleene <contact@robenkleene.com>",
   "contributors": [
