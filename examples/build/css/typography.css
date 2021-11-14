@@ -6,7 +6,8 @@ html, body, div, span {
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+}
 
 /* Text */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, ol, ul, li, strong, em {
@@ -16,7 +17,8 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, ol, ul, li, strong, em {
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+}
 
 /* Other */
 applet, object, iframe, abbr, acronym, address, big, cite, code, del, dfn,
@@ -29,88 +31,109 @@ tfoot, thead, tr, th, td {
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+}
 
 /* Misc */
 :focus {
-  outline: 0; }
+  outline: 0;
+}
 
 table {
   border-collapse: separate;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 caption, th, td {
   text-align: left;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 blockquote:before, blockquote:after, q:before, q:after {
-  content: ""; }
+  content: "";
+}
 
 blockquote, q {
-  quotes: "" ""; }
+  quotes: "" "";
+}
 
 html {
-  font-size: 12px; }
+  font-size: 12px;
+}
 
 body {
-  line-height: 17px; }
+  line-height: 17px;
+}
 
 h1 {
   font-size: calc(1em * (36 / 12));
-  line-height: calc(3 * 17px); }
+  line-height: calc(3 * 17px);
+}
 
 h2 {
   font-size: calc(1em * (24 / 12));
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+}
 
 h3 {
   font-size: calc(1em * (21 / 12));
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+}
 
 h4 {
   font-size: calc(1em * (18 / 12));
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+}
 
 h5 {
   font-size: calc(1em * (14 / 12));
-  line-height: calc(2 * 17px); }
+  line-height: calc(2 * 17px);
+}
 
 h6 {
   font-size: calc(1em * (12 / 12));
-  line-height: calc(1 * 17px); }
+  line-height: calc(1 * 17px);
+}
 
 h1, h2 {
   margin-bottom: 17px;
-  margin-top: 34px; }
+  margin-top: 34px;
+}
 
 p,
 ul,
 ol {
-  margin-bottom: 17px; }
+  margin-bottom: 17px;
+}
 
 ul ol,
 ol ol,
 ul ul,
 ol ul {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 ul {
   list-style-type: disc;
-  margin-left: 17px; }
+  margin-left: 17px;
+}
 
 ol {
   list-style-type: decimal;
-  margin-left: 17px; }
+  margin-left: 17px;
+}
 
 sub {
   line-height: 0;
   vertical-align: sub;
-  font-size: calc(1em * (10 / 12)); }
+  font-size: calc(1em * (10 / 12));
+}
 
 sup {
   line-height: 0;
   vertical-align: super;
-  font-size: calc(1em * (10 / 12)); }
+  font-size: calc(1em * (10 / 12));
+}
 
 .cyclist-guidelines {
   display: -webkit-flex;
@@ -120,7 +143,8 @@ sup {
   top: 0;
   bottom: 0;
   right: 0;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .cyclist-guidelines > div.cyclist-column {
   display: -webkit-flex;
@@ -128,43 +152,54 @@ sup {
   background-color: rgba(148, 235, 255, 0.25);
   margin-right: 17px;
   -webkit-flex: 0 0 153px;
-  flex: 0 0 153px; }
+  flex: 0 0 153px;
+}
 
 .cyclist-guidelines > div.cyclist-column:last-child {
-  margin-right: 0; }
+  margin-right: 0;
+}
 
 .cyclist-column > div.cyclist-unit {
   background-color: rgba(148, 235, 255, 0.25);
   margin-right: 17px;
   -webkit-flex: 0 0 68px;
-  flex: 0 0 68px; }
+  flex: 0 0 68px;
+}
 
 .cyclist-column > div.cyclist-unit:last-child {
-  margin-right: 0; }
+  margin-right: 0;
+}
 
 .cyclist-baseline {
-  z-index: -1; }
+  z-index: -1;
+}
 
 #container {
   margin: 0 auto;
   padding: 17px 0;
-  width: 493px; }
+  width: 493px;
+}
 
 nav {
   margin-bottom: 17px;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+}
 
 nav ul {
   display: flex;
   flex-direction: row;
   margin: 0;
-  text-align: center; }
+  text-align: center;
+}
 
 nav ul li {
   list-style: none;
-  flex-grow: 1; }
+  flex-grow: 1;
+}
 
 @-moz-document url-prefix() {
   ul {
-    list-style: none; } }
+    list-style: none;
+  }
+}

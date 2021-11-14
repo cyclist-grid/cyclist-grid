@@ -1,6 +1,6 @@
 // devDependencies
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const plumber = require("gulp-plumber");
 const pug = require("gulp-pug");
 const connect = require("gulp-connect");
