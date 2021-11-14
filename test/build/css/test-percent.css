@@ -66,32 +66,32 @@ body {
 }
 
 h1 {
-  font-size: calc(1em * (36 / 12));
+  font-size: calc(1em * 36/12);
   line-height: calc(3 * 2rem);
 }
 
 h2 {
-  font-size: calc(1em * (24 / 12));
+  font-size: calc(1em * 24/12);
   line-height: calc(2 * 2rem);
 }
 
 h3 {
-  font-size: calc(1em * (21 / 12));
-  line-height: calc(2 * 2rem);
+  font-size: calc(1em * 21/12);
+  line-height: calc(1.75 * 2rem);
 }
 
 h4 {
-  font-size: calc(1em * (18 / 12));
-  line-height: calc(2 * 2rem);
+  font-size: calc(1em * 18/12);
+  line-height: calc(1.5 * 2rem);
 }
 
 h5 {
-  font-size: calc(1em * (14 / 12));
-  line-height: calc(2 * 2rem);
+  font-size: calc(1em * 14/12);
+  line-height: calc(1.1666666667 * 2rem);
 }
 
 h6 {
-  font-size: calc(1em * (12 / 12));
+  font-size: calc(1em * 12/12);
   line-height: calc(1 * 2rem);
 }
 
@@ -126,13 +126,13 @@ ol {
 sub {
   line-height: 0;
   vertical-align: sub;
-  font-size: calc(1em * (10 / 12));
+  font-size: calc(1em * 10/12);
 }
 
 sup {
   line-height: 0;
   vertical-align: super;
-  font-size: calc(1em * (10 / 12));
+  font-size: calc(1em * 10/12);
 }
 
 .cyclist-guidelines {

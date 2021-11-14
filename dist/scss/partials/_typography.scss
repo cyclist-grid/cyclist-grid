@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @if $font-size {
   html {
     font-size: $font-size;
@@ -11,14 +13,14 @@ body {
 @function font-size-from-ratio($ratio) {
   $numerator: nth($ratio, 1);
   $denumerator: nth($ratio, 2);
-  @return calc(1em * (#{$numerator} / #{$denumerator}));
+  @return calc(1em * math.div(#{$numerator}, #{$denumerator}));
 }
 
 @mixin header($ratio) {
   $numerator: nth($ratio, 1);
   $denumerator: nth($ratio, 2);
   font-size: font-size-from-ratio($ratio);
-  $leading-multiplier: ceil($numerator / $denumerator);
+  $leading-multiplier: math.div($numerator, $denumerator);
   line-height: calc(#{$leading-multiplier} * #{$leading-height});
 }
 
