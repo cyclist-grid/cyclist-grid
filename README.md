@@ -70,7 +70,7 @@ Cyclist Grid's solution to this problem is to treat these as proportional font s
 * "double great primer": `36 / 12`
 * "double pica": `24 / 12`
 * "double small pica": `21 / 12`
-* "great primer": `18 / 12`s
+* "great primer": `18 / 12`
 * "english": `14 / 12`
 * "pica": `12 / 12`
 * "small pica": `11 / 12`
